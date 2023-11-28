@@ -12,6 +12,29 @@ import Footer from "./Footer";
 import Terms from "./Terms";
 import "./App.css";
 
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBygpDcQeB1uCLTiIAAtxvwM10Tzmkk0fE",
+  authDomain: "my-website-26cef.firebaseapp.com",
+  projectId: "my-website-26cef",
+  storageBucket: "my-website-26cef.appspot.com",
+  messagingSenderId: "1082529460512",
+  appId: "1:1082529460512:web:25aefd99175dee1d59e745",
+  measurementId: "G-SPLT8ZXMYL"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
+
 
 
 
