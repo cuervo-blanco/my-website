@@ -14,7 +14,7 @@ import "./App.css";
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
+import { getAnalytics, logEvent } from "firebase/analytics";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -33,15 +33,21 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
 
 
 
 
 function ScrollManager() {
   const location = useLocation();
+  const analytics = getAnalytics(app);
+
+  
 
   useEffect(() => {
+    logEvent(analytics, 'page_view', {
+      page_path: location.pathname,
+    });
     const scrollToSection = () => {
       if (location.state?.scrollTo) {
         const section = document.getElementById(location.state.scrollTo);
@@ -61,7 +67,7 @@ function ScrollManager() {
     };
 
     scrollToSection();
-  }, [location]);
+  }, [location, analytics]);
 
   return null;
 }
