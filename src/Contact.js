@@ -1,18 +1,62 @@
-import React from 'react';
+import React, { useState } from 'react';
 import soundStuff from './img/sound-stuff.webp';
 // import Title from './section-title.js';
 import contactBackground from './img/contact-background.jpg';
 
 
 function Contact(){
+    const [submissionMessage, setSubmissionMessage] = useState('');
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        setSubmissionMessage('Please wait...');
+    
+        const formData = new FormData(event.target);
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+    
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            });
+    
+            const result = await response.json();
+            setSubmissionMessage(result.message);
+    
+            if (response.status === 200) {
+                setSubmissionMessage('Your message has been sent successfully!');
+                // Redirect or show success message
+                // window.location.href = '/custom-success-page'; // Uncomment to redirect
+            } else {
+                setSubmissionMessage(result.message || 'An error occurred. Please try again.');
+                // Handle error
+            }
+        } catch (error) {
+            console.error('Submission error:', error);
+            setSubmissionMessage('Something went wrong!');
+        } finally {
+            // Reset form or perform other finalization tasks
+            event.target.reset();
+            setTimeout(() => {
+                setSubmissionMessage(''); // Clear message after a delay
+            }, 5000); // Adjust delay as needed
+        }
+    };
+    
     return(
             <div id="contact">
             <div id="contact-back-container"><div id="contact-background"><img src={contactBackground} alt="Background of constellations of a monkey and a chicken"></img></div></div>
             <h1>CONTACT</h1>
             <div id="contact-window">
+                <div id="submission-message">{submissionMessage}</div>
   
-                <form action="/submit-form" method="post">
+                <form onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST">
                     <div id="inputs">
+                        <input type="hidden" name="access_key" value="728e095b-d681-46ad-ad89-457e17a8353e"></input>
                         <div className="form-input"> <label for="name">Name:</label>
                             <input type="text" id="name" name="name" required />
                         </div>
