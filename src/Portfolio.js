@@ -35,9 +35,9 @@ function Portfolio() {
         <Title
          
           title="Films"
-          color="black"
+          color="transparent"
           fontColor="white"
-          border="0px solid white"
+          border="1px solid white"
         />
 
         {/* Title outputs title in component, movie selects poster (poster must have same name but 'Poster' at the end. Ext 1 parameter is the picture second parameter is the audio extension*/}

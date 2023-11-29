@@ -78,13 +78,13 @@ function App() {
       <Routes>
         <Route path="/" element={
           <div id="homepage">
-            <Hero />
-            <AboutSection />
-            <Expertise />
-            <Services />
-            <Skills />
-            <Contact />
-            <Footer />
+            <div><Hero /></div>
+            <div><AboutSection /></div>
+            <div><Expertise /></div>
+            <div><Services /></div>
+            <div><Skills /></div>
+            <div><Contact /></div>
+            <div><Footer /></div>
           </div>
         } />
         <Route path="/portfolio" element={<><Portfolio /><Footer /></>} />

@@ -2,6 +2,7 @@ import React, { } from 'react';
 // import moon from './img/moon.png'
 import Godzilla from './img/Godzilla.png'
 import JaimeMoon from './img/JaimeMoon.png'
+import banner from "./img/banner-npem.png";
 
 
 
@@ -9,6 +10,9 @@ import JaimeMoon from './img/JaimeMoon.png'
 const Hero = () => {
     return (
         <div id="hero">
+        <div id="banner-about">
+        <img src={banner} alt="Starry night with animal constelations" />
+      </div>
             <div id="hero-container">
                 <div id="hero-title">
                     <h1>Jaime Osvaldo</h1>

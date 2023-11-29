@@ -3,7 +3,6 @@ import jaimeOsvaldo002 from "./img/jaime-osvaldo-002.png";
 import rice from "./img/rice7.png";
 import PictureRow from "./PictureRow";
 //import Title from './section-title';
-import banner from "./img/banner-npem.png";
 import aboutBackground from "./img/about-background.png";
 import jaimeLogo from "./img/Logo Jaime.png";
 import shortStoryLong from "./img/picture-row-background.png";
@@ -14,9 +13,7 @@ const AboutSection = () => {
   return (
     <div id="about-section">
       <hr></hr>
-      <div id="banner-about">
-        <img src={banner} alt="Starry night with animal constelations" />
-      </div>
+      
       <img
         id="luna-logo"
         src={jaimeLogo}
