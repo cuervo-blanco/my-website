@@ -1,5 +1,5 @@
 import React from "react";
-import jaimeOsvaldo002 from "./img/jaime-osvaldo-002.png";
+import jaimeOsvaldo007 from "./img/jaime-osvaldo-007.jpg";
 import rice from "./img/rice7.png";
 import PictureRow from "./PictureRow";
 //import Title from './section-title';
@@ -60,7 +60,7 @@ const AboutSection = () => {
                 <div id="section-2">
                   <div id="jaime-about-1">
                     <img
-                      src={jaimeOsvaldo002}
+                      src={jaimeOsvaldo007}
                       alt="Jaime Osvaldo smiling at the camera"
                     />
                   </div>
@@ -80,7 +80,7 @@ const AboutSection = () => {
           <div id="images">
             <img
               id="jaime-about"
-              src={jaimeOsvaldo002}
+              src={jaimeOsvaldo007}
               alt="Jaime Osvaldo smiling at the camera"
             />
           </div>
