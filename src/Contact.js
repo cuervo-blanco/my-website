@@ -9,11 +9,11 @@ function Contact(){
     const handleSubmit = async (event) => {
         event.preventDefault();
         setSubmissionMessage('Please wait...');
-    
+
         const formData = new FormData(event.target);
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
-    
+
         try {
             const response = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
@@ -23,10 +23,10 @@ function Contact(){
                 },
                 body: json
             });
-    
+
             const result = await response.json();
             setSubmissionMessage(result.message);
-    
+
             if (response.status === 200) {
                 setSubmissionMessage('Your message has been sent successfully!');
                 // Redirect or show success message
@@ -46,14 +46,14 @@ function Contact(){
             }, 5000); // Adjust delay as needed
         }
     };
-    
+
     return(
             <div id="contact">
             <div id="contact-back-container"><div id="contact-background"><img src={contactBackground} alt="Background of constellations of a monkey and a chicken"></img></div></div>
             <h1>CONTACT</h1>
             <div id="contact-window">
                 <div id="submission-message">{submissionMessage}</div>
-  
+
                 <form onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST">
                     <div id="inputs">
                         <input type="hidden" name="access_key" value="728e095b-d681-46ad-ad89-457e17a8353e"></input>
@@ -66,7 +66,7 @@ function Contact(){
                         </div>
 
                         <div className="form-input"><label for="subject">Subject:</label>
-                            <select id="subject" name="subject" required> 
+                            <select id="subject" name="subject" required>
                                 <option value="production-sound">Production Sound Services</option>
                                 <option value="post-production-sound">Post-Production Sound Services</option>
                                 <option value="live-sound">Live Sound Services</option>
@@ -74,7 +74,7 @@ function Contact(){
                                 <option value="consultations">Consultations</option>
                                 <option value="courses">Online Courses</option>
                                 <option value="other">Other</option>
-                                
+
                             </select>
                         </div>
 
@@ -84,7 +84,7 @@ function Contact(){
                         <div className="form-input2"><label for="message">Message:</label>
                             <textarea id="message" name="message" rows="4" required></textarea>
                         </div>
-                    
+
                     <div className="form-input2"><button type="submit">SUBMIT</button></div></div>
                  </form>
 
