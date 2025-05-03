@@ -1,11 +1,8 @@
 import React, {useEffect} from 'react';
 import {useLocation, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Menu from "./components/common/Menu";
-import AboutSection from "./components/sections/AboutSection";
-import Skills from "./components/sections/Skills";
 import Contact from "./components/sections/Contact";
 import Portfolio from "./components/sections/Portfolio";
-import Expertise from "./components/sections/Expertise";
 import Services from "./components/sections/Services";
 import Footer from "./components/layout/Footer";
 import Hero from "./components/layout/Hero";
@@ -91,10 +88,7 @@ function App() {
         <Route path="/" element={
           <div id="homepage">
             <div><Hero /></div>
-            <div><AboutSection /></div>
-            <div><Expertise /></div>
             <div><Services /></div>
-            <div><Skills /></div>
             <div><Contact /></div>
             <div><Footer /></div>
           </div>

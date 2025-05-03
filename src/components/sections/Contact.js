@@ -81,6 +81,7 @@ function Contact(){
                         </div>
 
                     <div className="form-input2"><button type="submit">SUBMIT</button></div></div>
+                  
                  </form>
 
             </div>

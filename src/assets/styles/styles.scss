@@ -386,32 +386,30 @@ body {
   font-size: 2em;
   font-weight: bold;
   text-align: center;
-  //border: 6px dotted red;
+  margin-bottom: 100px;
 
   @media (max-width: 4000px) {
-    margin-bottom: 5%;
+    margin-bottom: 150px;
   }
 
   @media (max-width: $xxlarge) {
     margin-top: 0px;
-    margin-bottom: 5%;
+    margin-bottom: 150px;
   }
 
   @media (max-width: $large) {
-    margin-bottom: -100px;
+    margin-bottom: 100px;
   }
 
   @media (max-width: $small) {
     height: auto;
-    //border: 6px solid yellow;
-    margin-bottom: 0;
+    margin-bottom: 100px;
     z-index: 1;
   }
 
   #banner-about {
     width: 100vw;
     height: auto;
-    //border-top: 2px solid white;
     position: absolute;
     top: 0;
     left: 0;
@@ -2672,7 +2670,9 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  //border: 2px solid orange;
+  margin-top: 100px;
+  position: relative;
+  z-index: 2;
 
   h2 {
     font-size: 3em;

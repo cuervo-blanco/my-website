@@ -14,8 +14,8 @@ const Hero = () => {
       </div>
             <div id="hero-container">
                 <div id="hero-title">
-                    <h1>Jaime Osvaldo</h1>
-                    <h2>Audiovisual Sound for any time, any place and any one... even Godzilla. </h2>
+                    <h1>Jaime O. Rivera</h1>
+                    <h2>Sound for any time, any place and any one... even Godzilla. </h2>
                 </div>
                 <div id="hero-image">
                     <img id="hero-godzilla" className="hero-picture" src={Godzilla} alt="Godzilla terrorizing a city"></img>
