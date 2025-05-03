@@ -1,15 +1,15 @@
 import React, {useEffect} from 'react';
 import {useLocation, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Menu from "./Menu";
-import Hero from "./Hero";
-import AboutSection from "./AboutSection";
-import Skills from "./Skills";
-import Contact from "./Contact";
-import Portfolio from "./Portfolio";
-import Expertise from "./Expertise";
-import Services from "./Services";
-import Footer from "./Footer";
-import Terms from "./Terms";
+import Menu from "./components/common/Menu";
+import AboutSection from "./components/sections/AboutSection";
+import Skills from "./components/sections/Skills";
+import Contact from "./components/sections/Contact";
+import Portfolio from "./components/sections/Portfolio";
+import Expertise from "./components/sections/Expertise";
+import Services from "./components/sections/Services";
+import Footer from "./components/layout/Footer";
+import Hero from "./components/layout/Hero";
+import Terms from "./pages/Terms";
 import "./App.css";
 
 

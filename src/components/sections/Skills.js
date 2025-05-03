@@ -1,27 +1,26 @@
 import React from "react";
-import Title from "./section-title";
-import LogoScroller from "./LogoScroller";
-import ImageGallery from './ImageGallery';
+import Title from "../common/section-title";
+import LogoScroller from "../common/LogoScroller";
+import ImageGallery from '../common/ImageGallery';
 
-//Images
-import image1 from "./img/image1.jpg";
-import image2 from "./img/image2.jpg";
-import image3 from "./img/image3.jpg";
-import image4 from "./img/image4.jpg";
-import image5 from "./img/image5.jpg";
-import image6 from "./img/image6.jpg";
-import image7 from "./img/image7.jpg";
-import image8 from "./img/image8.jpg";
-import image9 from "./img/image9.jpg";
-import image10 from "./img/image10.jpg";
-import image11 from "./img/image11.jpg";
-import image12 from "./img/image12.jpg";
-import image13 from "./img/image13.jpg";
-import image14 from "./img/image14.jpg";
-import image15 from "./img/image15.jpg";
-import image16 from "./img/image16.jpg";
-import image17 from "./img/image17.jpg";
-import image18 from "./img/image18.jpg";
+import image1 from "../../assets/img/image1.jpg";
+import image2 from "../../assets/img/image2.jpg";
+import image3 from "../../assets/img/image3.jpg";
+import image4 from "../../assets/img/image4.jpg";
+import image5 from "../../assets/img/image5.jpg";
+import image6 from "../../assets/img/image6.jpg";
+import image7 from "../../assets/img/image7.jpg";
+import image8 from "../../assets/img/image8.jpg";
+import image9 from "../../assets/img/image9.jpg";
+import image10 from "../../assets/img/image10.jpg";
+import image11 from "../../assets/img/image11.jpg";
+import image12 from "../../assets/img/image12.jpg";
+import image13 from "../../assets/img/image13.jpg";
+import image14 from "../../assets/img/image14.jpg";
+import image15 from "../../assets/img/image15.jpg";
+import image16 from "../../assets/img/image16.jpg";
+import image17 from "../../assets/img/image17.jpg";
+import image18 from "../../assets/img/image18.jpg";
 
 function Skills() {
   const images = [
@@ -43,7 +42,6 @@ function Skills() {
     { src: image3, alt: 'A picture of Jaime 16' },
     { src: image17, alt: 'A picture of Jaime 17' },
     { src: image18, alt: 'A picture of Jaime 18' }
-    // ... more images
   ];
   return (
     <div id="skills-section">

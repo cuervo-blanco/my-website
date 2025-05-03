@@ -1,6 +1,6 @@
 import React, { } from 'react';
-import Title from './section-title';
-import jaimeLogo from './img/Logo Jaime 3.png';
+import Title from '../common/section-title';
+import jaimeLogo from '../../assets/img/Logo Jaime 3.png';
 
 const Expertise = () => {
     return(

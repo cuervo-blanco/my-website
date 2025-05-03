@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import galleryBackground from "./img/gallery-background.jpg";
+import galleryBackground from "../../assets/img/gallery-background.jpg";
 
 const ImageGallery = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

@@ -1,8 +1,8 @@
 import React from 'react';
-import jaimeOsvaldo003 from './img/jaime-osvaldo-003.jpeg';
-import jaimeOsvaldo004 from './img/jaime-osvaldo-004.jpeg';
-import jaimeOsvaldo005 from './img/jaime-osvaldo-005.jpeg';
-import pictureRowBackground from './img/background.jpg';
+import jaimeOsvaldo003 from '../../assets/img/jaime-osvaldo-003.jpeg';
+import jaimeOsvaldo004 from '../../assets/img/jaime-osvaldo-004.jpeg';
+import jaimeOsvaldo005 from '../../assets/img/jaime-osvaldo-005.jpeg';
+import pictureRowBackground from '../../assets/img/background.jpg';
 
 const PictureRow = () => {
     return (

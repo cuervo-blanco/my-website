@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import jaimeLogo from './img/Logo Jaime.png';
+import jaimeLogo from '../../assets/img/Logo Jaime.png';
 
 const Menu = (props) => {
     const [showHeader, setShowHeader] = useState(false);

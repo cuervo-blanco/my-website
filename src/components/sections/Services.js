@@ -1,6 +1,6 @@
 import React from "react";
-import Title from "./section-title";
-import Button from "./Button";
+import Title from "../common/section-title";
+import Button from "../common/Button";
 
 function Services() {
   return (

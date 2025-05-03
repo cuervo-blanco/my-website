@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom'; // Assuming you're using React Router for navigation
+import { Link, useNavigate } from 'react-router-dom'; 
 
 const Footer = () => {
 
@@ -13,42 +13,36 @@ const Footer = () => {
         const currentPath = window.location.pathname;
 
         if (currentPath !== '/') {
-          e.preventDefault(); // Prevent default anchor behavior
+          e.preventDefault(); 
           navigate('/');
-          // Navigate to homepage then scroll
           window.history.pushState({}, '', '/');
-          window.scrollTo(0, 0); // Scroll to top of the homepage
+          window.scrollTo(0, 0); 
 
-          // Wait for the homepage to render before scrolling to the section
           setTimeout(() => {
             const section = document.getElementById(sectionId);
             if (section) {
               section.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-          }, 100); // A slight delay to allow the page to render
+          }, 100); 
         }
-        // If we are on the homepage, the default anchor behavior will work
       };
 
       const handleNavigation2 = (e, sectionId) => {
         const currentPath = window.location.pathname;
 
         if (currentPath !== '/terms') {
-          e.preventDefault(); // Prevent default anchor behavior
+          e.preventDefault(); 
           navigate('/terms');
-          // Navigate to homepage then scroll
           window.history.pushState({}, '', '/terms');
-          window.scrollTo(0, 0); // Scroll to top of the homepage
+          window.scrollTo(0, 0); 
 
-          // Wait for the homepage to render before scrolling to the section
           setTimeout(() => {
             const section = document.getElementById(sectionId);
             if (section) {
               section.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
-          }, 100); // A slight delay to allow the page to render
+          }, 100); 
         }
-        // If we are on the homepage, the default anchor behavior will work
       };
 
 
@@ -80,5 +74,6 @@ const Footer = () => {
         </footer>
     );
 }
+
 
 export default Footer;

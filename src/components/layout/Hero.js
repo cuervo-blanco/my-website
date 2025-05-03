@@ -1,8 +1,7 @@
 import React, { } from 'react';
-// import moon from './img/moon.png'
-import Godzilla from './img/Godzilla.png'
-import JaimeMoon from './img/JaimeMoon.png'
-import banner from "./img/banner-npem.png";
+import Godzilla from '../../assets/img/Godzilla.png'
+import JaimeMoon from '../../assets/img/JaimeMoon.png'
+import banner from "../../assets/img/banner-npem.png";
 
 
 

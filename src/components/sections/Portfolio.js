@@ -1,8 +1,8 @@
 import React from "react";
-import AudioPlayer from "./AudioPlayer";
-import Title from "./section-title";
-import portfolioBackground from "./img/portfolio-background.jpg";
-import portfolioBackground2 from "./img/portfolio-background2.jpg";
+import AudioPlayer from "../common/AudioPlayer";
+import Title from "../common/section-title";
+import portfolioBackground from "../../assets/img/portfolio-background.jpg";
+import portfolioBackground2 from "../../assets/img/portfolio-background2.jpg";
 
 function Portfolio() {
   return (

@@ -1,22 +1,22 @@
 import React,  { useRef, useState, useEffect }  from 'react';
-import AESLogo from './img/AESLogo.png';
-import ArdourLogo from './img/ArdourLogo.png';
-import AuditionLogo from './img/AuditionLogo.png';
-import DanteLogo from './img/DanteLogo.png';
-import FModLogo from './img/FmodLogo.png';
-import izotopeLogo from './img/izotopeLogo.png';
-import LogicProLogo from './img/LogicProLogo.png';
-import OshaLogo from './img/OshaLogo.png';
-import ProToolsLogo from './img/ProToolsLogo.png';
-import ReaperLogo from './img/ReaperLogo.png';
-import UnityLogo from './img/UnityLogo.png';
-import PureDataLogo from './img/PureDataLogo.png';
-import QSysLogo from './img/Q-Sys-Logo.png';
-import WwiseLogo from './img/WwiseLogo.png';
-import WavesLogo from './img/WavesLogo.png';
-import QLabLogo from './img/QLabLogo.png';
-import RXLogo from './img/RXLogo.png';
-import RTSLogo from './img/RTSLogo.png';
+import AESLogo from '../../assets/img/AESLogo.png';
+import ArdourLogo from '../../assets/img/ArdourLogo.png';
+import AuditionLogo from '../../assets/img/AuditionLogo.png';
+import DanteLogo from '../../assets/img/DanteLogo.png';
+import FModLogo from '../../assets/img/FmodLogo.png';
+import izotopeLogo from '../../assets/img/izotopeLogo.png';
+import LogicProLogo from '../../assets/img/LogicProLogo.png';
+import OshaLogo from '../../assets/img/OshaLogo.png';
+import ProToolsLogo from '../../assets/img/ProToolsLogo.png';
+import ReaperLogo from '../../assets/img/ReaperLogo.png';
+import UnityLogo from '../../assets/img/UnityLogo.png';
+import PureDataLogo from '../../assets/img/PureDataLogo.png';
+import QSysLogo from '../../assets/img/Q-Sys-Logo.png';
+import WwiseLogo from '../../assets/img/WwiseLogo.png';
+import WavesLogo from '../../assets/img/WavesLogo.png';
+import QLabLogo from '../../assets/img/QLabLogo.png';
+import RXLogo from '../../assets/img/RXLogo.png';
+import RTSLogo from '../../assets/img/RTSLogo.png';
 
 
 function LogoScroller(props){

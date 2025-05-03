@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import soundStuff from './img/sound-stuff.webp';
-// import Title from './section-title.js';
-import contactBackground from './img/contact-background.jpg';
+import soundStuff from '../../assets/img/sound-stuff.webp';
+import contactBackground from '../../assets/img/contact-background.jpg';
 
 
 function Contact(){
@@ -29,21 +28,17 @@ function Contact(){
 
             if (response.status === 200) {
                 setSubmissionMessage('Your message has been sent successfully!');
-                // Redirect or show success message
-                // window.location.href = '/custom-success-page'; // Uncomment to redirect
             } else {
                 setSubmissionMessage(result.message || 'An error occurred. Please try again.');
-                // Handle error
             }
         } catch (error) {
             console.error('Submission error:', error);
             setSubmissionMessage('Something went wrong!');
         } finally {
-            // Reset form or perform other finalization tasks
             event.target.reset();
             setTimeout(() => {
-                setSubmissionMessage(''); // Clear message after a delay
-            }, 5000); // Adjust delay as needed
+                setSubmissionMessage(''); 
+            }, 5000);
         }
     };
 

@@ -1,13 +1,10 @@
 import React from "react";
-import jaimeOsvaldo007 from "./img/jaime-osvaldo-007.jpg";
-import rice from "./img/rice7.png";
-import PictureRow from "./PictureRow";
-//import Title from './section-title';
-import aboutBackground from "./img/about-background.png";
-import jaimeLogo from "./img/Logo Jaime.png";
-import shortStoryLong from "./img/picture-row-background.png";
-
-// import jaimeOsvaldo006 from './img/jaime-osvaldo-006.jpeg';
+import jaimeOsvaldo007 from "../../assets/img/jaime-osvaldo-007.jpg";
+import rice from "../../assets/img/rice7.png";
+import PictureRow from "../common/PictureRow";
+import aboutBackground from "../../assets/img/about-background.png";
+import jaimeLogo from "../../assets/img/Logo Jaime.png";
+import shortStoryLong from "../../assets/img/picture-row-background.png";
 
 const AboutSection = () => {
   return (
