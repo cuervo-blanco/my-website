@@ -15,7 +15,16 @@
             "value": "application/octet-stream"
           }
         ]
-      }
+      },
+      {
+        "source": "/CV/JaimeORiveraCV-2025v06.pdf",
+        "headers": [
+          {
+            "key": "Content-Type",
+            "value": "application/octet-stream"
+          }
+        ]
+      },
     ],
     "rewrites": [
       {
