@@ -24,7 +24,7 @@
             "value": "application/octet-stream"
           }
         ]
-      },
+      }
     ],
     "rewrites": [
       {
