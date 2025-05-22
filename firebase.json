@@ -20,7 +20,7 @@
         "source": "/CV/JaimeORiveraCV-2025v06.pdf",
         "headers": [
           {
-            "key": "Content-Type",
+            "key": "Content-Disposition",
             "value": "application/octet-stream"
           }
         ]
