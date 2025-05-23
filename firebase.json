@@ -36,6 +36,14 @@
     ],
     "rewrites": [
       {
+        "source": "/CV/JaimeORiveraCV-2025v06.pdf",
+        "destination": "/CV/JaimeORiveraCV-2025v06.pdf"
+      },
+      {
+        "source": "/firmware/firmware.bin",
+        "destination": "/firmware/firmware.bin"
+      },
+      {
         "source": "**",
         "destination": "/index.html"
       }
