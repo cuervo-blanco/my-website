@@ -9,7 +9,7 @@ function ResumeButton() {
         rel="noopener noreferrer"
         className="resume-button"
       >
-        Resume
+        Resumé
       </a>
     </div>
   );

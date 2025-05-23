@@ -14,7 +14,7 @@ const Hero = () => {
       </div>
             <div id="hero-container">
                 <div id="hero-title">
-                    <h1>Jaime O. Rivera</h1>
+                    <h1>Jaime O. Rivera Santana</h1>
                     <h2>Sound for any time, any place and any one... even Godzilla. </h2>
                 </div>
                 <div id="hero-image">
