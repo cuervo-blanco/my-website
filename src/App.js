@@ -3,13 +3,11 @@ import {useLocation, BrowserRouter as Router, Route, Routes } from 'react-router
 import Menu from "./components/common/Menu";
 import Contact from "./components/sections/Contact";
 import Portfolio from "./components/sections/Portfolio";
-import Services from "./components/sections/Services";
+import ResumeButton from "./components/sections/Resume";
 import Footer from "./components/layout/Footer";
 import Hero from "./components/layout/Hero";
 import Terms from "./pages/Terms";
 import "./App.css";
-
-
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -88,7 +86,7 @@ function App() {
         <Route path="/" element={
           <div id="homepage">
             <div><Hero /></div>
-            <div><Services /></div>
+            <div><ResumeButton /></div>
             <div><Contact /></div>
             <div><Footer /></div>
           </div>

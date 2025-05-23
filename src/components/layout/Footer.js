@@ -60,7 +60,6 @@ const Footer = () => {
                     <h4>Quick Links</h4>
                     <Link to="/" onClick={handleHomeClick}>Home</Link>
                     <a href="#about-link" onClick={(e) => handleNavigation(e, 'about-section')}>About</a>
-                    <a a href="#services-header" onClick={(e) => handleNavigation(e, 'services-header')}>Services</a>
                     <Link to="/portfolio" onClick={handleHomeClick}>Portfolio</Link>
                     <a href="#contact" onClick={(e) => handleNavigation(e, 'contact')}>Contact</a>
                 </div>
