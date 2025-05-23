@@ -31,110 +31,6 @@ function Portfolio() {
             </li>
           </ul>
         </div>
-        <hr id="films-section"></hr>
-        <div id="portfolio-background1"><img src={portfolioBackground} alt="Space background for the portfolio"></img></div>
-        <Title
-         
-          title="Films"
-          color="transparent"
-          fontColor="white"
-          border="1px solid white"
-        />
-
-        {/* Title outputs title in component, movie selects poster (poster must have same name but 'Poster' at the end. Ext 1 parameter is the picture second parameter is the audio extension*/}
-        <div className="portfolio-column">
-          
-        <AudioPlayer
-            title="El Pastor"
-            poster="ElPastorPoster.png"
-            ext=".wav"
-            tracks={[
-              ["PASTOR_track1", "Foley & Ambience "],
-              ["PASTOR_track2", "★ Sound Fx & Ambience"],
-              ["PASTOR_track3", "Ambience"],
-            ]}
-          />
-          <AudioPlayer
-            title="La Obra"
-            poster="LaObraPoster.png"
-            ext=".wav"
-            tracks={[
-              ["OBRA_track1", "★ Musique concrète/Sound Design"],
-              ["OBRA_track2", "★ Music"],
-              ["OBRA_track3", "★ Music & Ambience"],
-              ["OBRA_track4", "Sound FX & Foley"],
-              ["OBRA_track5", "Music"],
-            ]}
-          />
-          
-        </div>
-        <div className="portfolio-column">
-          
-
-          
-          <AudioPlayer
-            title="Hijas de la Invasión"
-            poster="HDLIPoster.png"
-            ext=".wav"
-            tracks={[["HDLI_track1", "Sound FX & Ambience"], ["HDLI_track2", "Sound FX, Ambience & Music"], ["HDLI_track3", "★ Foley & Ambience"]]}
-          />
-          <AudioPlayer
-            title="Las Hortensias"
-            poster="HortensiasPoster.jpg"
-            ext=".wav"
-            tracks={[
-              ["HORT_track1", "Music & Sound FX"],
-              ["HORT_track2", "★ Sound FX"],
-              ["HORT_track3", "Sound FX, Ambience & Foley"],
-              ["HORT_track4", "★ Sound FX, ADR Ambience & Foley"],
-            ]}
-          />
-          
-        </div>
-
-        <div className="portfolio-column">
-          
-          <AudioPlayer
-            title="Juan Caballo"
-            poster="JCPoster.png"
-            ext=".wav"
-            tracks={[["JC_track1", "★ Sound FX, Ambience & Foley"], ["JC_track2", "★ Sound FX"], ["JC_track3", "★ Sound FX"]]}
-          />
-          <AudioPlayer
-            title="The Omicron Killer"
-            poster="OmicronPoster.png"
-            ext=".wav"
-            tracks={[
-              ["TOK_track1", "Ambience & Sound FX"],
-              ["TOK_track2", "Sound FX"],
-              ["TOK_track3", "Foley"],
-              ["TOK_track4", "Ambience & Music"],
-              ["TOK_track5", "Ambience & Foley"],
-              ["TOK_track6", "Ambience & Sound FX"],
-              ["TOK_track7", "Ambience & Sound FX"],
-              ["TOK_track8", "Ambience"],
-              ["TOK_track9", "Ambience"],
-              ["TOK_track10", "Sound FX & Foley"],
-              ["TOK_track11", "Sound FX & Foley"],
-              ["TOK_track12", "Sound FX & Foley"],
-              ["TOK_track13", "Sound FX & Foley"],
-            ]}
-          />
-          
-        </div>
-        <div className="portfolio-column">
-        <AudioPlayer
-            title="Belly to the Ground (unreleased)"
-            poster="BTTGPoster.webp"
-            ext=".wav"
-            tracks={[
-              ["BTTG_track1", "Ambience & Sound FX"],
-              ["BTTG_track2", "Ambience"],
-              ["BTTG_track3", "★ Sound FX"],
-              ["BTTG_track4", "Sound FX"]
-            ]}
-          />
-        </div>
 
         {/*<AudioPlayer title="" poster="" ext="" tracks={[]} />*/}
         <div id="podcasts">
@@ -253,6 +149,108 @@ function Portfolio() {
               </a>
             </iframe>
           </div>
+        </div>
+        <hr id="films-section"></hr>
+        <div id="portfolio-background1"><img src={portfolioBackground} alt="Space background for the portfolio"></img></div>
+        <Title
+         
+          title="Films"
+          color="transparent"
+          fontColor="white"
+          border="1px solid white"
+        />
+
+        {/* Title outputs title in component, movie selects poster (poster must have same name but 'Poster' at the end. Ext 1 parameter is the picture second parameter is the audio extension*/}
+        <div className="portfolio-column">
+          
+        <AudioPlayer
+            title="El Pastor"
+            poster="ElPastorPoster.png"
+            ext=".wav"
+            tracks={[
+              ["PASTOR_track1", "Foley & Ambience "],
+              ["PASTOR_track2", "★ Sound Fx & Ambience"],
+              ["PASTOR_track3", "Ambience"],
+            ]}
+          />
+          <AudioPlayer
+            title="La Obra"
+            poster="LaObraPoster.png"
+            ext=".wav"
+            tracks={[
+              ["OBRA_track1", "★ Musique concrète/Sound Design"],
+              ["OBRA_track2", "★ Music"],
+              ["OBRA_track3", "★ Music & Ambience"],
+              ["OBRA_track4", "Sound FX & Foley"],
+              ["OBRA_track5", "Music"],
+            ]}
+          />
+          
+        </div>
+        <div className="portfolio-column">
+          
+          <AudioPlayer
+            title="Hijas de la Invasión"
+            poster="HDLIPoster.png"
+            ext=".wav"
+            tracks={[["HDLI_track1", "Sound FX & Ambience"], ["HDLI_track2", "Sound FX, Ambience & Music"], ["HDLI_track3", "★ Foley & Ambience"]]}
+          />
+          <AudioPlayer
+            title="Las Hortensias"
+            poster="HortensiasPoster.jpg"
+            ext=".wav"
+            tracks={[
+              ["HORT_track1", "Music & Sound FX"],
+              ["HORT_track2", "★ Sound FX"],
+              ["HORT_track3", "Sound FX, Ambience & Foley"],
+              ["HORT_track4", "★ Sound FX, ADR Ambience & Foley"],
+            ]}
+          />
+          
+        </div>
+
+        <div className="portfolio-column">
+          
+          <AudioPlayer
+            title="Juan Caballo"
+            poster="JCPoster.png"
+            ext=".wav"
+            tracks={[["JC_track1", "★ Sound FX, Ambience & Foley"], ["JC_track2", "★ Sound FX"], ["JC_track3", "★ Sound FX"]]}
+          />
+          <AudioPlayer
+            title="The Omicron Killer"
+            poster="OmicronPoster.png"
+            ext=".wav"
+            tracks={[
+              ["TOK_track1", "Ambience & Sound FX"],
+              ["TOK_track2", "Sound FX"],
+              ["TOK_track3", "Foley"],
+              ["TOK_track4", "Ambience & Music"],
+              ["TOK_track5", "Ambience & Foley"],
+              ["TOK_track6", "Ambience & Sound FX"],
+              ["TOK_track7", "Ambience & Sound FX"],
+              ["TOK_track8", "Ambience"],
+              ["TOK_track9", "Ambience"],
+              ["TOK_track10", "Sound FX & Foley"],
+              ["TOK_track11", "Sound FX & Foley"],
+              ["TOK_track12", "Sound FX & Foley"],
+              ["TOK_track13", "Sound FX & Foley"],
+            ]}
+          />
+          
+        </div>
+        <div className="portfolio-column">
+        <AudioPlayer
+            title="Belly to the Ground (unreleased)"
+            poster="BTTGPoster.webp"
+            ext=".wav"
+            tracks={[
+              ["BTTG_track1", "Ambience & Sound FX"],
+              ["BTTG_track2", "Ambience"],
+              ["BTTG_track3", "★ Sound FX"],
+              ["BTTG_track4", "Sound FX"]
+            ]}
+          />
         </div>
       </div>
     </div>
