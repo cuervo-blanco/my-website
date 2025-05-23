@@ -13,6 +13,10 @@
           {
             "key": "Content-Type",
             "value": "application/octet-stream"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"firmware.bin\""
           }
         ]
       },
@@ -20,8 +24,12 @@
         "source": "/CV/JaimeORiveraCV-2025v06.pdf",
         "headers": [
           {
-            "key": "Content-Disposition",
+            "key": "Content-Type",
             "value": "application/octet-stream"
+          },
+          {
+            "key": "Content-Disposition",
+            "value": "attachment; filename=\"JaimeORiveraCV-2025v06.pdf\""
           }
         ]
       }
