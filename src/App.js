@@ -3,21 +3,16 @@ import {useLocation, BrowserRouter as Router, Route, Routes } from 'react-router
 import Menu from "./components/common/Menu";
 import Contact from "./components/sections/Contact";
 import Portfolio from "./components/sections/Portfolio";
+import Reel from "./components/sections/Reel.tsx";
 import ResumeButton from "./components/sections/Resume";
 import Footer from "./components/layout/Footer";
 import Hero from "./components/layout/Hero";
 import Terms from "./pages/Terms";
 import "./App.css";
 
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics, logEvent } from "firebase/analytics";
 
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyBygpDcQeB1uCLTiIAAtxvwM10Tzmkk0fE",
   authDomain: "my-website-26cef.firebaseapp.com",
@@ -28,18 +23,11 @@ const firebaseConfig = {
   measurementId: "G-SPLT8ZXMYL"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-
-
-
 
 function ScrollManager() {
   const location = useLocation();
   const analytics = getAnalytics(app);
-
-  
 
   useEffect(() => {
     logEvent(analytics, 'page_view', {
@@ -56,23 +44,14 @@ function ScrollManager() {
         }
       } else {
         window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      
-      
       }
-
-      
     };
-
     scrollToSection();
   }, [location, analytics]);
-
   return null;
 }
 
-
-
 function App() {
-
   const navigate = (path) => {
     window.history.pushState({}, '', path);
   };
@@ -86,6 +65,13 @@ function App() {
         <Route path="/" element={
           <div id="homepage">
             <div><Hero /></div>
+            <div>
+              <Reel
+                storagePath="videos/jaime-rivera-reel.mov"
+                width={1920}
+                height={1080}
+              />
+            </div>
             <div><ResumeButton /></div>
             <div><Contact /></div>
             <div><Footer /></div>
