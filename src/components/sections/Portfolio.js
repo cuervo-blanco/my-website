@@ -1,258 +1,126 @@
-import React from "react";
 import AudioPlayer from "../common/AudioPlayer";
-import Title from "../common/section-title";
-import portfolioBackground from "../../assets/img/portfolio-background.jpg";
-import portfolioBackground2 from "../../assets/img/portfolio-background2.jpg";
+import {
+  audioAssetBasePath,
+  filmProjects,
+  musicAlbums,
+  podcastFeature,
+} from "../../data/portfolio";
+
+const totalFilmSamples = filmProjects.reduce(
+  (sampleCount, project) => sampleCount + project.tracks.length,
+  0
+);
 
 function Portfolio() {
   return (
-    <div id="portfolio">
-      <div class="portfolio-bar"></div>
-      <div class="portfolio-blocks">
-        <div id="portfolio-title">
-          <h1>Samples</h1>
-          <hr />
-          <p>
-          We have gone through the task of selecting the most illustrative sounds for your benefit. Where does your movie begin?
-          </p>
-          <p>Recommended listen = ★</p>
-        </div>
+    <div className="portfolio-showcase">
+      <section
+        id="portfolio-podcasts"
+        className="portfolio-showcase-section"
+        aria-labelledby="portfolio-podcasts-heading"
+      >
+        <div className="portfolio-page-shell portfolio-showcase-grid">
+          <header className="portfolio-section-copy">
+            <p className="portfolio-section-kicker">Podcasts</p>
+            <h2 id="portfolio-podcasts-heading">{podcastFeature.title}</h2>
+            <p>{podcastFeature.description}</p>
+            <p>
+              This section focuses on long-form storytelling, voice performance,
+              atmosphere, editorial rhythm, and how sound carries tone across
+              an episodic narrative.
+            </p>
+          </header>
 
-        <div id="portfolio-sub-menu">
-          <ul>
-            <li>
-              <a href="#films-section">Films</a>
-            </li>
-            <li>
-              <a href="#podcasts-section">Podcasts</a>
-            </li>
-            <li>
-              <a href="#music-section">Music</a>
-            </li>
-          </ul>
-        </div>
-
-        {/*<AudioPlayer title="" poster="" ext="" tracks={[]} />*/}
-        <div id="podcasts">
-        <hr id="podcasts-section"></hr>
-        <Title
-          title="Podcasts"
-          color="transparent"
-          fontColor="white"
-          border="2px solid white"
-        />
-        
-        <div className="intro-portfolio" id="podcasts-intro">
-          <p>
-            "No Pienses en Monos" is a podcast series featuring a collection of
-            11 episodes, each presenting a unique fable re-narrated in Spanish.
-            Crafted by Jaime Osvaldo, the series explores various stories
-            inspired by Osho, brought to life through voice acting, ambient
-            soundscapes, and sound effects. The episodes range from mystical
-            tales to thought-provoking parables, each enriched with natural
-            sounds and carefully mixed audio elements. This podcast represents
-            Jaime's dedication to audio craftsmanship, offering listeners an
-            engaging and immersive storytelling experience.
-          </p>
-          <div id="portfolio-background2"><img src={portfolioBackground2} alt="Space background for the portfolio"></img></div>
-        </div>
-
-        <div id="podcast-stuff" className="portfolio-column">
-          <div id="podcast-window">
+          <div className="portfolio-embed-card">
             <iframe
-              width="100%"
-              height="600"
-              scrolling="no"
-              frameBorder="no"
-              title="No Pienses en Monos"
+              className="portfolio-embed-frame"
+              title={podcastFeature.embedTitle}
               allow="autoplay"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/1565212765&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-            ></iframe>
-            <div
-              style={{
-                fontSize: "10px",
-                color: "#cccccc",
-                lineBreak: "anywhere",
-                wordBreak: "normal",
-                overflow: "hidden",
-                whiteSpace: "nowrap",
-                textOverflow: "ellipsis",
-                borderRadius: "0px",
-                fontFamily:
-                  "Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans, Garuda, Verdana, Tahoma, sans-serif",
-                fontWeight: "100",
-              }}
-            >
-              <a
-                href="https://soundcloud.com/nopiensesenmonos"
-                title="No Pienses en Monos"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#cccccc", textDecoration: "none" }}
-              ></a>
-              <a
-                href="https://soundcloud.com/nopiensesenmonos/sets/no-pienses-en-monos"
-                title="No Pienses en Monos"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: "#cccccc", textDecoration: "none" }}
-              ></a>
-            </div>
+              loading="lazy"
+              src={podcastFeature.embedUrl}
+            />
           </div>
         </div>
-        </div>
-        <hr id="music-section"></hr>
-        <Title
-          title="Music"
-          color="black"
-          fontColor="white"
-          border="0px solid white"
-        />
-        <div id="album-list">
-        <div id="portfolio-background3"><img src={portfolioBackground} alt="Space background for the portfolio"></img></div>
-          <div className="albums">
-            {" "}
-            <iframe
-              title="negrita-album"
-              style={{ border: "0", width: "350px", height: "555px", borderRadius: "0px" }}
-              src="https://bandcamp.com/EmbeddedPlayer/album=4029898044/size=large/bgcol=333333/linkcol=e99708/transparent=true/"
-              seamless
-            >
-              {" "}
-              <a href="https://jaimeosvaldo.bandcamp.com/album/negrita-es-la-noche-oscura-de-mi-alma-ep">
-                Negrita es la noche oscura de mi alma EP by Jaime Osvaldo
-              </a>
-            </iframe>
-          </div>
-          <div className="albums">
-            <iframe
-              title="isla-album"
-              style={{ border: "0", width: "350px", height: "720px", borderRadius: "0px" }}
-              src="https://bandcamp.com/EmbeddedPlayer/album=2719182319/size=large/bgcol=333333/linkcol=e99708/transparent=true/"
-              seamless
-            >
-              <a href="https://jaimeosvaldo.bandcamp.com/album/isla-encantada">
-                Isla Encantada by Jaime Osvaldo
-              </a>
-            </iframe>
-          </div>
-          <div className="albums">
-            <iframe
-              title="spirit-album"
-              style={{ border: "0", width: "350px", height: "786px", borderRadius: "0px"}}
-              src="https://bandcamp.com/EmbeddedPlayer/album=1330167475/size=large/bgcol=333333/linkcol=e99708/transparent=true/"
-              seamless
-            >
-              <a href="https://jaimeosvaldo.bandcamp.com/album/endless-spirit-of-the-earth">
-                {" "}
-                Endless Spirit of the Earth by Jaime Osvaldo
-              </a>
-            </iframe>
-          </div>
-        </div>
-        <hr id="films-section"></hr>
-        <div id="portfolio-background1"><img src={portfolioBackground} alt="Space background for the portfolio"></img></div>
-        <Title
-         
-          title="Films"
-          color="transparent"
-          fontColor="white"
-          border="1px solid white"
-        />
+      </section>
 
-        {/* Title outputs title in component, movie selects poster (poster must have same name but 'Poster' at the end. Ext 1 parameter is the picture second parameter is the audio extension*/}
-        <div className="portfolio-column">
-          
-        <AudioPlayer
-            title="El Pastor"
-            poster="ElPastorPoster.png"
-            ext=".wav"
-            tracks={[
-              ["PASTOR_track1", "Foley & Ambience "],
-              ["PASTOR_track2", "★ Sound Fx & Ambience"],
-              ["PASTOR_track3", "Ambience"],
-            ]}
-          />
-          <AudioPlayer
-            title="La Obra"
-            poster="LaObraPoster.png"
-            ext=".wav"
-            tracks={[
-              ["OBRA_track1", "★ Musique concrète/Sound Design"],
-              ["OBRA_track2", "★ Music"],
-              ["OBRA_track3", "★ Music & Ambience"],
-              ["OBRA_track4", "Sound FX & Foley"],
-              ["OBRA_track5", "Music"],
-            ]}
-          />
-          
-        </div>
-        <div className="portfolio-column">
-          
-          <AudioPlayer
-            title="Hijas de la Invasión"
-            poster="HDLIPoster.png"
-            ext=".wav"
-            tracks={[["HDLI_track1", "Sound FX & Ambience"], ["HDLI_track2", "Sound FX, Ambience & Music"], ["HDLI_track3", "★ Foley & Ambience"]]}
-          />
-          <AudioPlayer
-            title="Las Hortensias"
-            poster="HortensiasPoster.jpg"
-            ext=".wav"
-            tracks={[
-              ["HORT_track1", "Music & Sound FX"],
-              ["HORT_track2", "★ Sound FX"],
-              ["HORT_track3", "Sound FX, Ambience & Foley"],
-              ["HORT_track4", "★ Sound FX, ADR Ambience & Foley"],
-            ]}
-          />
-          
-        </div>
+      <section
+        id="portfolio-music"
+        className="portfolio-showcase-section"
+        aria-labelledby="portfolio-music-heading"
+      >
+        <div className="portfolio-page-shell">
+          <header className="portfolio-section-copy portfolio-section-copy--narrow">
+            <p className="portfolio-section-kicker">Music</p>
+            <h2 id="portfolio-music-heading">Albums and releases</h2>
+            <p>
+              Selected releases spanning composition, production, texture work,
+              and sound-driven world building. These records show the music side
+              of the same listening practice that shapes the film and post work.
+            </p>
+          </header>
 
-        <div className="portfolio-column">
-          
-          <AudioPlayer
-            title="Juan Caballo"
-            poster="JCPoster.png"
-            ext=".wav"
-            tracks={[["JC_track1", "★ Sound FX, Ambience & Foley"], ["JC_track2", "★ Sound FX"], ["JC_track3", "★ Sound FX"]]}
-          />
-          <AudioPlayer
-            title="The Omicron Killer"
-            poster="OmicronPoster.png"
-            ext=".wav"
-            tracks={[
-              ["TOK_track1", "Ambience & Sound FX"],
-              ["TOK_track2", "Sound FX"],
-              ["TOK_track3", "Foley"],
-              ["TOK_track4", "Ambience & Music"],
-              ["TOK_track5", "Ambience & Foley"],
-              ["TOK_track6", "Ambience & Sound FX"],
-              ["TOK_track7", "Ambience & Sound FX"],
-              ["TOK_track8", "Ambience"],
-              ["TOK_track9", "Ambience"],
-              ["TOK_track10", "Sound FX & Foley"],
-              ["TOK_track11", "Sound FX & Foley"],
-              ["TOK_track12", "Sound FX & Foley"],
-              ["TOK_track13", "Sound FX & Foley"],
-            ]}
-          />
-          
+          <div className="portfolio-album-grid">
+            {musicAlbums.map((album) => (
+              <article key={album.id} className="portfolio-album-card">
+                <h3>{album.title}</h3>
+                <iframe
+                  title={`Bandcamp album: ${album.title}`}
+                  className="portfolio-album-embed"
+                  style={{ height: `${album.height}px` }}
+                  src={album.embedUrl}
+                  loading="lazy"
+                >
+                  <a href={album.href}>{album.title} by Jaime Osvaldo</a>
+                </iframe>
+                <a
+                  className="portfolio-album-link"
+                  href={album.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Open album on Bandcamp
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
-        <div className="portfolio-column">
-        <AudioPlayer
-            title="Belly to the Ground (unreleased)"
-            poster="BTTGPoster.webp"
-            ext=".wav"
-            tracks={[
-              ["BTTG_track1", "Ambience & Sound FX"],
-              ["BTTG_track2", "Ambience"],
-              ["BTTG_track3", "★ Sound FX"],
-              ["BTTG_track4", "Sound FX"]
-            ]}
-          />
+      </section>
+
+      <section
+        id="portfolio-films"
+        className="portfolio-showcase-section"
+        aria-labelledby="portfolio-films-heading"
+      >
+        <div className="portfolio-page-shell">
+          <header className="portfolio-section-copy portfolio-section-copy--narrow">
+            <p className="portfolio-section-kicker">Films</p>
+            <h2 id="portfolio-films-heading">Selected film sound samples</h2>
+            <p>
+              A curated set of scene work across {filmProjects.length} projects
+              and {totalFilmSamples} sample cues. The clips cover ambience,
+              Foley, sound effects, music editorial, and the small sonic details
+              that build dramatic space.
+            </p>
+            <p>
+              Recommended listens are marked directly in the cue titles so you
+              can jump into the strongest examples first.
+            </p>
+          </header>
+
+          <div className="portfolio-film-grid">
+            {filmProjects.map((project) => (
+              <AudioPlayer
+                key={project.title}
+                title={project.title}
+                poster={project.poster}
+                tracks={project.tracks}
+                ext=".mp3"
+                assetPath={audioAssetBasePath}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

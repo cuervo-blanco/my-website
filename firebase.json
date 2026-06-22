@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build",
+    "public": "dist",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -21,27 +21,39 @@
         ]
       },
       {
-        "source": "/CV/JaimeORiveraCV-2025v06.pdf",
+        "source": "/CV/JaimeORiveraCV-2025v09.pdf",
         "headers": [
           {
             "key": "Content-Type",
-            "value": "application/octet-stream"
+            "value": "application/pdf"
           },
           {
             "key": "Content-Disposition",
-            "value": "attachment; filename=\"JaimeORiveraCV-2025v06.pdf\""
+            "value": "inline; filename=\"JaimeORiveraCV-2025v09.pdf\""
           }
         ]
       }
     ],
     "rewrites": [
       {
-        "source": "/CV/JaimeORiveraCV-2025v06.pdf",
-        "destination": "/CV/JaimeORiveraCV-2025v06.pdf"
+        "source": "/CV/JaimeORiveraCV-2025v09.pdf",
+        "destination": "/CV/JaimeORiveraCV-2025v09.pdf"
       },
       {
         "source": "/firmware/firmware.bin",
         "destination": "/firmware/firmware.bin"
+      },
+      {
+        "source": "/portfolio",
+        "destination": "/portfolio/index.html"
+      },
+      {
+        "source": "/dsp-dictionary",
+        "destination": "/dsp-dictionary/index.html"
+      },
+      {
+        "source": "/terms",
+        "destination": "/terms/index.html"
       },
       {
         "source": "**",

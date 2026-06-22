@@ -1,70 +1,105 @@
-# Getting Started with Create React App
+# Jaime Osvaldo Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfolio and marketing site for Jaime Osvaldo built with React, Vite, and deployed to Firebase Hosting.
 
-## Available Scripts
+## Stack
 
-In the project directory, you can run:
+- React 18 with `react-router-dom`
+- Vite 6 for dev/build and Vitest for tests
+- SCSS for styling
+- Firebase Hosting for static deployment
+- Firebase Analytics and Storage on the frontend
+- Web3Forms for the current contact flow
+- Optional Firebase Function scaffold for a private contact relay
 
-### `npm start`
+## Project Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [src/App.js](/Users/soyingeniero/Documents/my-website/src/App.js:1): router and scroll/analytics shell
+- [src/main.jsx](/Users/soyingeniero/Documents/my-website/src/main.jsx:1): client entry and hydration bootstrap
+- [src/entry-server.jsx](/Users/soyingeniero/Documents/my-website/src/entry-server.jsx:1): SSR entry used for prerendering
+- [src/pages/Home.js](/Users/soyingeniero/Documents/my-website/src/pages/Home.js:1): homepage composition
+- [src/components](/Users/soyingeniero/Documents/my-website/src/components): layout, common UI, and content sections
+- [src/config/site.js](/Users/soyingeniero/Documents/my-website/src/config/site.js:1): site metadata, navigation, social links, and contact config
+- [src/config/prerender.js](/Users/soyingeniero/Documents/my-website/src/config/prerender.js:1): route metadata and structured data used by the prerender step
+- [src/data/portfolio.js](/Users/soyingeniero/Documents/my-website/src/data/portfolio.js:1): portfolio media/content data
+- [src/data/services.js](/Users/soyingeniero/Documents/my-website/src/data/services.js:1): service/category content data
+- [public](/Users/soyingeniero/Documents/my-website/public): deploy-time static assets
+- [scripts/prerender.mjs](/Users/soyingeniero/Documents/my-website/scripts/prerender.mjs:1): route prerender step for static HTML output
+- [functions](/Users/soyingeniero/Documents/my-website/functions/index.js:1): optional Firebase Function for contact form relay
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Local Development
 
-### `npm test`
+```bash
+npm install
+npm run dev
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open [http://127.0.0.1:5173](http://127.0.0.1:5173).
 
-### `npm run build`
+## Scripts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run dev
+npm run build
+npm run preview
+npm test
+npm run test:ci
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+`npm run build` performs three steps:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. client build with Vite
+2. server render bundle for the known routes
+3. prerender pass that writes crawlable HTML into `dist`
 
-### `npm run eject`
+## Contact Form Modes
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+By default the site still posts directly to Web3Forms so the contact form works without extra backend setup.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Environment variables live in [.env.example](/Users/soyingeniero/Documents/my-website/.env.example:1):
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- `VITE_CONTACT_ENDPOINT`
+- `VITE_WEB3FORMS_ACCESS_KEY`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+If you want the contact form to stop exposing the Web3Forms key in the browser:
 
-## Learn More
+1. Install function dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+cd functions
+npm install
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+2. Deploy the `contact` function and set the Web3Forms key as a Firebase secret.
+3. Point `VITE_CONTACT_ENDPOINT` at the deployed function URL, for example:
 
-### Code Splitting
+```bash
+VITE_CONTACT_ENDPOINT=https://us-central1-my-website-26cef.cloudfunctions.net/contact
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+The frontend is already compatible with either mode.
 
-### Analyzing the Bundle Size
+## Media Notes
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Source WAV files remain in [public/audio](/Users/soyingeniero/Documents/my-website/public/audio).
+- Compressed portfolio previews are generated into [public/audio-previews](/Users/soyingeniero/Documents/my-website/public/audio-previews) and are the assets used by the site.
 
-### Making a Progressive Web App
+## Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Firebase Hosting deploys through the GitHub workflows in [.github/workflows](/Users/soyingeniero/Documents/my-website/.github/workflows/firebase-hosting-merge.yml:1).
 
-### Advanced Configuration
+Current CI steps:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- `npm ci`
+- `npm run test:ci`
+- `npm run build`
+- deploy hosting preview/live
 
-### Deployment
+## Recent Cleanup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Replaced hardcoded content blobs with shared data/config modules
+- Migrated the frontend build from Create React App to Vite
+- Added prerendered route output for SEO-critical pages
+- Improved navigation, accessibility, and test coverage
+- Added compressed audio preview support
+- Added optional backend scaffold for private contact submissions
