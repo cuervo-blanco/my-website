@@ -2,7 +2,24 @@ const { onRequest } = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
 const { defineSecret } = require("firebase-functions/params");
 
+const { createDatabase } = require("./licensing/database");
+const { createLicensingApp } = require("./licensing/app");
+
 const WEB3FORMS_ACCESS_KEY = defineSecret("WEB3FORMS_ACCESS_KEY");
+const LICENSING_DATABASE_URL = defineSecret("LICENSING_DATABASE_URL");
+const LICENSING_ADMIN_TOKEN = defineSecret("LICENSING_ADMIN_TOKEN");
+const DIDICOMPENSATE_PRIVATE_KEY = defineSecret("DIDICOMPENSATE_PRIVATE_KEY");
+const DIDICOMPENSATE_PUBLIC_KEY = defineSecret("DIDICOMPENSATE_PUBLIC_KEY");
+
+let licensingDatabase;
+
+function getLicensingDatabase() {
+  if (!licensingDatabase) {
+    licensingDatabase = createDatabase(LICENSING_DATABASE_URL.value());
+  }
+
+  return licensingDatabase;
+}
 
 exports.contact = onRequest(
   {
@@ -64,5 +81,35 @@ exports.contact = onRequest(
         message: "Something went wrong while sending your message.",
       });
     }
+  }
+);
+
+exports.licensing = onRequest(
+  {
+    cors: true,
+    secrets: [
+      LICENSING_DATABASE_URL,
+      LICENSING_ADMIN_TOKEN,
+      DIDICOMPENSATE_PRIVATE_KEY,
+      DIDICOMPENSATE_PUBLIC_KEY,
+    ],
+  },
+  (request, response) => {
+    const app = createLicensingApp({
+      config: {
+        adminToken: LICENSING_ADMIN_TOKEN.value(),
+        productId: process.env.DIDICOMPENSATE_PRODUCT_ID || "didi-compensate",
+        privateKey: DIDICOMPENSATE_PRIVATE_KEY.value(),
+        publicKey: DIDICOMPENSATE_PUBLIC_KEY.value(),
+        defaultLeaseDurationDays: Number.parseInt(
+          process.env.DEFAULT_LEASE_DURATION_DAYS || "14",
+          10
+        ),
+      },
+      database: getLicensingDatabase(),
+      logger,
+    });
+
+    return app(request, response);
   }
 );

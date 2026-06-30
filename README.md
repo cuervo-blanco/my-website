@@ -10,7 +10,7 @@ Portfolio and marketing site for Jaime Osvaldo built with React, Vite, and deplo
 - Firebase Hosting for static deployment
 - Firebase Analytics and Storage on the frontend
 - Web3Forms for the current contact flow
-- Optional Firebase Function scaffold for a private contact relay
+- Firebase Functions for private backend endpoints
 
 ## Project Structure
 
@@ -25,7 +25,7 @@ Portfolio and marketing site for Jaime Osvaldo built with React, Vite, and deplo
 - [src/data/services.js](/Users/soyingeniero/Documents/my-website/src/data/services.js:1): service/category content data
 - [public](/Users/soyingeniero/Documents/my-website/public): deploy-time static assets
 - [scripts/prerender.mjs](/Users/soyingeniero/Documents/my-website/scripts/prerender.mjs:1): route prerender step for static HTML output
-- [functions](/Users/soyingeniero/Documents/my-website/functions/index.js:1): optional Firebase Function for contact form relay
+- [functions](/Users/soyingeniero/Documents/my-website/functions/index.js:1): Firebase Functions entrypoint for contact and licensing
 
 ## Local Development
 
@@ -78,6 +78,54 @@ VITE_CONTACT_ENDPOINT=https://us-central1-my-website-26cef.cloudfunctions.net/co
 ```
 
 The frontend is already compatible with either mode.
+
+## Licensing API
+
+This repo now also contains a self-hosted licensing backend for DidiCompensate under [functions/licensing](/Users/soyingeniero/Documents/my-website/functions/licensing).
+
+What it does:
+
+- creates license records in Postgres
+- issues short-lived signed leases
+- verifies those leases locally on the client
+- refreshes and releases activations by requiring the previous signed lease
+
+Routes are available in two shapes:
+
+- direct Firebase function URL:
+  `https://us-central1-my-website-26cef.cloudfunctions.net/licensing/health`
+- same-domain Hosting rewrite:
+  `https://jaimeosvaldo.com/api/licensing/health`
+
+The API uses:
+
+- [functions/sql/001_licensing_schema.sql](/Users/soyingeniero/Documents/my-website/functions/sql/001_licensing_schema.sql:1) for the Postgres schema
+- [functions/test/licensingApi.test.js](/Users/soyingeniero/Documents/my-website/functions/test/licensingApi.test.js:1) for local smoke tests
+
+Required Firebase secrets:
+
+- `LICENSING_DATABASE_URL`
+- `LICENSING_ADMIN_TOKEN`
+- `DIDICOMPENSATE_PRIVATE_KEY`
+- `DIDICOMPENSATE_PUBLIC_KEY`
+
+Optional environment variables for the function runtime:
+
+- `DIDICOMPENSATE_PRODUCT_ID`
+- `DEFAULT_LEASE_DURATION_DAYS`
+
+Typical setup:
+
+```bash
+cd functions
+npm install
+npm test
+firebase functions:secrets:set LICENSING_DATABASE_URL
+firebase functions:secrets:set LICENSING_ADMIN_TOKEN
+firebase functions:secrets:set DIDICOMPENSATE_PRIVATE_KEY
+firebase functions:secrets:set DIDICOMPENSATE_PUBLIC_KEY
+firebase deploy --only functions
+```
 
 ## Media Notes
 

@@ -1,4 +1,7 @@
 {
+  "functions": {
+    "source": "functions"
+  },
   "hosting": {
     "public": "dist",
     "ignore": [
@@ -35,6 +38,14 @@
       }
     ],
     "rewrites": [
+      {
+        "source": "/api/licensing",
+        "function": "licensing"
+      },
+      {
+        "source": "/api/licensing/**",
+        "function": "licensing"
+      },
       {
         "source": "/CV/JaimeORiveraCV-2025v09.pdf",
         "destination": "/CV/JaimeORiveraCV-2025v09.pdf"
