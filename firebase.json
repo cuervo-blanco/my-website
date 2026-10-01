@@ -80,6 +80,7 @@
     "ignore": [
       "firebase.json",
       "**/.*",
+      "audio/**",
       "**/node_modules/**"
     ],
     "headers": [

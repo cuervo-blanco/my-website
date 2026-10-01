@@ -13,6 +13,7 @@ const Hero = ({
     return (
       <section id="hero" className="work-hero" aria-label="Jaime Osvaldo">
         <h1>Jaime Osvaldo</h1>
+        <p className="work-hero__subtitle">Audio Visual for any Time, any Place and any One... even Godzilla.</p>
         <div className="work-hero__images">
           <img src={Godzilla} alt="Godzilla terrorizing a city" width="853" height="900" loading="eager" />
           <img src={JaimeMoon} alt="Jaime recording sound on the moon" width="952" height="900" loading="eager" />

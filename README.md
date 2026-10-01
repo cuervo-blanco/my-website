@@ -143,6 +143,8 @@ Current CI steps:
 - `npm run build`
 - deploy hosting preview/live
 
+Original WAV masters in `public/audio` stay in Git but are excluded from Hosting by `firebase.json`. The site uses the smaller `public/audio-previews` files. Keep a limited release history in the Firebase Hosting console to prevent retained releases from filling the project storage quota.
+
 ## Recent Cleanup
 
 - Replaced hardcoded content blobs with shared data/config modules
