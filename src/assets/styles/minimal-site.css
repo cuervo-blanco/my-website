@@ -1,5 +1,34 @@
 #menu .menu-link { gap: 0; }
 
+#application { isolation: isolate; }
+
+.site-constellations {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+  background: #2c2c2c;
+}
+
+.site-constellations img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0.48;
+}
+
+.site-constellations::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #2c2c2c66, transparent 50%, #2c2c2c55);
+}
+
+#application #terms { background: transparent; }
+
 #application #contact.compact-contact {
   display: block;
   position: relative;
