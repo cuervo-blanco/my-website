@@ -2,6 +2,7 @@ import Godzilla from "../../assets/img/Godzilla.png";
 import JaimeMoon from "../../assets/img/JaimeMoon.png";
 import banner from "../../assets/img/banner-npem.png";
 import Button from "../common/Button";
+import { Link } from "react-router-dom";
 import { heroActions, homeHeroContent } from "../../config/site";
 
 const Hero = ({
@@ -18,6 +19,10 @@ const Hero = ({
           <img src={Godzilla} alt="Godzilla terrorizing a city" width="853" height="900" loading="eager" />
           <img src={JaimeMoon} alt="Jaime recording sound on the moon" width="952" height="900" loading="eager" />
         </div>
+        <p className="work-hero__services">
+          New York sound mixer &amp; sound designer for film and theater.
+          <br />Software developer, audio programmer &amp; animator. <Link to="/contact">Get in touch ↗</Link>
+        </p>
       </section>
     );
   }

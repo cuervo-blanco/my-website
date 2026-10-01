@@ -73,8 +73,9 @@ function Contact({ compact = false, standalone = false }) {
     const Heading = standalone ? "h1" : "h2";
     const FormContainer = standalone ? "div" : "details";
     return (
-      <section id="contact" className="compact-contact" aria-labelledby="contact-heading">
+      <section id="contact" className="compact-contact surface-panel" aria-labelledby="contact-heading">
         <Heading id="contact-heading">Contact</Heading>
+        {standalone ? <p className="service-intro">New York · Film &amp; theater sound · Audio programming · Software · Animation</p> : null}
         {siteMetadata.email ? <a className="compact-contact__email" href={`mailto:${siteMetadata.email}`} aria-label="Email">{siteMetadata.email} ↗</a> : null}
         <FormContainer className="compact-contact__form">
           {standalone ? null : <summary>Send a message</summary>}

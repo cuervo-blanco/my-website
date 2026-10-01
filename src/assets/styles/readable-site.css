@@ -1,0 +1,112 @@
+:root {
+  --title-font: "Yeseva One", serif;
+  --panel-background: rgba(10, 15, 23, 0.84);
+  --secondary-text: #c9cdd4;
+}
+
+#application :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--title-font);
+  font-weight: 400;
+}
+
+#application .surface-panel,
+#application .dictionary-concept,
+#application .dictionary-navigation .dictionary-shell,
+#application .dictionary-hero .dictionary-shell {
+  box-sizing: border-box;
+  padding: clamp(20px, 3vw, 36px);
+  border: 1px solid #ffffff26;
+  background: var(--panel-background);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #f5f5f5;
+}
+
+#application #recent-clients,
+#application .work-live {
+  border-top: 0;
+}
+
+#application .work-live { margin-top: 12px; }
+#application .film-work { padding-top: 36px; }
+#application #contact.compact-contact.surface-panel {
+  padding: clamp(20px, 3vw, 36px);
+  background: var(--panel-background);
+}
+#application .work-page__reel.surface-panel,
+#application .work-samples.surface-panel { margin-top: 20px; }
+#application .dev-intro { margin-bottom: 36px; }
+#application .dictionary-concept + .dictionary-concept { margin-top: 20px; }
+#application .dev-work-header,
+#application .animation-header { padding-top: 0; }
+#application .dev-work-links { padding-bottom: 8px; }
+
+#application .work-hero__subtitle {
+  font-family: "Fira Sans Extra Condensed", sans-serif;
+  font-weight: 500;
+  font-size: clamp(1.1rem, 2vw, 2rem);
+  text-shadow: 0 2px 6px #000;
+}
+
+#application .work-hero h1 { text-shadow: 0 3px 16px #0008; }
+
+.work-hero__services {
+  box-sizing: border-box;
+  width: min(86vw, 100%);
+  margin: 20px 0 0;
+  padding: 16px 20px;
+  background: var(--panel-background);
+  border: 1px solid #ffffff26;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: #eceef2;
+  font: 400 clamp(0.8rem, 1.2vw, 1rem) / 1.8 "Courier Prime", monospace;
+  text-align: center;
+}
+
+.work-hero__services a { color: #ffc15b; white-space: nowrap; }
+.service-intro { margin: 12px 0 0; color: var(--secondary-text); font: 400 0.95rem / 1.7 "Courier Prime", monospace; }
+
+#application .film-work__meta,
+#application .film-work__more,
+#application .work-live__sources,
+#application .work-live__credits p,
+#application .work-live__image-credit p,
+#application .animation-tools,
+#application .animation-feature figcaption,
+#application .dictionary-index-group h3,
+#application .dictionary-concept-index > summary span,
+#application .dsp-demo-compact figcaption > p:last-child {
+  color: var(--secondary-text);
+}
+
+#application .work-live__credits h3 { line-height: 1.6; }
+#application .film-work__meta,
+#application .film-work__stage,
+#application .film-work__more { font-size: 0.78rem; }
+#application .film-work__roles { font-size: 0.82rem; }
+#application .film-work__card--featured .film-work__roles { font-size: 0.9rem; }
+#application .film-work__header > a,
+#application .film-work__links a { font-size: 0.82rem; }
+#application .minimal-footer {
+  color: var(--secondary-text);
+  background: var(--panel-background);
+  border-color: #ffffff26;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+#application .minimal-footer a { color: #e5e7eb; }
+#application .minimal-footer a:hover { color: #ffc15b; }
+#application #terms { padding: 32px; background: var(--panel-background); }
+
+@media (max-width: 560px) {
+  #application .surface-panel,
+  #application .dictionary-concept,
+  #application .dictionary-navigation .dictionary-shell,
+  #application .dictionary-hero .dictionary-shell { padding: 20px 16px; }
+  .work-hero__services { width: 100%; padding: 16px; }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  :root { --panel-background: #0a0f17; }
+}

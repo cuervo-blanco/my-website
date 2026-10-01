@@ -12,7 +12,7 @@ function DevHomePage() {
     <DspMotion>
       <PageSeo {...pageMetadata.devHome} structuredData={softwareStructuredData} />
       <main className="section-site-page dev-site-page">
-        <div className="section-site-shell">
+        <div className="section-site-shell dev-intro surface-panel">
           <header className="dev-work-header">
             <h1>Dev</h1>
           </header>
@@ -21,6 +21,7 @@ function DevHomePage() {
               GitHub <span aria-hidden="true">↗</span>
             </a>
           </nav>
+          <p className="service-intro">Software developer &amp; audio programmer in New York. Audio tools, DSP &amp; interactive sound.</p>
         </div>
         <DspDictionaryContent embedded />
       </main>

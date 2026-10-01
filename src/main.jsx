@@ -6,6 +6,7 @@ import "./App.css";
 import "./index.css";
 import "./assets/styles/styles.scss";
 import "./assets/styles/minimal-site.css";
+import "./assets/styles/readable-site.css";
 
 const container = document.getElementById("root");
 const isHostedSectionSite = Boolean(getHostedSiteKey(window.location.hostname));

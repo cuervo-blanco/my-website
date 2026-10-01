@@ -14,7 +14,7 @@ const totalFilmSamples = filmProjects.reduce(
 
 function CompactPortfolio() {
   return (
-    <div className="work-samples work-page__shell">
+    <div className="work-samples work-page__shell surface-panel">
       <section id="portfolio-films" aria-labelledby="portfolio-films-heading">
         <h3 id="portfolio-films-heading">Scene samples</h3>
         <div className="work-samples__films">

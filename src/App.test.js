@@ -15,7 +15,7 @@ test("puts work on the homepage with contact in primary navigation", () => {
   expect(screen.getByRole("link", { name: "Résumé" })).toBeInTheDocument();
   expect(navigation.getByRole("link", { name: "Contact" })).toHaveAttribute("href", "/contact");
   expect(screen.queryByRole("heading", { name: "Contact" })).not.toBeInTheDocument();
-  expect(document.title).toMatch(/sound, software & animation/i);
+  expect(document.title).toMatch(/New York Sound Mixer & Sound Designer/i);
 });
 
 test("orders the homepage as Film, Companies, then Live & Theatre", () => {

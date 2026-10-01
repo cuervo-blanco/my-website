@@ -17,7 +17,7 @@ function FilmHomePage() {
       <main id="homepage" className="site-home site-home--film work-page">
         <Hero compact />
         <FilmCredits />
-        <div className="work-page__shell work-page__reel">
+        <div className="work-page__shell work-page__reel surface-panel">
           <details>
             <summary>Sound reel</summary>
             <Reel storagePath={siteMetadata.reelStoragePath} />

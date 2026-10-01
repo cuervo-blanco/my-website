@@ -29,7 +29,7 @@
 
 .work-live__image-credit h3 {
   margin: 14px 0 6px;
-  font: 400 1rem / 1.4 Georgia, serif;
+  font: 400 1rem / 1.4 var(--title-font, "Yeseva One", serif);
 }
 
 .work-live__image-credit p {

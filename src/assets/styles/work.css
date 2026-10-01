@@ -27,7 +27,7 @@
 .work-hero h1 {
   position: relative;
   margin: 0 0 8px;
-  font: 400 clamp(2.5rem, 6vw, 7rem) / 1.2 Georgia, serif;
+  font: 400 clamp(2.5rem, 6vw, 7rem) / 1.2 var(--title-font, "Yeseva One", serif);
 }
 
 .work-hero__subtitle {
@@ -56,7 +56,7 @@
 }
 
 .work-page h2 {
-  font: 400 clamp(1.8rem, 3vw, 2.4rem) / 1.2 Georgia, serif;
+  font: 400 clamp(1.8rem, 3vw, 2.4rem) / 1.2 var(--title-font, "Yeseva One", serif);
 }
 
 .work-page summary {
@@ -103,7 +103,7 @@
 
 .work-samples h3 {
   margin: 0 0 20px;
-  font: 400 1.3rem / 1.3 Georgia, serif;
+  font: 400 1.3rem / 1.3 var(--title-font, "Yeseva One", serif);
 }
 
 .work-samples__films {
@@ -229,7 +229,7 @@
 
 .work-page .company-directory h2 {
   margin-bottom: 28px;
-  font: 400 clamp(1.8rem, 3vw, 2.4rem) / 1.2 Georgia, serif;
+  font: 400 clamp(1.8rem, 3vw, 2.4rem) / 1.2 var(--title-font, "Yeseva One", serif);
 }
 
 .work-page .company-list {

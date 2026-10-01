@@ -54,7 +54,7 @@ function FilmCredits() {
 
   return (
     <section id="credits" className="film-work" aria-labelledby="film-credits-heading">
-      <div className="film-work__shell">
+      <div className="film-work__shell surface-panel">
         <header className="film-work__header">
           <h2 id="film-credits-heading">Film</h2>
           <FilmLink href={imdbProfileUrl}>IMDb credits</FilmLink>

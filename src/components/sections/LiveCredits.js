@@ -16,7 +16,7 @@ function LiveCredits() {
   const otherCredits = liveCredits.filter((credit) => !credit.image);
 
   return (
-    <section id="live-credits" className="work-live work-page__shell" aria-labelledby="live-credits-heading">
+    <section id="live-credits" className="work-live work-page__shell surface-panel" aria-labelledby="live-credits-heading">
       <h2 id="live-credits-heading">Live &amp; Theatre</h2>
       <div className="work-live__gallery">
         {gallery.map((credit) => (

@@ -145,6 +145,12 @@ Current CI steps:
 
 Original WAV masters in `public/audio` stay in Git but are excluded from Hosting by `firebase.json`. The site uses the smaller `public/audio-previews` files. Keep a limited release history in the Firebase Hosting console to prevent retained releases from filling the project storage quota.
 
+## Search visibility
+
+The four portfolio pages include visible New York service descriptions, descriptive search titles, canonical URLs, social previews, and JSON-LD identifying the same person and verified work. The production build prerenders this content into HTML so it is available before JavaScript runs. Keep the location and roles accurate when editing `src/config/site.js` and `src/config/prerender.js`.
+
+After publishing, verify `https://jaimeosvaldo.com` in Google Search Console using the Google account that owns the domain. Submit `https://jaimeosvaldo.com/sitemap.xml` and use URL Inspection to request indexing for `/`, `/dev`, `/art`, and `/contact`. Verification requires the domain owner's DNS access or Google's supplied verification token; no token is fabricated in this repository. Search rankings and indexing timing are controlled by Google.
+
 ## Recent Cleanup
 
 - Replaced hardcoded content blobs with shared data/config modules

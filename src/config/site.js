@@ -1,12 +1,12 @@
 const clientEnv = typeof import.meta !== "undefined" ? import.meta.env : {};
 
 export const siteMetadata = {
-  title: "Jaime Osvaldo | Sound, Software & Animation",
+  title: "Jaime Osvaldo | New York Sound Mixer & Sound Designer",
   shortTitle: "Jaime Osvaldo",
   legalName: "Jaime O. Rivera Santana",
   siteName: "Jaime Osvaldo",
   description:
-    "Film sound, theatre and live audio, audio software, DSP, and animation by New York-based sound mixer and designer Jaime Osvaldo.",
+    "New York sound mixer and sound designer for film and theater. Explore Jaime Osvaldo's credits, audio programming, software development, and animation.",
   url: "https://jaimeosvaldo.com",
   defaultSocialImage: "/og-image.png",
   socialImageAlt: "Jaime Osvaldo website preview",
@@ -35,7 +35,7 @@ export const pageMetadata = {
   home: {
     title: siteMetadata.title,
     description:
-      "Film, companies, and live/theatre credits by Jaime Osvaldo.",
+      siteMetadata.description,
     path: "/",
     type: "website",
     keywords: [
@@ -50,7 +50,7 @@ export const pageMetadata = {
   film: {
     title: siteMetadata.title,
     description:
-      "Film, companies, and live/theatre credits by Jaime Osvaldo.",
+      siteMetadata.description,
     path: "/",
     type: "website",
     keywords: [
@@ -97,9 +97,9 @@ export const pageMetadata = {
     type: "website",
   },
   devHome: {
-    title: `Dev | ${siteMetadata.shortTitle}`,
+    title: `${siteMetadata.shortTitle} | NYC Software Developer & Audio Programmer`,
     description:
-      "Jaime Osvaldo's GitHub and interactive DSP Dictionary.",
+      "Jaime Osvaldo, New York audio programmer and software developer. Explore his GitHub and interactive DSP Dictionary with audio demos, controls, and formulas.",
     path: "/dev",
     type: "website",
     keywords: [
@@ -110,9 +110,9 @@ export const pageMetadata = {
     ],
   },
   software: {
-    title: `Dev | ${siteMetadata.shortTitle}`,
+    title: `${siteMetadata.shortTitle} | NYC Software Developer & Audio Programmer`,
     description:
-      "Jaime Osvaldo's GitHub and interactive DSP Dictionary.",
+      "Jaime Osvaldo, New York audio programmer and software developer. Explore his GitHub and interactive DSP Dictionary with audio demos, controls, and formulas.",
     path: "/dev",
     type: "website",
     keywords: [
@@ -138,9 +138,9 @@ export const pageMetadata = {
     ],
   },
   art: {
-    title: `Animation | ${siteMetadata.shortTitle}`,
+    title: `New York Animator & Sound Designer | ${siteMetadata.shortTitle}`,
     description:
-      "Dark Knites: animation and sound by Jaime Osvaldo, made with Blender, DaVinci Resolve, Logic Pro, and SuperCollider.",
+      "Animation and original sound by New York animator Jaime Osvaldo. Watch Dark Knites, created with Blender, DaVinci Resolve, Logic Pro, and SuperCollider.",
     path: "/art",
     type: "website",
   },
@@ -153,7 +153,7 @@ export const pageMetadata = {
   },
   contact: {
     title: `Contact | ${siteMetadata.shortTitle}`,
-    description: "Contact Jaime Osvaldo about your project.",
+    description: "Contact Jaime Osvaldo in New York for film and theater sound mixing, sound design, audio programming, software development, and animation.",
     path: "/contact",
     type: "website",
   },

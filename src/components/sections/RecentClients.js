@@ -28,7 +28,7 @@ function RecentClients({ showHeading = true, compact = false }) {
       aria-labelledby={showHeading ? "recent-clients-heading" : undefined}
       aria-label={showHeading ? undefined : "Companies"}
     >
-      <div className="company-directory-shell">
+      <div className="company-directory-shell surface-panel">
         {showHeading ? <h2 id="recent-clients-heading">Companies</h2> : null}
         {groups.map((group) => (
           <div className="company-group" key={group.id}>

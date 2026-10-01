@@ -1,16 +1,18 @@
 import PageSeo from "../components/common/PageSeo";
 import Footer from "../components/layout/Footer";
 import { pageMetadata } from "../config/site";
+import { animationStructuredData } from "../config/prerender";
 import "../assets/styles/animation.css";
 
 function ArtHomePage() {
   return (
     <>
-      <PageSeo {...pageMetadata.art} />
+      <PageSeo {...pageMetadata.art} structuredData={animationStructuredData} />
       <main id="animation-page" className="section-site-page">
-        <div className="section-site-shell">
+        <div className="section-site-shell surface-panel">
           <header className="animation-header">
             <h1>Animation</h1>
+            <p className="service-intro">New York animator. Animation &amp; original sound by Jaime Osvaldo.</p>
           </header>
           <figure className="animation-feature">
             <video
