@@ -12,7 +12,6 @@ const Hero = ({
   if (compact) {
     return (
       <section id="hero" className="work-hero" aria-label="Jaime Osvaldo">
-        <img className="work-hero__background" src={banner} alt="" />
         <h1>Jaime Osvaldo</h1>
         <div className="work-hero__images">
           <img src={Godzilla} alt="Godzilla terrorizing a city" width="853" height="900" loading="eager" />

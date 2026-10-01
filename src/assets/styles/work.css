@@ -26,35 +26,24 @@
 
 .work-hero h1 {
   position: relative;
-  margin: 0 0 32px;
-  font: 400 clamp(1.8rem, 3.5vw, 2.5rem) / 1.2 Georgia, serif;
-}
-
-.work-hero__background {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.16;
-  mask-image: linear-gradient(transparent, black 20%, black 75%, transparent);
-  pointer-events: none;
+  margin: 0 0 24px;
+  font: 400 clamp(2.4rem, 5vw, 6rem) / 1.2 Georgia, serif;
 }
 
 .work-hero__images {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: minmax(0, 853fr) minmax(0, 952fr);
   align-items: center;
-  gap: 24px;
-  width: min(1060px, 100%);
+  gap: 8px;
+  width: min(86vw, 100%);
 }
 
 .work-hero__images img {
   display: block;
   width: 100%;
   height: auto;
-  max-height: min(62svh, 560px);
+  max-height: none;
   object-fit: contain;
 }
 
@@ -325,7 +314,9 @@
   }
 
   .work-hero__images {
-    gap: 12px;
+    grid-template-columns: 1fr;
+    width: 100%;
+    gap: 16px;
   }
 
   .work-samples__films,
