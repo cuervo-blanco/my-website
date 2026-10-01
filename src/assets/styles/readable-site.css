@@ -1,17 +1,25 @@
 :root {
   --title-font: "Yeseva One", serif;
   --panel-background: #000;
-  --secondary-text: #b8c0cc;
-  --syntax-keyword: #c586c0;
-  --syntax-function: #dcdcaa;
-  --syntax-value: #b5cea8;
-  --syntax-link: #9cdcfe;
-  --syntax-string: #ce9178;
+  /* Brighter accents from the animal constellations in banner-npem.png. */
+  --constellation-mint: #b4d3c1;
+  --constellation-lilac: #bba6e3;
+  --constellation-pink: #d7a1cc;
+  --constellation-gold: #d6cf93;
+  --constellation-green: #a8ca91;
+  --constellation-orange: #e2a17c;
+  --secondary-text: #c5cbc9;
+  --syntax-keyword: var(--constellation-pink);
+  --syntax-function: var(--constellation-gold);
+  --syntax-value: var(--constellation-green);
+  --syntax-link: var(--constellation-mint);
+  --syntax-string: var(--constellation-orange);
 }
 
 #application :is(h1, h2, h3, h4, h5, h6) {
   font-family: var(--title-font);
   font-weight: 400;
+  color: #fff;
 }
 
 #application .surface-panel,
@@ -45,6 +53,7 @@
 #application .dev-work-links { padding-bottom: 8px; }
 
 #application .work-hero__subtitle {
+  color: var(--syntax-string);
   font-family: "Fira Sans Extra Condensed", sans-serif;
   font-weight: 500;
   font-size: clamp(1.1rem, 2vw, 2rem);
@@ -76,7 +85,6 @@
 #application .work-live__image-credit p,
 #application .animation-tools,
 #application .animation-feature figcaption,
-#application .dictionary-index-group h3,
 #application .dictionary-concept-index > summary span,
 #application .dsp-demo-compact figcaption > p:last-child {
   color: var(--secondary-text);
@@ -96,7 +104,7 @@
   border-color: #ffffff26;
 }
 #application .minimal-footer a { color: var(--syntax-link); }
-#application .minimal-footer a:hover { color: #ffc15b; }
+#application .minimal-footer a:hover { color: var(--syntax-keyword); }
 #application #terms { padding: 32px; background: var(--panel-background); }
 
 @media (max-width: 560px) {
@@ -107,9 +115,6 @@
   .work-hero__services { width: 100%; padding: 16px; }
 }
 
-#application h1 { color: var(--syntax-link); }
-#application h2 { color: var(--syntax-keyword); }
-#application :is(h3, h4, h5, h6) { color: var(--syntax-function); }
 #application .film-work__roles,
 #application .work-live__credits p,
 #application .work-live__image-credit p,
@@ -124,20 +129,20 @@
 #application #contact.compact-contact a { color: var(--syntax-link); }
 #application .film-work__card h3 a { color: inherit; }
 #application .film-work__card h3 a:hover { color: var(--syntax-link); }
-#application #dictionary-heading { color: var(--syntax-keyword); }
-#application .animation-title { color: var(--syntax-function); margin: 0; }
+#application #dictionary-heading { color: #fff; }
+#application .animation-title { color: #fff; margin: 0; }
 #application .company-list { background: #000; }
 #application .company-mark .company-light-logo { filter: none; }
 #application .company-mark img[data-logo-backdrop="light"] { padding: 12px; background: #faf9f6; }
-#application .company-wordmark { color: var(--syntax-function); }
+#application .company-wordmark { color: #fff; }
 #application .dev-work-header h1,
 #application #animation-page h1,
-#application #contact.compact-contact h1 { color: var(--syntax-link); }
+#application #contact.compact-contact h1 { color: #fff; }
 #application #menu,
 #application #menu #menu-container,
 #application #menu #hidden-menu { background: #000; }
 #application #menu #menu-container .menu-link,
-#application #menu #hidden-menu .menu-link { color: var(--syntax-link); }
+#application #menu #hidden-menu .menu-link { color: #fff; }
 #application #menu #menu-container .menu-link:hover,
 #application #menu #hidden-menu .menu-link:hover { color: var(--syntax-keyword); }
 #application .dictionary-index-group a { color: var(--syntax-link); }
@@ -145,3 +150,8 @@
 #application #contact.compact-contact input,
 #application #contact.compact-contact textarea { background: #000; border-color: #424752; }
 #application #contact.compact-contact button { color: var(--syntax-link); border-color: var(--syntax-link); }
+#application .dsp-gain-demo { --dsp-accent: var(--constellation-gold); }
+#application .dsp-gain-demo .dsp-demo-equation { color: var(--constellation-lilac); }
+#application .dsp-concept-secondary { stroke: var(--constellation-mint); }
+#application .dsp-concept-markers.dsp-concept-secondary circle { fill: var(--constellation-mint); }
+#application .dictionary-index-group a:hover { color: var(--syntax-keyword); }

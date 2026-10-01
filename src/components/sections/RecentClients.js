@@ -29,7 +29,7 @@ function RecentClients({ showHeading = true, compact = false }) {
       aria-label={showHeading ? undefined : "Companies"}
     >
       <div className="company-directory-shell surface-panel">
-        {showHeading ? <h2 id="recent-clients-heading">Companies</h2> : null}
+        {showHeading ? <h2 id="recent-clients-heading">Companies I’ve Worked With &amp; Still Work With</h2> : null}
         {groups.map((group) => (
           <div className="company-group" key={group.id}>
             {group.title ? <h3 id={group.id}>{group.title}</h3> : null}

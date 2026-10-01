@@ -173,4 +173,6 @@ The canonical portfolio pages are `/` (Film, Companies, Live & Theatre), `/dev` 
 
 The original descriptions are preserved outside the public bundle in `content-archive/2026-10-01-original-descriptions.json`. Its `files` object contains exact pre-revision source text keyed by path; see `content-archive/README.md`.
 
+The `--constellation-*` color tokens in `src/assets/styles/readable-site.css` match the hero artwork and drive both text accents and the animated stars. Headings stay white. `HeroStars` loads tsParticles' basic bundle and star shape only on the homepage, uses a small particle count at 24 FPS, pauses outside the viewport, and disables drift and twinkling for reduced-motion preferences. The original image and its fade into black remain underneath.
+
 Frontend checks run with `npm run test:ci`. The Functions backend uses a separate Node test runner: `npm --prefix functions test`.

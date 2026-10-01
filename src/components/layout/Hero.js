@@ -2,6 +2,7 @@ import Godzilla from "../../assets/img/Godzilla.png";
 import JaimeMoon from "../../assets/img/JaimeMoon.png";
 import banner from "../../assets/img/banner-npem.png";
 import Button from "../common/Button";
+import HeroStars from "../common/HeroStars";
 import { Link } from "react-router-dom";
 import { heroActions, homeHeroContent } from "../../config/site";
 
@@ -13,7 +14,10 @@ const Hero = ({
   if (compact) {
     return (
       <section id="hero" className="work-hero" aria-label="Jaime Osvaldo">
-        <div className="hero-constellations" aria-hidden="true"><img src={banner} alt="" /></div>
+        <div className="hero-constellations" aria-hidden="true">
+          <img src={banner} alt="" />
+          <HeroStars />
+        </div>
         <h1>Jaime Osvaldo</h1>
         <p className="work-hero__subtitle">Audio Visual for any Time, any Place and any One... even Godzilla.</p>
         <div className="work-hero__images">

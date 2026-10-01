@@ -3,6 +3,7 @@ import { afterEach, expect, test, vi } from "vitest";
 
 vi.mock("./lib/firebase", () => ({ logPageView: vi.fn() }));
 vi.mock("./components/sections/Reel.tsx", () => ({ default: () => <div>Reel</div> }));
+vi.mock("./components/common/HeroStars", () => ({ default: () => <div aria-hidden="true" /> }));
 import App from "./App";
 
 afterEach(() => { window.history.pushState({}, "", "/"); });
@@ -67,7 +68,7 @@ test("deep sample links open their collapsed media section", () => {
 
 test("keeps all companies on the combined page", () => {
   render(<App />);
-  const directory = screen.getByRole("region", { name: "Companies" });
+  const directory = screen.getByRole("region", { name: "Companies I’ve Worked With & Still Work With" });
   expect(within(directory).getByRole("img", { name: "SDN Broadcast" })).toBeVisible();
   expect(within(directory).getByRole("img", { name: "McCabe Event Services" })).toBeVisible();
   expect(within(directory).getAllByRole("listitem")).toHaveLength(19);
