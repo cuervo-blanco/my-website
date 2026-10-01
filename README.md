@@ -143,7 +143,7 @@ Current CI steps:
 - `npm run build`
 - deploy hosting preview/live
 
-Original WAV masters in `public/audio` stay in Git but are excluded from Hosting by `firebase.json`. The site uses the smaller `public/audio-previews` files. Keep a limited release history in the Firebase Hosting console to prevent retained releases from filling the project storage quota.
+Original WAV masters in `public/audio` stay in Git but are excluded from Hosting by `firebase.json`. The site uses the smaller `public/audio-previews` files. Keep a limited release history in the Firebase Hosting console to prevent retained releases from filling the project storage quota. The release-count limit is set to three total releases, including the current live version, so two rollback slots remain. Cleanup is asynchronous; confirm the deployment result instead of relying on the daily storage estimate.
 
 ## Search visibility
 
@@ -162,7 +162,7 @@ After publishing, verify `https://jaimeosvaldo.com` in Google Search Console usi
 
 ## Updating Portfolio Content
 
-- Companies: edit `companyGroups` in `src/data/clients.js`. Add `{ name: "New Company" }` to either list; a name alone renders cleanly. An optional `logo: "/img/company.svg"` uses a file in `public/img`, or import an image from `src/assets/img/client-logos`. Logos use accessible names without repeated visible labels. Set `logoTone: "light"` for a white transparent logo so it remains visible on the light grid. No component edits are required.
+- Companies: edit `companyGroups` in `src/data/clients.js`. Add `{ name: "New Company" }` to either list; a name alone renders cleanly. An optional `logo: "/img/company.svg"` uses a file in `public/img`, or import an image from `src/assets/img/client-logos`. Logos use accessible names without repeated visible labels. Use artwork that is readable on black; original logo image backgrounds are preserved. Set `logoBackdrop: "light"` for a dark logo that needs a small light backing. No component edits are required.
 - Film credits: edit `filmCredits` in `src/data/film.js`. Each title uses its IMDb title ID and verified roles. Set `forthcoming: true` and a confirmed production `stage` for upcoming work. Optional `poster`, `featured`, and `mediaLinks` add artwork and links. Check IMDb before changing a stage or adding a release date.
 - Animation: the Dark Knites feature lives in `src/pages/ArtHomePage.js`. Its web video and still are in `public/media`; the source render remains in Movies/Renders/DarkKnites/Video Renders. The video is a 1080p H.264/AAC copy with fast-start playback and is loaded when a visitor presses play.
 - Live & theatre credits: add `{ title: "Production", roles: ["A1"], venue: "Venue" }` to `src/data/liveCredits.js`. An optional `image` object adds a gallery card; record its photographer and source. Sources for the current six images are in `content-sources/live-theatre-media.md`. The homepage presents these after Film and Companies.

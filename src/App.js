@@ -7,7 +7,6 @@ import FilmHomePage from "./pages/FilmHomePage";
 import DevHomePage from "./pages/DevHomePage";
 import ArtHomePage from "./pages/ArtHomePage";
 import ContactPage from "./pages/ContactPage";
-import constellations from "./assets/img/banner-npem.png";
 import { getHostedSiteKey } from "./config/siteSections";
 import { logPageView } from "./lib/firebase";
 import { scrollToElementById, scrollToTop } from "./lib/scroll";
@@ -65,7 +64,7 @@ export function AppRoutes() {
 }
 
 export function AppShell() {
-  return <div className="App" id="application"><div className="site-constellations" aria-hidden="true"><img src={constellations} alt="" /></div><Menu /><AppRoutes /></div>;
+  return <div className="App" id="application"><Menu /><AppRoutes /></div>;
 }
 
 function App() {

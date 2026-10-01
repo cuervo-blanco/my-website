@@ -3,7 +3,7 @@ import "../../assets/styles/companies.css";
 
 function CompanyMark({ company }) {
   if (company.logo) {
-    return <img src={company.logo} className={company.logoTone === "light" ? "company-light-logo" : undefined} alt={company.name} loading="lazy" decoding="async" />;
+    return <img src={company.logo} className={company.logoTone === "light" ? "company-light-logo" : undefined} data-logo-backdrop={company.logoBackdrop} alt={company.name} loading="lazy" decoding="async" />;
   }
 
   if (company.icon) {

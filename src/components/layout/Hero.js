@@ -13,6 +13,7 @@ const Hero = ({
   if (compact) {
     return (
       <section id="hero" className="work-hero" aria-label="Jaime Osvaldo">
+        <div className="hero-constellations" aria-hidden="true"><img src={banner} alt="" /></div>
         <h1>Jaime Osvaldo</h1>
         <p className="work-hero__subtitle">Audio Visual for any Time, any Place and any One... even Godzilla.</p>
         <div className="work-hero__images">

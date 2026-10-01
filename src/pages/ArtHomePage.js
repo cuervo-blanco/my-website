@@ -30,8 +30,8 @@ function ArtHomePage() {
             </video>
             <figcaption id="dark-knites-caption">
               <div className="animation-credit">
-                <span className="animation-title">Dark Knites</span>
-                <span>Animation &amp; sound — Jaime Osvaldo</span>
+                <h2 className="animation-title">Dark Knites</h2>
+                <span className="animation-authorship">Animation &amp; sound — Jaime Osvaldo</span>
                 <ul className="animation-tools" aria-label="Tools used">
                   <li>Blender</li>
                   <li>DaVinci Resolve</li>
