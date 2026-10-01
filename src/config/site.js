@@ -1,17 +1,17 @@
 const clientEnv = typeof import.meta !== "undefined" ? import.meta.env : {};
 
 export const siteMetadata = {
-  title: "Jaime Osvaldo | Sound Mixer, Designer, and Audio Programmer",
+  title: "Jaime Osvaldo | Sound, Software & Animation",
   shortTitle: "Jaime Osvaldo",
   legalName: "Jaime O. Rivera Santana",
   siteName: "Jaime Osvaldo",
   description:
-    "Sound mixer, recordist, designer, and audio programmer based in New York. Production sound, post-production, live performance, and interactive audio support for film, theater, podcasts, and music.",
+    "Film sound, theatre and live audio, audio software, DSP, and animation by New York-based sound mixer and designer Jaime Osvaldo.",
   url: "https://jaimeosvaldo.com",
   defaultSocialImage: "/og-image.png",
   socialImageAlt: "Jaime Osvaldo website preview",
   themeColor: "#040404",
-  email: "support@jaimeosvaldo.com",
+  email: clientEnv.VITE_CONTACT_EMAIL || "",
   location: "New York, NY",
   resumePath: "/CV/JaimeORiveraCV-2025v09.pdf",
   reelStoragePath: "videos/jaime-rivera-reel.mov",
@@ -22,41 +22,113 @@ export const siteMetadata = {
     "728e095b-d681-46ad-ad89-457e17a8353e",
 };
 
+export const homeHeroContent = {
+  eyebrow: siteMetadata.legalName,
+  title: "Sound Mixer, Sound Designer & Audio Programmer",
+  subtitle:
+    "I work across production sound, theatre/live audio, and custom audio software - building practical tools for real-world sound workflows.",
+  summary:
+    "Sound work + software development, built from field experience in film, theatre, live sound, and post-production.",
+};
+
 export const pageMetadata = {
   home: {
     title: siteMetadata.title,
-    description: siteMetadata.description,
+    description:
+      "Film, companies, and live/theatre credits by Jaime Osvaldo.",
     path: "/",
     type: "website",
     keywords: [
-      "sound mixer new york",
-      "production sound mixer",
-      "sound designer",
-      "audio programmer",
+      "jaime osvaldo",
       "film sound",
+      "live audio",
+      "audio software",
+      "dsp",
+      "art and animation",
+    ],
+  },
+  film: {
+    title: siteMetadata.title,
+    description:
+      "Film, companies, and live/theatre credits by Jaime Osvaldo.",
+    path: "/",
+    type: "website",
+    keywords: [
+      "production sound mixer",
+      "film sound mixer",
       "post production sound",
-      "podcast sound design",
+      "sound designer film",
+      "film audio new york",
     ],
   },
   portfolio: {
-    title: `Portfolio | ${siteMetadata.shortTitle}`,
+    title: `Samples | ${siteMetadata.shortTitle}`,
     description:
-      "Selected portfolio of film sound, podcast production, music releases, post-production, Foley, ambience, and sound design by Jaime Osvaldo.",
-    path: "/portfolio",
+      "Selected samples across film sound, podcast production, music releases, post-production, Foley, ambience, and sound design by Jaime Osvaldo.",
+    path: "/",
     type: "website",
     keywords: [
-      "sound design portfolio",
+      "film sound samples",
       "film sound portfolio",
       "podcast sound design",
       "audio post production samples",
-      "jaime osvaldo portfolio",
+      "jaime osvaldo samples",
+    ],
+  },
+  live: {
+    title: `Live / Theatre | ${siteMetadata.shortTitle}`,
+    description:
+      "Theatre, school productions, festivals, awards, and live-event audio work by Jaime Osvaldo.",
+    path: "/",
+    type: "website",
+    keywords: [
+      "theatre audio",
+      "live sound",
+      "a1 sound engineer",
+      "sound design theatre",
+      "event audio new york",
+    ],
+  },
+  liveCompanies: {
+    title: `Companies | ${siteMetadata.shortTitle}`,
+    description:
+      "Production partners, brands, and institutions connected to Jaime Osvaldo's live and theatre audio work.",
+    path: "/",
+    type: "website",
+  },
+  devHome: {
+    title: `Dev | ${siteMetadata.shortTitle}`,
+    description:
+      "Jaime Osvaldo's GitHub and interactive DSP Dictionary.",
+    path: "/dev",
+    type: "website",
+    keywords: [
+      "audio software developer",
+      "audio dsp",
+      "juce c++ audio",
+      "audio workflow tools",
+    ],
+  },
+  software: {
+    title: `Dev | ${siteMetadata.shortTitle}`,
+    description:
+      "Jaime Osvaldo's GitHub and interactive DSP Dictionary.",
+    path: "/dev",
+    type: "website",
+    keywords: [
+      "audio software developer",
+      "audio plugin development",
+      "juce c++ audio",
+      "dsp prototype",
+      "audio workflow tools",
+      "show control utilities",
     ],
   },
   dspDictionary: {
     title: `DSP Dictionary | ${siteMetadata.shortTitle}`,
     description:
-      "An informal DSP dictionary covering digital audio, filtering, compression, modulation, distortion, mixing, and audio plugin concepts.",
-    path: "/dsp-dictionary",
+      "Interactive audio DSP concepts: graphs, controls, and formulas.",
+    path: "/dev",
     type: "article",
     keywords: [
       "audio dsp dictionary",
@@ -64,6 +136,26 @@ export const pageMetadata = {
       "compression eq reverb explained",
       "audio plugin development notes",
     ],
+  },
+  art: {
+    title: `Animation | ${siteMetadata.shortTitle}`,
+    description:
+      "Dark Knites: animation and sound by Jaime Osvaldo, made with Blender, DaVinci Resolve, Logic Pro, and SuperCollider.",
+    path: "/art",
+    type: "website",
+  },
+  artAbout: {
+    title: `About Art | ${siteMetadata.shortTitle}`,
+    description:
+      "Animation and visual work by Jaime Osvaldo.",
+    path: "/art/about",
+    type: "website",
+  },
+  contact: {
+    title: `Contact | ${siteMetadata.shortTitle}`,
+    description: "Contact Jaime Osvaldo about your project.",
+    path: "/contact",
+    type: "website",
   },
   terms: {
     title: `Terms and Privacy | ${siteMetadata.shortTitle}`,
@@ -76,19 +168,32 @@ export const pageMetadata = {
 };
 
 export const mainNavigation = [
-  { label: "Home", type: "route", to: "/", icon: "home" },
-  { label: "Work", type: "section", to: "/", sectionId: "services", icon: "work" },
-  { label: "DSP Dictionary", type: "route", to: "/dsp-dictionary", icon: "work" },
-  { label: "Portfolio", type: "route", to: "/portfolio", icon: "portfolio" },
-  { label: "Contact", type: "section", to: "/", sectionId: "contact", icon: "contact" },
+  { label: "Work", type: "route", to: "/", icon: "portfolio" },
+  { label: "Dev", type: "route", to: "/dev", icon: "software" },
+  { label: "Animation", type: "route", to: "/art", icon: "home" },
+  {
+    label: "Resume",
+    type: "external",
+    href: siteMetadata.resumePath,
+    icon: "resume",
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
+  { label: "Contact", type: "route", to: "/contact", icon: "contact" },
 ];
 
 export const footerQuickLinks = [
-  { label: "Home", type: "route", to: "/" },
-  { label: "Work", type: "section", to: "/", sectionId: "services" },
-  { label: "DSP Dictionary", type: "route", to: "/dsp-dictionary" },
-  { label: "Portfolio", type: "route", to: "/portfolio" },
-  { label: "Contact", type: "section", to: "/", sectionId: "contact" },
+  { label: "Work", type: "route", to: "/" },
+  { label: "Dev", type: "route", to: "/dev" },
+  { label: "Animation", type: "route", to: "/art" },
+  {
+    label: "Resume",
+    type: "external",
+    href: siteMetadata.resumePath,
+    target: "_blank",
+    rel: "noopener noreferrer",
+  },
+  { label: "Contact", type: "route", to: "/contact" },
 ];
 
 export const legalLinks = [
@@ -115,16 +220,22 @@ export const socialLinks = [
 ];
 
 export const heroActions = [
-  { label: "Hear the Portfolio", type: "route", to: "/portfolio" },
-  { label: "Start a Project", type: "section", to: "/", sectionId: "contact" },
+  { label: "Samples", type: "route", to: "/#portfolio-films" },
+  { label: "Film", type: "route", to: "/#credits" },
+  { label: "Contact", type: "route", to: "/contact" },
 ];
 
 export const contactSubjects = [
-  { value: "production-sound", label: "Production Sound Services" },
-  { value: "post-production-sound", label: "Post-Production Sound Services" },
-  { value: "live-sound", label: "Live Sound Services" },
-  { value: "rate-query", label: "Services Rate Information" },
-  { value: "consultations", label: "Consultations" },
-  { value: "courses", label: "Online Courses" },
+  { value: "production-sound", label: "Production Sound" },
+  { value: "sound-design", label: "Sound Design" },
+  { value: "theatre-live-audio", label: "Theatre / Live Audio" },
+  {
+    value: "audio-software-plugin-development",
+    label: "Audio Software / Plugin Development",
+  },
+  { value: "technical-consulting", label: "Technical Consulting" },
   { value: "other", label: "Other" },
 ];
+
+export const contactIntro =
+  "Reach out for sound work, audio software collaboration, technical consulting, or custom workflow tools.";

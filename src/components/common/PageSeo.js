@@ -40,7 +40,7 @@ function upsertLink({ rel, href }) {
 
 function upsertStructuredData(structuredData) {
   const existingNode = document.head.querySelector(
-    'script[data-seo="structured-data"]'
+    'script[data-seo="structured-data"], script[data-prerender="structured-data"]'
   );
 
   if (!structuredData) {

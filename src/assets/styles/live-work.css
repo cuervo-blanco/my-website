@@ -1,0 +1,66 @@
+.work-live__gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  margin-bottom: 32px;
+}
+
+.work-live__image-credit {
+  min-width: 0;
+}
+
+.work-live__image {
+  display: block;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: #080808;
+}
+
+.work-live__image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-live__image--artwork img {
+  object-fit: contain;
+}
+
+.work-live__image-credit h3 {
+  margin: 14px 0 6px;
+  font: 400 1rem / 1.4 Georgia, serif;
+}
+
+.work-live__image-credit p {
+  margin: 0;
+  color: #bdbdbd;
+  font: 400 0.75rem / 1.6 "Courier New", monospace;
+}
+
+.work-live__image-credit abbr {
+  text-decoration: none;
+}
+
+.work-live__sources {
+  margin: 0 0 28px;
+  color: #aaa;
+  font: 400 0.75rem / 1.6 "Courier New", monospace;
+}
+
+.work-live__sources a { color: inherit; }
+.work-live__sources ul { padding-left: 20px; }
+.work-live__sources li + li { margin-top: 8px; }
+
+@media (max-width: 800px) {
+  .work-live__gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-live__gallery {
+    grid-template-columns: 1fr;
+  }
+}

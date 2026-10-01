@@ -1,5 +1,6 @@
 import { pageMetadata, siteMetadata, socialLinks } from "./site";
 import { filmProjects, musicAlbums, podcastFeature } from "../data/portfolio";
+import { githubProfileUrl } from "../data/software";
 
 const totalFilmSamples = filmProjects.reduce(
   (sampleCount, project) => sampleCount + project.tracks.length,
@@ -13,7 +14,7 @@ export const homeStructuredData = [
     name: siteMetadata.shortTitle,
     alternateName: siteMetadata.legalName,
     url: siteMetadata.url,
-    email: siteMetadata.email,
+    ...(siteMetadata.email ? { email: siteMetadata.email } : {}),
     address: {
       "@type": "PostalAddress",
       addressLocality: "New York",
@@ -26,8 +27,12 @@ export const homeStructuredData = [
       "Production sound",
       "Post-production sound",
       "Sound design",
+      "Theatre audio",
+      "Live audio",
       "Podcast audio",
       "Audio programming",
+      "Audio software",
+      "Workflow tools",
       "DSP",
     ],
   },
@@ -42,8 +47,10 @@ export const homeStructuredData = [
       "Production sound",
       "Post-production sound",
       "Sound design",
+      "Theatre/live audio",
       "Podcast production",
       "Audio programming",
+      "Audio software consulting",
     ],
     sameAs: socialLinks.map((link) => link.href),
   },
@@ -86,12 +93,41 @@ export const portfolioStructuredData = {
   ],
 };
 
+export const workStructuredData = [...homeStructuredData, portfolioStructuredData];
+
+export const softwareStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: pageMetadata.devHome.title,
+  description: pageMetadata.devHome.description,
+  url: `${siteMetadata.url}${pageMetadata.devHome.path}`,
+  author: {
+    "@type": "Person",
+    name: siteMetadata.shortTitle,
+    url: siteMetadata.url,
+  },
+  about: ["Audio programming", "DSP"],
+  sameAs: [githubProfileUrl],
+  hasPart: [
+    {
+      "@type": "WebPage",
+      name: "GitHub",
+      url: githubProfileUrl,
+    },
+    {
+      "@type": "Article",
+      name: "DSP Dictionary",
+      url: `${siteMetadata.url}/dev#dsp-dictionary`,
+    },
+  ],
+};
+
 export const dspStructuredData = {
   "@context": "https://schema.org",
   "@type": "Article",
   headline: pageMetadata.dspDictionary.title,
   description: pageMetadata.dspDictionary.description,
-  url: `${siteMetadata.url}${pageMetadata.dspDictionary.path}`,
+  url: `${siteMetadata.url}/dev#dsp-dictionary`,
   author: {
     "@type": "Person",
     name: siteMetadata.shortTitle,
@@ -110,15 +146,17 @@ export const dspStructuredData = {
 export const prerenderRoutes = [
   {
     ...pageMetadata.home,
-    structuredData: homeStructuredData,
+    structuredData: workStructuredData,
   },
   {
-    ...pageMetadata.portfolio,
-    structuredData: portfolioStructuredData,
+    ...pageMetadata.devHome,
+    structuredData: softwareStructuredData,
   },
   {
-    ...pageMetadata.dspDictionary,
-    structuredData: dspStructuredData,
+    ...pageMetadata.contact,
+  },
+  {
+    ...pageMetadata.art,
   },
   {
     ...pageMetadata.terms,

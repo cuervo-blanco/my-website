@@ -1,16 +1,17 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import jaimeLogo from "../../assets/img/Logo Jaime.png";
-import { mainNavigation } from "../../config/site";
 import useSiteNavigation from "../../hooks/useSiteNavigation";
+import useSectionSite from "../../hooks/useSectionSite";
 import SiteIcon from "./SiteIcon";
-import SocialLinks from "./SocialLinks";
 
 function Menu() {
   const [showHeader, setShowHeader] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
+  const toggleRef = useRef(null);
+  const mobileMenuRef = useRef(null);
   const lastScrollTopRef = useRef(0);
   const { getItemHref, handleNavigationClick } = useSiteNavigation();
+  const { navigation } = useSectionSite();
   const location = useLocation();
 
   useEffect(() => {
@@ -69,33 +70,69 @@ function Menu() {
   }, [location.hash, location.pathname]);
 
   useEffect(() => {
-    document.body.style.overflow = isExpanded ? "hidden" : "";
+    const previousOverflow = document.body.style.overflow;
+    if (isExpanded) document.body.style.overflow = "hidden";
+    if (isExpanded) mobileMenuRef.current?.querySelector("a")?.focus();
 
     return () => {
-      document.body.style.overflow = "";
+      document.body.style.overflow = previousOverflow;
     };
   }, [isExpanded]);
+
+  const handleMenuKeyDown = (event) => {
+    if (!isExpanded) return;
+    if (event.key === "Escape") {
+      setIsExpanded(false);
+      toggleRef.current?.focus();
+    }
+    if (event.key === "Tab") {
+      const controls = [toggleRef.current, ...mobileMenuRef.current.querySelectorAll("a")];
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+    }
+  };
 
   const handleNavigation = (event, item) => {
     handleNavigationClick(event, item);
     setIsExpanded(false);
   };
 
+  const renderNavigationLink = (item) => {
+    if (item.type === "external") {
+      return (
+        <a
+          className="menu-link"
+          href={getItemHref(item)}
+          target={item.target}
+          rel={item.rel}
+          onClick={() => setIsExpanded(false)}
+        >
+          <span>{item.label}</span>
+        </a>
+      );
+    }
+
+    return (
+      <Link
+        className="menu-link"
+        to={getItemHref(item)}
+        onClick={(event) => handleNavigation(event, item)}
+      >
+        <span>{item.label}</span>
+      </Link>
+    );
+  };
+
   return (
-    <header id="menu" className={`header ${showHeader ? "" : "hide"}`}>
+    <header id="menu" onKeyDown={handleMenuKeyDown} className={`header ${showHeader ? "" : "hide"} ${isExpanded ? "menu-open" : ""}`}>
       <div id="menu-container" className={isExpanded ? "is-expanded" : ""}>
         <nav aria-label="Primary">
           <ul className="menu-list">
-            {mainNavigation.map((item) => (
+            {navigation.map((item) => (
               <li key={item.label}>
-                <Link
-                  className="menu-link"
-                  to={getItemHref(item)}
-                  onClick={(event) => handleNavigation(event, item)}
-                >
-                  <SiteIcon name={item.icon} />
-                  <span>{item.label}</span>
-                </Link>
+                {renderNavigationLink(item)}
               </li>
             ))}
           </ul>
@@ -103,37 +140,23 @@ function Menu() {
 
         <button
           type="button"
+          ref={toggleRef}
           onClick={() => setIsExpanded((currentValue) => !currentValue)}
           id="menu-bars"
           aria-expanded={isExpanded}
           aria-controls="hidden-menu"
           aria-label={isExpanded ? "Close menu" : "Open menu"}
         >
-          <SiteIcon name="menu" />
+          {isExpanded ? <span aria-hidden="true">×</span> : <SiteIcon name="menu" />}
         </button>
 
         {isExpanded && (
-          <div id="hidden-menu">
-            <ul>
-              <li id="moon-logo-menu">
-                <img src={jaimeLogo} alt="Jaime Osvaldo moon logo" />
-              </li>
-              {mainNavigation.map((item) => (
-                <li key={item.label}>
-                  <Link
-                    className="menu-link"
-                    to={getItemHref(item)}
-                    onClick={(event) => handleNavigation(event, item)}
-                  >
-                    <SiteIcon name={item.icon} />
-                    <span>{item.label}</span>
-                  </Link>
-                </li>
-              ))}
-              <li id="social-media-menu">
-                <SocialLinks iconOnly />
-              </li>
-            </ul>
+          <div id="hidden-menu" ref={mobileMenuRef}>
+            <nav aria-label="Mobile">
+              <ul>
+                {navigation.map((item) => <li key={item.label}>{renderNavigationLink(item)}</li>)}
+              </ul>
+            </nav>
           </div>
         )}
       </div>

@@ -7,6 +7,10 @@ function getNavigationHref(item) {
     return "/";
   }
 
+  if (item.type === "external") {
+    return item.href;
+  }
+
   if (item.type === "section") {
     return `${item.to}#${item.sectionId}`;
   }
@@ -23,6 +27,11 @@ export default function useSiteNavigation() {
   const navigateToItem = useCallback(
     (item) => {
       if (!item) {
+        return;
+      }
+
+      if (item.type === "external") {
+        window.open(item.href, item.target || "_self", "noopener,noreferrer");
         return;
       }
 
@@ -58,6 +67,10 @@ export default function useSiteNavigation() {
   const handleNavigationClick = useCallback(
     (event, item) => {
       if (!item) {
+        return;
+      }
+
+      if (item.type === "external") {
         return;
       }
 

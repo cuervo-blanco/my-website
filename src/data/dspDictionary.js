@@ -153,9 +153,12 @@ export const dspDictionaryTopicGroups = [
         body: [
           "A limiter is a type of compressor that has an infinite ratio, which means that once the input signal exceeds the threshold, the output signal will not exceed the threshold at all. In other words, a limiter is a compressor that completely prevents the output signal from exceeding the threshold level.",
           "The main purpose of a limiter is to prevent clipping and distortion in the output signal by ensuring that the signal does not exceed a certain level.",
+          "The demo uses an ideal gain reduction model for a steady tone. A real limiter follows the signal over time using peak detection, lookahead, and gain smoothing. Directly cutting off each sample at the threshold is hard clipping, which reshapes the waveform.",
         ],
         code:
-          "y[n] = max(-threshold, min(x[n], threshold))",
+          "peak = detectedPeakAmplitude\n" +
+          "gain = min(1, ceilingAmplitude / max(peak, epsilon))\n" +
+          "y[n] = gain * x[n]",
       },
       {
         id: "noise-gate",
@@ -166,8 +169,9 @@ export const dspDictionaryTopicGroups = [
           "Of course, a real noise gate is usually less brutal than that. It will often include attack, hold, and release behavior so the opening and closing feel natural instead of abrupt.",
         ],
         code:
-          "y[n] = x[n] if abs(x[n]) > threshold\n" +
-          "y[n] = 0 if abs(x[n]) <= threshold",
+          "env[n] = envelopeFollower(x[n])\n" +
+          "gainDb = 0 if env[n] >= threshold else -closedAttenuationDb\n" +
+          "y[n] = x[n] * 10^(gainDb / 20)",
       },
       {
         id: "expansion",
@@ -176,9 +180,10 @@ export const dspDictionaryTopicGroups = [
           "An expander can be thought of as going in the opposite direction from compression. Instead of reducing dynamic contrast, it increases it. Depending on the design, it can make loud things relatively louder, quiet things relatively quieter, or both.",
           "One loose way to picture it is that you are multiplying the signal by a factor greater than 1 above a threshold, or attenuating lower-level material further below the threshold, depending on the type of expander you are using. That is why noise gates and expanders belong to the same family, even though a gate is a much more abrupt version.",
           "Like with compression, the real usefulness is in the behavior over time. A mathematically simple rule is easy to write, but attack, release, and smoothing are what make the process sound usable instead of jumpy.",
+          "The demo and example below show downward expansion: levels below the threshold are attenuated, while levels above it pass unchanged.",
         ],
         code:
-          "if xDb > thresholdDb:\n" +
+          "if xDb < thresholdDb:\n" +
           "  yDb = thresholdDb + (xDb - thresholdDb) * ratio\n" +
           "else:\n" +
           "  yDb = xDb",

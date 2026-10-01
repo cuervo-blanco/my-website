@@ -15,6 +15,11 @@ export function scrollToElementById(elementId, options = {}, attempt = 0) {
   const element = document.getElementById(elementId);
 
   if (element) {
+    let disclosure = element.closest("details");
+    while (disclosure) {
+      disclosure.open = true;
+      disclosure = disclosure.parentElement?.closest("details");
+    }
     element.scrollIntoView({
       behavior: options.behavior || "smooth",
       block: options.block || "start",

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, type FC } from "react";
 import { getStorageAssetUrl } from "../../lib/firebase";
+import { getSiteRoute } from "../../config/siteSections";
 
 interface ReelProps {
   storagePath: string;
@@ -47,7 +48,11 @@ const Reel: FC<ReelProps> = ({
 
   return (
     <section id="reel" ref={sectionRef}>
-      {error && <div style={{ color: "red" }}>Error loading video: {error}</div>}
+      {error && (
+        <p className="media-placeholder">
+          The reel is currently unavailable. <a href={getSiteRoute("film", "/samples")}>Hear film samples</a>.
+        </p>
+      )}
       {!error && !videoUrl && <div className="media-placeholder">Loading reel...</div>}
       {videoUrl && (
         <video

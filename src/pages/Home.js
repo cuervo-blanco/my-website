@@ -1,5 +1,7 @@
 import Hero from "../components/layout/Hero";
 import Services from "../components/sections/Services";
+import RecentClients from "../components/sections/RecentClients";
+import AudioSoftwareTools from "../components/sections/AudioSoftwareTools";
 import Reel from "../components/sections/Reel.tsx";
 import ResumeButton from "../components/sections/Resume";
 import Contact from "../components/sections/Contact";
@@ -15,6 +17,8 @@ function Home() {
       <main id="homepage">
         <Hero />
         <Services />
+        <RecentClients />
+        <AudioSoftwareTools />
         <div>
           <Reel
             storagePath={siteMetadata.reelStoragePath}

@@ -129,7 +129,7 @@ const Terms = () => {
     <p>We may update this policy from time to time. We encourage you to review it periodically.</p>
 
     <h4>7. Contact Us</h4>
-    <p>If you have any questions about this privacy policy, please contact us at support@jaimeosvaldo.com.</p>
+    <p>If you have any questions about this privacy policy, please use our <a href="/contact">contact page</a>.</p>
 </section>
 
         </main>

@@ -4,6 +4,79 @@
   },
   "hosting": {
     "public": "dist",
+    "trailingSlash": false,
+    "redirects": [
+      {
+        "source": "/film",
+        "destination": "/#credits",
+        "type": 301
+      },
+      {
+        "source": "/film/samples",
+        "destination": "/#portfolio-films",
+        "type": 301
+      },
+      {
+        "source": "/samples",
+        "destination": "/#portfolio-films",
+        "type": 301
+      },
+      {
+        "source": "/portfolio",
+        "destination": "/#portfolio-films",
+        "type": 301
+      },
+      {
+        "source": "/live",
+        "destination": "/#live-credits",
+        "type": 301
+      },
+      {
+        "source": "/live/companies",
+        "destination": "/#recent-clients",
+        "type": 301
+      },
+      {
+        "source": "/companies",
+        "destination": "/#recent-clients",
+        "type": 301
+      },
+      {
+        "source": "/software",
+        "destination": "/dev",
+        "type": 301
+      },
+      {
+        "source": "/projects",
+        "destination": "/dev",
+        "type": 301
+      },
+      {
+        "source": "/dev/projects",
+        "destination": "/dev",
+        "type": 301
+      },
+      {
+        "source": "/dsp-dictionary",
+        "destination": "/dev",
+        "type": 301
+      },
+      {
+        "source": "/art/about",
+        "destination": "/art",
+        "type": 301
+      },
+      {
+        "source": "/about",
+        "destination": "/art",
+        "type": 301
+      },
+      {
+        "source": "/dev/dsp-dictionary",
+        "destination": "/dev",
+        "type": 301
+      }
+    ],
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -55,16 +128,20 @@
         "destination": "/firmware/firmware.bin"
       },
       {
-        "source": "/portfolio",
-        "destination": "/portfolio/index.html"
-      },
-      {
-        "source": "/dsp-dictionary",
-        "destination": "/dsp-dictionary/index.html"
-      },
-      {
         "source": "/terms",
         "destination": "/terms/index.html"
+      },
+      {
+        "source": "/dev",
+        "destination": "/dev/index.html"
+      },
+      {
+        "source": "/art",
+        "destination": "/art/index.html"
+      },
+      {
+        "source": "/contact",
+        "destination": "/contact/index.html"
       },
       {
         "source": "**",

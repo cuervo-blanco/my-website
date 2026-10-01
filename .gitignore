@@ -12,6 +12,9 @@
 /build
 /dist
 
+# temporary media inspection files
+/tmp
+
 # misc
 .DS_Store
 .env.local

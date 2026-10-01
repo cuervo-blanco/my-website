@@ -1,9 +1,9 @@
 import { useState } from "react";
 import soundStuff from "../../assets/img/sound-stuff.webp";
 import contactBackground from "../../assets/img/contact-background.jpg";
-import { contactSubjects, siteMetadata } from "../../config/site";
+import { contactIntro, contactSubjects, siteMetadata } from "../../config/site";
 
-function Contact() {
+function Contact({ compact = false, standalone = false }) {
   const [status, setStatus] = useState({
     type: "idle",
     message: "",
@@ -48,7 +48,7 @@ function Contact() {
 
       const result = await response.json().catch(() => ({}));
 
-      if (!response.ok) {
+      if (!response.ok || result.success === false) {
         throw new Error(result.message || "Unable to send your message right now.");
       }
 
@@ -69,6 +69,34 @@ function Contact() {
     }
   };
 
+  if (compact) {
+    const Heading = standalone ? "h1" : "h2";
+    const FormContainer = standalone ? "div" : "details";
+    return (
+      <section id="contact" className="compact-contact" aria-labelledby="contact-heading">
+        <Heading id="contact-heading">Contact</Heading>
+        {siteMetadata.email ? <a className="compact-contact__email" href={`mailto:${siteMetadata.email}`} aria-label="Email">{siteMetadata.email} ↗</a> : null}
+        <FormContainer className="compact-contact__form">
+          {standalone ? null : <summary>Send a message</summary>}
+          {status.message ? <p role="status" className={`status-${status.type}`}>{status.message}</p> : null}
+          <form onSubmit={handleSubmit}>
+            <input type="hidden" name="subject" value="Portfolio enquiry" />
+            <div className="honeypot-field" aria-hidden="true">
+              <label htmlFor="contact-company">Company</label>
+              <input id="contact-company" type="text" name="company" tabIndex="-1" autoComplete="off" />
+            </div>
+            <div className="compact-contact__fields">
+              <label htmlFor="contact-name">Name<input id="contact-name" name="name" autoComplete="name" required /></label>
+              <label htmlFor="contact-email">Email<input id="contact-email" type="email" name="email" autoComplete="email" required /></label>
+            </div>
+            <label htmlFor="contact-message">Message<textarea id="contact-message" name="message" rows="4" required /></label>
+            <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>{isSubmitting ? "Sending…" : "Send"}</button>
+          </form>
+        </FormContainer>
+      </section>
+    );
+  }
+
   return (
     <section id="contact">
       <div id="contact-back-container">
@@ -81,6 +109,7 @@ function Contact() {
         </div>
       </div>
       <h2>Contact</h2>
+      <p className="contact-intro">{contactIntro}</p>
       <div id="contact-window">
         {status.message && (
           <div
@@ -155,9 +184,9 @@ function Contact() {
               <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
                 {isSubmitting ? "Sending..." : "Submit"}
               </button>
-              <p className="contact-note">
+              {siteMetadata.email ? <p className="contact-note">
                 Replies go to <a href={`mailto:${siteMetadata.email}`}>{siteMetadata.email}</a>.
-              </p>
+              </p> : null}
             </div>
           </div>
         </form>
