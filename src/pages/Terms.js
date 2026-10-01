@@ -1,9 +1,12 @@
-import React from 'react';
+import PageSeo from "../components/common/PageSeo";
+import { pageMetadata } from "../config/site";
 
 const Terms = () => {
     return (
-        <div id="terms">
-            <h2>TERMS</h2>
+        <>
+        <PageSeo {...pageMetadata.terms} />
+        <main id="terms">
+            <h1>Terms</h1>
 
             <section>
                 <h3>Payment and Invoicing:</h3>
@@ -99,9 +102,9 @@ const Terms = () => {
                     <li>This agreement and any related disputes or claims are governed by New York State law. Both parties agree to the exclusive jurisdiction of New York courts for any disputes or claims related to this agreement.</li>
                 </ul>
             </section>
-            <hr id="policy"></hr>
-            <section id="policy-section">
-    <h3>Privacy Policy</h3>
+            <hr />
+            <section id="policy" aria-labelledby="privacy-policy-heading">
+    <h3 id="privacy-policy-heading">Privacy Policy</h3>
     <p>Effective Date: November 2023</p>
         
     <h4>1. Introduction</h4>
@@ -126,13 +129,12 @@ const Terms = () => {
     <p>We may update this policy from time to time. We encourage you to review it periodically.</p>
 
     <h4>7. Contact Us</h4>
-    <p>If you have any questions about this privacy policy, please contact us at support@jaimeosvaldo.com.</p>
+    <p>If you have any questions about this privacy policy, please use our <a href="/contact">contact page</a>.</p>
 </section>
 
-        </div>
+        </main>
+        </>
     );
 };
 
 export default Terms;
-
-            

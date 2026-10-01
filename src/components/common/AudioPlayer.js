@@ -1,38 +1,34 @@
-import React from "react";
 import AudioTrack from "./AudioTrack";
 
-function AudioPlayer(props) {
-  const { poster, tracks, ext, title = [] } = props;
-
-  const audioExt = ext;
-
+function AudioPlayer({ poster, tracks, ext, title, assetPath = "/audio" }) {
   const posterUrl = `/img/${poster}`;
 
-
   return (
-    <div id="audio-container">
-      <div id="movie-poster">
-        <img src={posterUrl} alt={title} />
+    <article className="audio-container portfolio-audio-card">
+      <div className="movie-poster">
+        <img src={posterUrl} alt={`${title} poster`} loading="lazy" />
       </div>
 
-      <div id="audio-player">
+      <div className="audio-player">
         <div className="track-list">
-          <h2>{title}</h2>
-          <hr></hr>
-          {Array.isArray(tracks) &&
-            tracks.map((trackName, i) => (
-              <AudioTrack
-                key={i}
-                sound={trackName[0]}
-                audioExt={audioExt}
-                index={i}
-                name={trackName[1]}
-              />
-            ))}
-          <hr></hr>
+          <h3>{title}</h3>
+          <ul className="track-items">
+            {Array.isArray(tracks) &&
+              tracks.map((track, index) => (
+                <AudioTrack
+                  key={`${title}-${track[0]}`}
+                  sound={track[0]}
+                  audioExt={ext}
+                  assetPath={assetPath}
+                  index={index}
+                  name={track[1]}
+                />
+              ))}
+          </ul>
         </div>
       </div>
-    </div>
+    </article>
   );
 }
+
 export default AudioPlayer;

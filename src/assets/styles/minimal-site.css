@@ -1,0 +1,122 @@
+#menu .menu-link { gap: 0; }
+
+#application #contact.compact-contact {
+  display: block;
+  position: relative;
+  width: min(1160px, calc(100% - 48px));
+  height: auto;
+  min-height: 0;
+  margin: 48px auto 0;
+  padding: 36px 0;
+  border-top: 1px solid #ffffff26;
+  background: transparent;
+  color: #f4f4f4;
+  text-align: left;
+  font: 0.85rem / 1.6 "Courier New", monospace;
+  scroll-margin-top: 90px;
+}
+
+#contact.compact-contact h1,
+#contact.compact-contact h2 {
+  margin: 0 0 20px;
+  padding: 0;
+  font: 400 clamp(1.8rem, 3vw, 2.4rem) / 1.2 Georgia, serif;
+  text-align: left;
+  color: inherit;
+}
+
+#contact.compact-contact a { color: #ffc15b; text-decoration: none; overflow-wrap: anywhere; }
+#contact.compact-contact a:hover { text-decoration: underline; }
+#contact.compact-contact summary { cursor: pointer; width: fit-content; margin-top: 20px; }
+#contact.compact-contact a:focus-visible,
+#contact.compact-contact summary:focus-visible { outline: 2px solid orange; outline-offset: 5px; }
+#contact.compact-contact form { display: grid; gap: 20px; max-width: 640px; margin-top: 24px; }
+#contact.compact-contact label { display: grid; gap: 8px; }
+#contact.compact-contact input,
+#contact.compact-contact textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #666;
+  border-radius: 0;
+  background: #222;
+  color: white;
+  font: inherit;
+}
+#contact.compact-contact textarea { resize: vertical; }
+#contact.compact-contact button {
+  width: fit-content;
+  padding: 10px 24px;
+  border: 1px solid #ffc15b;
+  background: transparent;
+  color: #ffc15b;
+  cursor: pointer;
+  font: inherit;
+}
+#contact.compact-contact button:disabled { opacity: 0.6; cursor: wait; }
+#contact.compact-contact .compact-contact__fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+#contact.compact-contact .honeypot-field { display: none; }
+
+.minimal-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 28px 24px;
+  border-top: 1px solid #333;
+  text-align: left;
+  color: #999;
+  font: 0.8rem "Courier New", monospace;
+  scroll-margin-top: 90px;
+}
+
+.minimal-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+}
+
+.minimal-footer a { color: #bbb; text-decoration: none; }
+.minimal-footer a:hover { color: orange; }
+.minimal-footer a:focus-visible { outline: 2px solid orange; outline-offset: 5px; }
+.minimal-footer small { font-size: 0.75rem; }
+
+@media (max-width: 600px) {
+  .minimal-footer { margin-top: 24px; gap: 20px; }
+  #application #contact.compact-contact { width: calc(100% - 32px); }
+  #contact.compact-contact .compact-contact__fields { grid-template-columns: 1fr; }
+}
+
+.contact-page { width: 100%; padding-top: 100px; min-height: 65vh; }
+#application .contact-page #contact.compact-contact { margin-top: 0; border-top: 0; }
+#application .contact-page #contact.compact-contact h1 { font-size: clamp(2.8rem, 5vw, 4.9rem); }
+#menu { overflow: visible; }
+#menu #menu-container { box-sizing: border-box; }
+#menu #menu-bars { cursor: pointer; min-width: 44px; min-height: 44px; color: white; }
+#menu #menu-bars span { font-size: 2.5rem; line-height: 1; }
+#menu #menu-bars:focus-visible, #menu .menu-link:focus-visible { outline: 2px solid orange; outline-offset: 3px; }
+@media (max-width: 768px) {
+  #application #menu #menu-container { min-height: 64px; }
+  #application #menu #menu-container > nav { display: none; }
+  #application #menu #menu-bars { display: flex; align-items: center; justify-content: center; margin-left: auto; }
+  #application #menu #hidden-menu {
+    display: block;
+    position: absolute;
+    inset: 64px 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+    height: calc(100dvh - 64px);
+    padding: 24px;
+    overflow-y: auto;
+    background: #070a12;
+  }
+  #application #menu #hidden-menu nav { display: block; }
+  #application #menu #hidden-menu ul { display: grid; gap: 12px; margin: 0; padding: 0; width: 100%; height: auto; border: 0; }
+  #application #menu #hidden-menu li { display: block; width: 100%; height: auto; margin: 0; font-size: 1.6rem; }
+  #application #menu #hidden-menu .menu-link { display: flex; justify-content: flex-start; padding: 16px 0; min-height: 44px; box-sizing: border-box; color: white; }
+}

@@ -1,0 +1,20 @@
+{
+  "name": "my-website-functions",
+  "private": true,
+  "engines": {
+    "node": "20"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "echo \"No dedicated lint config yet\"",
+    "serve": "firebase emulators:start --only functions",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "firebase-functions": "^5.0.1",
+    "pg": "^8.16.3"
+  }
+}

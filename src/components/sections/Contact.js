@@ -1,96 +1,202 @@
-import React, { useState } from 'react';
-import soundStuff from '../../assets/img/sound-stuff.webp';
-import contactBackground from '../../assets/img/contact-background.jpg';
+import { useState } from "react";
+import soundStuff from "../../assets/img/sound-stuff.webp";
+import contactBackground from "../../assets/img/contact-background.jpg";
+import { contactIntro, contactSubjects, siteMetadata } from "../../config/site";
 
+function Contact({ compact = false, standalone = false }) {
+  const [status, setStatus] = useState({
+    type: "idle",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-function Contact(){
-    const [submissionMessage, setSubmissionMessage] = useState('');
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        setSubmissionMessage('Please wait...');
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-        const formData = new FormData(event.target);
-        const object = Object.fromEntries(formData);
-        const json = JSON.stringify(object);
-
-        try {
-            const response = await fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: json
-            });
-
-            const result = await response.json();
-            setSubmissionMessage(result.message);
-
-            if (response.status === 200) {
-                setSubmissionMessage('Your message has been sent successfully!');
-            } else {
-                setSubmissionMessage(result.message || 'An error occurred. Please try again.');
-            }
-        } catch (error) {
-            console.error('Submission error:', error);
-            setSubmissionMessage('Something went wrong!');
-        } finally {
-            event.target.reset();
-            setTimeout(() => {
-                setSubmissionMessage(''); 
-            }, 5000);
-        }
+    const formData = new FormData(event.target);
+    const payload = Object.fromEntries(formData.entries());
+    const requestBody = {
+      ...payload,
+      ...(siteMetadata.contactEndpoint.includes("web3forms.com")
+        ? { access_key: siteMetadata.web3FormsAccessKey }
+        : {}),
     };
 
-    return(
-            <div id="contact">
-            <div id="contact-back-container"><div id="contact-background"><img src={contactBackground} alt="Background of constellations of a monkey and a chicken"></img></div></div>
-            <h1>CONTACT</h1>
-            <div id="contact-window">
-                <div id="submission-message">{submissionMessage}</div>
+    if (payload.company) {
+      setStatus({
+        type: "error",
+        message: "Submission blocked.",
+      });
+      return;
+    }
 
-                <form onSubmit={handleSubmit} action="https://api.web3forms.com/submit" method="POST">
-                    <div id="inputs">
-                        <input type="hidden" name="access_key" value="728e095b-d681-46ad-ad89-457e17a8353e"></input>
-                        <div className="form-input"> <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" required />
-                        </div>
+    setIsSubmitting(true);
+    setStatus({
+      type: "info",
+      message: "Sending your message...",
+    });
 
-                        <div className="form-input"><label for="email">Email:</label>
-                            <input type="email" id="email" name="email" required />
-                        </div>
+    try {
+      const response = await fetch(siteMetadata.contactEndpoint, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(requestBody),
+      });
 
-                        <div className="form-input"><label for="subject">Subject:</label>
-                            <select id="subject" name="subject" required>
-                                <option value="production-sound">Production Sound Services</option>
-                                <option value="post-production-sound">Post-Production Sound Services</option>
-                                <option value="live-sound">Live Sound Services</option>
-                                <option value="rate-query">Services Rate Information</option>
-                                <option value="consultations">Consultations</option>
-                                <option value="courses">Online Courses</option>
-                                <option value="other">Other</option>
+      const result = await response.json().catch(() => ({}));
 
-                            </select>
-                        </div>
+      if (!response.ok || result.success === false) {
+        throw new Error(result.message || "Unable to send your message right now.");
+      }
 
-                    </div>
+      setStatus({
+        type: "success",
+        message:
+          result.message || "Your message has been sent successfully.",
+      });
+      event.target.reset();
+    } catch (error) {
+      setStatus({
+        type: "error",
+        message:
+          error.message || "Something went wrong. Please try again in a moment.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
-                    <div id="message">
-                        <div className="form-input2"><label for="message">Message:</label>
-                            <textarea id="message" name="message" rows="4" required></textarea>
-                        </div>
+  if (compact) {
+    const Heading = standalone ? "h1" : "h2";
+    const FormContainer = standalone ? "div" : "details";
+    return (
+      <section id="contact" className="compact-contact" aria-labelledby="contact-heading">
+        <Heading id="contact-heading">Contact</Heading>
+        {siteMetadata.email ? <a className="compact-contact__email" href={`mailto:${siteMetadata.email}`} aria-label="Email">{siteMetadata.email} ↗</a> : null}
+        <FormContainer className="compact-contact__form">
+          {standalone ? null : <summary>Send a message</summary>}
+          {status.message ? <p role="status" className={`status-${status.type}`}>{status.message}</p> : null}
+          <form onSubmit={handleSubmit}>
+            <input type="hidden" name="subject" value="Portfolio enquiry" />
+            <div className="honeypot-field" aria-hidden="true">
+              <label htmlFor="contact-company">Company</label>
+              <input id="contact-company" type="text" name="company" tabIndex="-1" autoComplete="off" />
+            </div>
+            <div className="compact-contact__fields">
+              <label htmlFor="contact-name">Name<input id="contact-name" name="name" autoComplete="name" required /></label>
+              <label htmlFor="contact-email">Email<input id="contact-email" type="email" name="email" autoComplete="email" required /></label>
+            </div>
+            <label htmlFor="contact-message">Message<textarea id="contact-message" name="message" rows="4" required /></label>
+            <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>{isSubmitting ? "Sending…" : "Send"}</button>
+          </form>
+        </FormContainer>
+      </section>
+    );
+  }
 
-                    <div className="form-input2"><button type="submit">SUBMIT</button></div></div>
-                  
-                 </form>
+  return (
+    <section id="contact">
+      <div id="contact-back-container">
+        <div id="contact-background">
+          <img
+            src={contactBackground}
+            alt="Background of constellations of a monkey and a chicken"
+            loading="lazy"
+          />
+        </div>
+      </div>
+      <h2>Contact</h2>
+      <p className="contact-intro">{contactIntro}</p>
+      <div id="contact-window">
+        {status.message && (
+          <div
+            id="submission-message"
+            className={`status-${status.type}`}
+            aria-live="polite"
+          >
+            {status.message}
+          </div>
+        )}
 
+        <form onSubmit={handleSubmit}>
+          <div id="inputs">
+            <div className="form-input honeypot-field">
+              <label htmlFor="company">Company</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                tabIndex="-1"
+                autoComplete="off"
+              />
             </div>
 
-            <div id="contact-footer">
-                <img src={soundStuff} alt="Sound Equipment doodle"/>
+            <div className="form-input">
+              <label htmlFor="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                autoComplete="name"
+                required
+              />
             </div>
-    </div>
-    )
+
+            <div className="form-input">
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autoComplete="email"
+                required
+              />
+            </div>
+
+            <div className="form-input">
+              <label htmlFor="subject">Subject</label>
+              <select id="subject" name="subject" defaultValue="production-sound" required>
+                {contactSubjects.map((subject) => (
+                  <option key={subject.value} value={subject.value}>
+                    {subject.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          </div>
+
+          <div id="message-column">
+            <div className="form-input2">
+              <label htmlFor="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                autoComplete="off"
+                required
+              ></textarea>
+            </div>
+
+            <div className="form-input2">
+              <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>
+                {isSubmitting ? "Sending..." : "Submit"}
+              </button>
+              {siteMetadata.email ? <p className="contact-note">
+                Replies go to <a href={`mailto:${siteMetadata.email}`}>{siteMetadata.email}</a>.
+              </p> : null}
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div id="contact-footer">
+        <img src={soundStuff} alt="Sound equipment doodle" loading="lazy" />
+      </div>
+    </section>
+  );
 }
 
 export default Contact;

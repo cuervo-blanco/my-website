@@ -1,0 +1,89 @@
+#animation-page {
+  margin-bottom: 72px;
+}
+
+#animation-page .animation-header {
+  padding: 40px 0 28px;
+}
+
+#animation-page h1 {
+  margin: 0;
+  color: #fff;
+  font-family: "Yeseva One", serif;
+  font-size: clamp(2.8rem, 6vw, 4.9rem);
+  line-height: 1.15;
+}
+
+#animation-page .animation-header > p:last-child {
+  margin: 12px 0 0;
+  color: #b7b7b7;
+  font-family: "Courier Prime", monospace;
+  font-size: 1.1rem;
+}
+
+#animation-page .animation-feature {
+  margin: 0;
+}
+
+#animation-page video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border: 1px solid #282828;
+}
+
+#animation-page figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  color: #b7b7b7;
+  font-family: "Courier Prime", monospace;
+  font-size: 0.95rem;
+}
+
+#animation-page .animation-credit {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#animation-page .animation-title {
+  color: #fff;
+  font-size: 1.15rem;
+}
+
+#animation-page .animation-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  color: #999;
+  font-size: 0.8rem;
+}
+
+#animation-page figcaption a {
+  color: #e0e0e0;
+  text-underline-offset: 4px;
+}
+
+#animation-page figcaption a:hover {
+  color: orange;
+}
+
+#animation-page a:focus-visible,
+#animation-page video:focus-visible {
+  outline: 2px solid orange;
+  outline-offset: 5px;
+}
+
+@media (max-width: 600px) {
+  #animation-page .animation-header {
+    padding-top: 24px;
+  }
+}

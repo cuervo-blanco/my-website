@@ -1,23 +1,30 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import useSiteNavigation from "../../hooks/useSiteNavigation";
 
 function Button({ buttonText, buttonLink }) {
-  const handleClick = (e) => {
-    e.preventDefault();
-    const section = document.getElementById(buttonLink.substring(1)); // Assuming buttonLink is like '#contact'
-    console.log(section);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const { getItemHref, handleNavigationClick } = useSiteNavigation();
+  const navigationItem = buttonLink.startsWith("/")
+    ? {
+        type: "route",
+        to: buttonLink,
+      }
+    : {
+        type: "section",
+        to: "/",
+        sectionId: buttonLink.replace("#", ""),
+      };
 
   return (
-    <div id="button-cta">
-      <a href={buttonLink} onClick={handleClick}>
-        <p>{buttonText}</p>
-        <div id="greater-than">
-          <p>&gt;</p>
-        </div>
-      </a>
+    <div className="button-cta">
+      <Link
+        to={getItemHref(navigationItem)}
+        onClick={(event) => handleNavigationClick(event, navigationItem)}
+      >
+        <span>{buttonText}</span>
+        <span className="greater-than" aria-hidden="true">
+          <span>&gt;</span>
+        </span>
+      </Link>
     </div>
   );
 }

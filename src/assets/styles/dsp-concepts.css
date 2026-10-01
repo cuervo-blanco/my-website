@@ -1,0 +1,205 @@
+.dsp-concept-demo h3 {
+  margin: 0 0 12px;
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+}
+
+#dsp-dictionary-page .dictionary-section > .dsp-concept-demo {
+  margin: 24px 0;
+}
+
+.dsp-concept-chart {
+  margin-top: 28px;
+  min-width: 0;
+}
+
+.dsp-concept-charts {
+  min-width: 0;
+}
+
+.dsp-concept-demo .dsp-concept-chart-title {
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.dsp-concept-chart .dsp-demo-legend {
+  flex-wrap: wrap;
+  gap: 8px 20px;
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.dsp-demo-legend .dsp-demo-secondary-key::before {
+  border-color: #64d8cf;
+}
+
+.dsp-concept-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.dsp-concept-chart path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.dsp-concept-line {
+  stroke-width: 2;
+  stroke-linejoin: round;
+}
+
+.dsp-concept-input { stroke: #a8a8a8; }
+.dsp-concept-output { stroke: var(--dsp-accent); }
+.dsp-concept-secondary { stroke: #64d8cf; }
+.dsp-concept-markers circle { stroke-width: 1; }
+.dsp-concept-markers path { stroke-width: 1; opacity: 0.55; }
+.dsp-concept-markers.dsp-concept-input circle { fill: #a8a8a8; }
+.dsp-concept-markers.dsp-concept-output circle { fill: var(--dsp-accent); }
+.dsp-concept-markers.dsp-concept-secondary circle { fill: #64d8cf; }
+
+.dsp-concept-controls {
+  display: grid;
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.dsp-concept-controls select {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 42px;
+  padding: 8px 12px;
+  border: 1px solid #666;
+  border-radius: 0;
+  background: #141414;
+  color: #fff;
+  font: inherit;
+  cursor: pointer;
+}
+
+.dsp-concept-controls select:focus-visible,
+.dsp-concept-footer button:focus-visible {
+  outline: 2px solid var(--dsp-accent);
+  outline-offset: 4px;
+}
+
+.dsp-concept-demo .dsp-concept-readout {
+  margin: 24px 0 0;
+  color: var(--dsp-accent);
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.dsp-concept-demo .dsp-demo-equation {
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.dsp-concept-footer {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.dsp-concept-demo .dsp-concept-note {
+  flex: 1;
+  margin: 0;
+  color: #aaa;
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  line-height: 1.65;
+}
+
+.dsp-concept-footer button {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 8px 12px;
+  border: 1px solid #666;
+  background: transparent;
+  color: #ddd;
+  font: 0.78rem "Courier New", monospace;
+  cursor: pointer;
+}
+
+.dsp-concept-footer button:hover {
+  border-color: var(--dsp-accent);
+  color: var(--dsp-accent);
+}
+
+.dsp-model-notes {
+  flex: 1;
+  min-width: 0;
+  color: #aaa;
+  font: 0.78rem/1.6 "Courier New", monospace;
+}
+
+.dsp-model-notes summary {
+  width: fit-content;
+  min-height: 32px;
+  padding: 6px 0;
+  cursor: pointer;
+}
+
+.dsp-model-notes summary:hover {
+  color: var(--dsp-accent);
+}
+
+.dsp-model-notes summary:focus-visible {
+  outline: 2px solid var(--dsp-accent);
+  outline-offset: 4px;
+}
+
+.dsp-concept-demo .dsp-model-notes .dsp-concept-note {
+  max-width: 70ch;
+  margin-top: 8px;
+}
+
+.dsp-demo-compact .dsp-concept-controls {
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+  gap: 20px 28px;
+}
+
+.dsp-demo-compact .dsp-concept-readout {
+  margin-top: 20px;
+  font-size: 0.85rem;
+}
+
+.dsp-demo-compact .dsp-concept-footer {
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+@media (min-width: 760px) {
+  .dsp-demo-compact .dsp-concept-charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dsp-concept-controls .dsp-demo-control {
+    gap: 8px;
+  }
+
+  .dsp-concept-controls label {
+    min-width: 0;
+  }
+
+  .dsp-concept-chart .dsp-demo-axis-label {
+    font-size: 22px;
+  }
+
+  .dsp-concept-footer {
+    flex-direction: column;
+  }
+
+  .dsp-demo-compact .dsp-concept-footer {
+    flex-direction: row;
+  }
+}

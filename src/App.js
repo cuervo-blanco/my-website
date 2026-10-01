@@ -1,88 +1,74 @@
-import React, {useEffect} from 'react';
-import {useLocation, BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { useEffect } from "react";
+import { BrowserRouter, Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Menu from "./components/common/Menu";
-import Contact from "./components/sections/Contact";
-import Portfolio from "./components/sections/Portfolio";
-import Reel from "./components/sections/Reel.tsx";
-import ResumeButton from "./components/sections/Resume";
 import Footer from "./components/layout/Footer";
-import Hero from "./components/layout/Hero";
 import Terms from "./pages/Terms";
-import "./App.css";
-
-import { initializeApp } from "firebase/app";
-import { getAnalytics, logEvent } from "firebase/analytics";
-
-const firebaseConfig = {
-  apiKey: "AIzaSyBygpDcQeB1uCLTiIAAtxvwM10Tzmkk0fE",
-  authDomain: "my-website-26cef.firebaseapp.com",
-  projectId: "my-website-26cef",
-  storageBucket: "my-website-26cef.appspot.com",
-  messagingSenderId: "1082529460512",
-  appId: "1:1082529460512:web:25aefd99175dee1d59e745",
-  measurementId: "G-SPLT8ZXMYL"
-};
-
-const app = initializeApp(firebaseConfig);
+import FilmHomePage from "./pages/FilmHomePage";
+import DevHomePage from "./pages/DevHomePage";
+import ArtHomePage from "./pages/ArtHomePage";
+import ContactPage from "./pages/ContactPage";
+import { getHostedSiteKey } from "./config/siteSections";
+import { logPageView } from "./lib/firebase";
+import { scrollToElementById, scrollToTop } from "./lib/scroll";
 
 function ScrollManager() {
   const location = useLocation();
-  const analytics = getAnalytics(app);
-
+  const navigate = useNavigate();
   useEffect(() => {
-    logEvent(analytics, 'page_view', {
-      page_path: location.pathname,
-    });
-    const scrollToSection = () => {
-      if (location.state?.scrollTo) {
-        const section = document.getElementById(location.state.scrollTo);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          // Retry after a short delay
-          setTimeout(scrollToSection, 100);
-        }
-      } else {
-        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-      }
-    };
-    scrollToSection();
-  }, [location, analytics]);
+    if (location.hash === "#contact") { navigate("/contact", { replace: true }); return; }
+    logPageView(location.pathname);
+    const sectionId = location.state?.scrollTo || location.hash.replace("#", "");
+    if (sectionId) scrollToElementById(sectionId);
+    else scrollToTop();
+  }, [location, navigate]);
   return null;
 }
 
-function App() {
-  const navigate = (path) => {
-    window.history.pushState({}, '', path);
-  };
+function HostedRootRoute() {
+  const hosted = getHostedSiteKey(typeof window !== "undefined" ? window.location.hostname : "");
+  if (hosted === "dev") return <DevHomePage />;
+  if (hosted === "art") return <ArtHomePage />;
+  return <FilmHomePage />;
+}
 
+function LegacyRedirect({ to }) {
+  const { hash } = useLocation();
+  const target = hash ? `${to.split("#")[0]}${hash}` : to;
+  return <Navigate to={target} replace />;
+}
+
+export function AppRoutes() {
   return (
-    <Router>
-    <ScrollManager />
-    <div className="App" id="application">
-      <Menu navigate={navigate}/>
-      <Routes>
-        <Route path="/" element={
-          <div id="homepage">
-            <div><Hero /></div>
-            <div>
-              <Reel
-                storagePath="videos/jaime-rivera-reel.mov"
-                width={1920}
-                height={1080}
-              />
-            </div>
-            <div><ResumeButton /></div>
-            <div><Contact /></div>
-            <div><Footer /></div>
-          </div>
-        } />
-        <Route path="/portfolio" element={<><Portfolio /><Footer /></>} />
-        <Route path="/terms" element={<><Terms /><Footer /></>} />
-      </Routes>
-    </div>
-  </Router>
+    <Routes>
+      <Route path="/" element={<HostedRootRoute />} />
+      <Route path="/dev" element={<DevHomePage />} />
+      <Route path="/dev/dsp-dictionary" element={<LegacyRedirect to="/dev#dsp-dictionary" />} />
+      <Route path="/contact" element={<ContactPage />} />
+      <Route path="/art" element={<ArtHomePage />} />
+      <Route path="/terms" element={<><Terms /><Footer /></>} />
+      {["/film", "/live", "/live/companies", "/film/samples", "/portfolio", "/samples", "/companies"].map((path) => (
+        <Route key={path} path={path} element={<LegacyRedirect to={
+          ["/companies", "/live/companies"].includes(path) ? "/#recent-clients"
+            : path === "/live" ? "/#live-credits"
+              : path === "/film" ? "/#credits" : "/#portfolio-films"
+        } />} />
+      ))}
+      {["/software", "/projects", "/dev/projects"].map((path) => (
+        <Route key={path} path={path} element={<LegacyRedirect to="/dev" />} />
+      ))}
+      <Route path="/dsp-dictionary" element={<LegacyRedirect to="/dev#dsp-dictionary" />} />
+      <Route path="/art/about" element={<Navigate to="/art" replace />} />
+      <Route path="/about" element={<Navigate to="/art" replace />} />
+    </Routes>
   );
+}
+
+export function AppShell() {
+  return <div className="App" id="application"><Menu /><AppRoutes /></div>;
+}
+
+function App() {
+  return <BrowserRouter><ScrollManager /><AppShell /></BrowserRouter>;
 }
 
 export default App;

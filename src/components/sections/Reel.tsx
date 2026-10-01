@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { getStorage, ref, getDownloadURL } from 'firebase/storage';
+import { useEffect, useRef, useState, type FC } from "react";
+import { getStorageAssetUrl } from "../../lib/firebase";
+import { getSiteRoute } from "../../config/siteSections";
 
 interface ReelProps {
   storagePath: string;
@@ -7,35 +8,64 @@ interface ReelProps {
   height?: number | string;
 }
 
-const Reel: React.FC<ReelProps> = ({ storagePath, width = '100%', height = 'auto' }) => {
+const Reel: FC<ReelProps> = ({
+  storagePath,
+  width = "100%",
+  height = "auto",
+}) => {
   const [videoUrl, setVideoUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [shouldLoad, setShouldLoad] = useState(false);
+  const sectionRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const storage = getStorage();
-    const videoRef = ref(storage, storagePath);
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setShouldLoad(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "200px" }
+    );
 
-    getDownloadURL(videoRef)
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!shouldLoad) {
+      return;
+    }
+
+    getStorageAssetUrl(storagePath)
       .then((url) => setVideoUrl(url))
       .catch((err) => setError(err.message));
-  }, [storagePath]);
-
-  if (error) {
-    return <div style={{ color: 'red' }}>Error loading video: {error}</div>;
-  }
-
-  if (!videoUrl) {
-    return <div>Loading video...</div>;
-  }
+  }, [shouldLoad, storagePath]);
 
   return (
-    <video
-      src={videoUrl}
-      controls
-      width={width}
-      height={height}
-      style={{ borderRadius: '8px', backgroundColor: '#000' }}
-    />
+    <section id="reel" ref={sectionRef}>
+      {error && (
+        <p className="media-placeholder">
+          The reel is currently unavailable. <a href={getSiteRoute("film", "/samples")}>Hear film samples</a>.
+        </p>
+      )}
+      {!error && !videoUrl && <div className="media-placeholder">Loading reel...</div>}
+      {videoUrl && (
+        <video
+          src={videoUrl}
+          controls
+          playsInline
+          preload="metadata"
+          width={width}
+          height={height}
+          style={{ borderRadius: "8px", backgroundColor: "#000" }}
+        />
+      )}
+    </section>
   );
 };
 

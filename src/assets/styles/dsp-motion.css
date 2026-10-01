@@ -1,0 +1,280 @@
+.dsp-gain-demo {
+  --dsp-accent: #ffa500;
+  margin: 0;
+  padding: clamp(20px, 3vw, 32px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.025);
+  color: #fff;
+  text-align: left;
+}
+
+.dsp-gain-demo .dsp-demo-eyebrow {
+  margin: 0 0 10px;
+  font-family: "Courier New", monospace;
+  font-size: 0.78rem;
+  color: var(--dsp-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.dsp-gain-demo h2,
+.dsp-gain-demo h3,
+.dsp-gain-demo h4,
+.dsp-gain-demo h5 {
+  margin: 0 0 12px;
+  font-size: clamp(1.45rem, 3vw, 2.15rem);
+}
+
+.dsp-gain-demo.dsp-demo-compact {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+
+.dsp-gain-demo.dsp-demo-compact figcaption > p:last-child {
+  max-width: 74ch;
+  color: #bbb;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+#dsp-dictionary-page .dictionary-shell {
+  width: min(960px, calc(100% - 48px));
+}
+
+#dsp-dictionary-page .dictionary-hero {
+  padding: 20px 0 24px;
+  text-align: left;
+}
+
+#dsp-dictionary-page .dictionary-navigation {
+  padding: 0 0 28px;
+}
+
+.dictionary-concept-index {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ddd;
+  text-align: left;
+  font: 0.85rem/1.5 "Courier New", monospace;
+  scroll-margin-top: 120px;
+}
+
+.dictionary-concept-index > summary {
+  width: fit-content;
+  min-height: 44px;
+  padding: 12px 0;
+  cursor: pointer;
+}
+
+.dictionary-concept-index > summary span {
+  margin-left: 12px;
+  color: #888;
+  font-size: 0.75rem;
+}
+
+.dictionary-index-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 24px;
+  padding: 8px 0 24px;
+}
+
+.dictionary-index-group h2 {
+  margin: 0 0 8px;
+  color: #888;
+  font: 0.75rem/1.5 "Courier New", monospace;
+}
+
+.dictionary-index-group ul {
+  display: grid;
+  gap: 2px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dictionary-index-group a {
+  display: block;
+  width: fit-content;
+  padding: 5px 0;
+  color: #eee;
+  text-decoration: none;
+}
+
+.dictionary-index-group a:hover,
+.dictionary-concept-index > summary:hover {
+  color: orange;
+}
+
+.dictionary-index-group a:focus-visible,
+.dictionary-concept-index > summary:focus-visible {
+  outline: 2px solid orange;
+  outline-offset: 4px;
+}
+
+.dictionary-concept {
+  position: relative;
+  padding: 32px 0 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+  scroll-margin-top: 120px;
+}
+
+.dictionary-anchor {
+  position: absolute;
+  top: 0;
+  scroll-margin-top: 120px;
+}
+
+@media (max-width: 480px) {
+  #dsp-dictionary-page .dictionary-shell {
+    width: calc(100% - 32px);
+  }
+
+  .dictionary-index-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px 16px;
+  }
+
+  .dictionary-concept {
+    padding: 24px 0 32px;
+  }
+
+  .dictionary-index-group a {
+    min-height: 36px;
+  }
+}
+
+.dsp-gain-demo figcaption > p:last-child {
+  max-width: 65ch;
+  margin: 0;
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.dsp-demo-legend {
+  display: flex;
+  gap: 24px;
+  margin-top: 24px;
+  font-family: "Courier New", monospace;
+  font-size: 0.8rem;
+}
+
+.dsp-demo-legend span::before {
+  content: "";
+  display: inline-block;
+  width: 22px;
+  margin-right: 8px;
+  border-top: 2px solid #939393;
+  vertical-align: middle;
+}
+
+.dsp-demo-legend .dsp-demo-output-key::before {
+  border-color: var(--dsp-accent);
+}
+
+.dsp-demo-waveform {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 290px;
+  margin: 12px 0 20px;
+  overflow: visible;
+}
+
+.dsp-demo-waveform path {
+  fill: none;
+  vector-effect: non-scaling-stroke;
+}
+
+.dsp-demo-grid {
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 1;
+}
+
+.dsp-demo-axis {
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 1;
+}
+
+.dsp-demo-axis-label {
+  fill: #bbb;
+  font-family: "Courier New", monospace;
+  font-size: 10px;
+}
+
+.dsp-demo-input {
+  stroke: #939393;
+  stroke-width: 2;
+  stroke-dasharray: 4 4;
+}
+
+.dsp-demo-output {
+  stroke: var(--dsp-accent);
+  stroke-width: 2;
+}
+
+.dsp-demo-control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  font-family: "Courier New", monospace;
+  font-size: 0.9rem;
+}
+
+.dsp-demo-control output {
+  font-variant-numeric: tabular-nums;
+  color: var(--dsp-accent);
+}
+
+.dsp-demo-control input {
+  grid-column: 1 / -1;
+  width: 100%;
+  min-height: 32px;
+  margin: 0;
+  accent-color: var(--dsp-accent);
+  cursor: pointer;
+}
+
+.dsp-demo-control input:focus-visible {
+  outline: 2px solid var(--dsp-accent);
+  outline-offset: 4px;
+}
+
+.dsp-gain-demo .dsp-demo-equation {
+  margin: 16px 0 0;
+  color: #ccc;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+}
+
+#dsp-dictionary-page .dictionary-topic .dsp-gain-demo {
+  margin: 24px 0;
+}
+
+.dev-dsp-demo-section {
+  padding: 12px 0 32px;
+}
+
+#dsp-dictionary-page .dictionary-card:focus-visible {
+  outline: 2px solid orange;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #dsp-dictionary-page .dictionary-card,
+  .dev-site-page .site-utility-card {
+    transition: none;
+  }
+
+  #dsp-dictionary-page .dictionary-card:hover,
+  .dev-site-page .site-utility-card:hover {
+    transform: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .dsp-demo-control {
+    font-size: 0.8rem;
+  }
+}

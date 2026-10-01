@@ -1,12 +1,12 @@
-import React from "react";
-
 function Title(props) {
+  const HeadingTag = props.as || "h2";
+
   return (
     <div
       style={{ backgroundColor: props.color, border: props.border }}
       className="section-title"
     >
-      <h1 style={{ color: props.fontColor }}>{props.title}</h1>
+      <HeadingTag style={{ color: props.fontColor }}>{props.title}</HeadingTag>
     </div>
   );
 }
