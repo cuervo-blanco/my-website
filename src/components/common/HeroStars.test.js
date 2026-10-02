@@ -18,6 +18,10 @@ test("reduced-motion visitors receive static decorative stars", async () => {
   const options = load.mock.calls[0][0].options;
   expect(options.particles.move.enable).toBe(false);
   expect(options.particles.opacity.animation.enable).toBe(false);
+  expect(options.particles.shape.type).toBe("star");
+  expect(options.particles.paint.color.value).toBe("#fff");
+  expect(options.particles.number.value).toBeLessThanOrEqual(24);
+  expect(options.particles.color).toBeUndefined();
   expect(options.fullScreen.enable).toBe(false);
   expect(container.firstChild).toHaveAttribute("aria-hidden", "true");
   unmount();

@@ -3,7 +3,7 @@ import { afterEach, expect, test, vi } from "vitest";
 
 vi.mock("./lib/firebase", () => ({ logPageView: vi.fn() }));
 vi.mock("./components/sections/Reel.tsx", () => ({ default: () => <div>Reel</div> }));
-vi.mock("./components/common/HeroStars", () => ({ default: () => <div aria-hidden="true" /> }));
+vi.mock("./components/common/HeroStars", () => ({ default: () => <div id="hero-stars" aria-hidden="true" /> }));
 import App from "./App";
 
 afterEach(() => { window.history.pushState({}, "", "/"); });
@@ -30,6 +30,21 @@ test("orders the homepage as Film, Companies, then Live & Theatre", () => {
   expect(within(billy).getByText("A1")).toBeVisible();
   expect(within(spotlight).getByText("TD")).toBeVisible();
   expect(within(live).getAllByRole("heading", { name: "Reverend Billy and the Stop Shopping Choir" })).toHaveLength(1);
+});
+
+test("the service submenu has accessible links to each kind of work", () => {
+  render(<App />);
+  const destinations = within(screen.getByRole("navigation", { name: "Explore my work" }));
+  for (const [name, href] of [
+    ["sound mixer", "/#credits"], ["sound designer", "/#credits"], ["film", "/#credits"],
+    ["theater", "/#live-credits"], ["Software developer", "/dev"],
+    ["audio programmer", "/dev#dsp-dictionary"], ["animator", "/art"], ["Get in touch ↗", "/contact"],
+  ]) expect(destinations.getByRole("link", { name, exact: true })).toHaveAttribute("href", href);
+  fireEvent.click(destinations.getByRole("link", { name: "audio programmer", exact: true }));
+  expect(window.location.pathname).toBe("/dev");
+  expect(window.location.hash).toBe("#dsp-dictionary");
+  expect(screen.getByRole("heading", { name: "DSP Dictionary" })).toBeVisible();
+  expect(document.querySelector("#hero-stars").parentElement).toHaveAttribute("id", "application");
 });
 
 test.each([
@@ -71,6 +86,7 @@ test("keeps all companies on the combined page", () => {
   const directory = screen.getByRole("region", { name: "Companies I’ve Worked With & Still Work With" });
   expect(within(directory).getByRole("img", { name: "SDN Broadcast" })).toBeVisible();
   expect(within(directory).getByRole("img", { name: "McCabe Event Services" })).toBeVisible();
+  expect(within(directory).getByRole("img", { name: "Amas Musical Theatre" })).toHaveAttribute("data-logo-backdrop", "light");
   expect(within(directory).getAllByRole("listitem")).toHaveLength(19);
   expect(within(directory).queryByText("The Immediate Life")).not.toBeInTheDocument();
   for (const name of ["Encore", "Creative Technology", "Blackstone", "Oracle", "Dataiku"]) {

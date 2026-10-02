@@ -30,7 +30,7 @@ export const companyGroups = [
       { name: "Creative Technology", logo: creativeTechnologyLogo },
       { name: "New Federal Theatre", logo: newFederalTheatreLogo, logoTone: "light" },
       { name: "CPA Theatricals", logo: cpaTheatricalsLogo },
-      { name: "Amas Musical Theatre", logo: amasMusicalTheatreLogo },
+      { name: "Amas Musical Theatre", logo: amasMusicalTheatreLogo, logoBackdrop: "light" },
     ],
   },
   {

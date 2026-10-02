@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { getHeroStarEngine } from "../../lib/heroStars";
 
-const paletteTokens = ["mint", "lilac", "pink", "gold", "green", "orange"];
-
 export default function HeroStars() {
   const host = useRef(null);
   const [reduceMotion, setReduceMotion] = useState(false);
@@ -20,8 +18,6 @@ export default function HeroStars() {
     let cancelled = false;
     let container;
     const element = host.current;
-    const styles = getComputedStyle(document.documentElement);
-    const colors = paletteTokens.map((name) => styles.getPropertyValue(`--constellation-${name}`).trim());
 
     async function start() {
       const engine = await getHeroStarEngine();
@@ -36,22 +32,22 @@ export default function HeroStars() {
           pauseOnBlur: true,
           pauseOnOutsideViewport: true,
           particles: {
-            number: { value: window.innerWidth < 600 ? 12 : 26, density: { enable: false } },
-            color: { value: colors },
+            number: { value: window.innerWidth < 600 ? 10 : 24, density: { enable: false } },
+            paint: { color: { value: "#fff" } },
             shape: { type: "star" },
-            size: { value: { min: 1.5, max: 4 } },
+            size: { value: { min: 1, max: 2.5 } },
             opacity: {
-              value: { min: 0.2, max: 0.65 },
-              animation: { enable: !reduceMotion, speed: 0.15, sync: false },
+              value: { min: 0.3, max: 0.7 },
+              animation: { enable: !reduceMotion, speed: 0.1, sync: false },
             },
-            move: { enable: !reduceMotion, speed: 0.12, direction: "none", outModes: { default: "out" } },
+            move: { enable: !reduceMotion, speed: 0.15, direction: "none", outModes: { default: "out" } },
           },
         },
       });
       if (cancelled) container?.destroy();
     }
 
-    // The original constellation artwork remains visible if the effect cannot load.
+    // Decoration must never prevent visitors from opening the portfolio.
     start().catch(() => {});
     return () => { cancelled = true; container?.destroy(); };
   }, [reduceMotion]);

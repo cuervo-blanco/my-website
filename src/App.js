@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { BrowserRouter, Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import Menu from "./components/common/Menu";
+import HeroStars from "./components/common/HeroStars";
 import Footer from "./components/layout/Footer";
 import Terms from "./pages/Terms";
 import FilmHomePage from "./pages/FilmHomePage";
@@ -64,7 +65,7 @@ export function AppRoutes() {
 }
 
 export function AppShell() {
-  return <div className="App" id="application"><Menu /><AppRoutes /></div>;
+  return <div className="App" id="application"><HeroStars /><Menu /><AppRoutes /></div>;
 }
 
 function App() {
