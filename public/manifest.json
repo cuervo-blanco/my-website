@@ -3,14 +3,19 @@
   "name": "Jaime Osvaldo Portfolio",
   "icons": [
     {
-      "src": "brand-icon.svg",
+      "src": "dragon-icon.svg",
       "type": "image/svg+xml",
       "sizes": "any"
     },
     {
-      "src": "og-image.png",
+      "src": "dragon-192.png",
       "type": "image/png",
-      "sizes": "1200x630"
+      "sizes": "192x192"
+    },
+    {
+      "src": "dragon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
     }
   ],
   "start_url": ".",
