@@ -35,7 +35,7 @@ export default function HeroStars() {
             number: { value: window.innerWidth < 600 ? 10 : 24, density: { enable: false } },
             paint: { color: { value: "#fff" } },
             shape: { type: "star" },
-            size: { value: { min: 1, max: 2.5 } },
+            size: { value: { min: 1.5, max: 3.5 } },
             opacity: {
               value: { min: 0.3, max: 0.7 },
               animation: { enable: !reduceMotion, speed: 0.1, sync: false },
