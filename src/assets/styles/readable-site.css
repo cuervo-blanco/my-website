@@ -240,6 +240,9 @@
   font-size: clamp(2.5rem, 8vw, 7.5rem);
   line-height: 1.15;
 }
+/* Start the artwork at the navigation border; keep the content's top spacing. */
+#application #homepage.work-page { padding-top: 72px; }
+#application #homepage.work-page > #hero { padding-top: 28px; }
 #application #recent-clients,
 #application .work-live,
 #application .film-work,
@@ -270,7 +273,10 @@
   #application #menu #menu-container.is-expanded { height: 64px; min-height: 64px; padding: 0 16px; }
   #application #menu #menu-bars { margin: 0 auto; width: 44px; height: 44px; }
   #application #menu #hidden-menu .menu-link { justify-content: center; }
+  #application #homepage.work-page { padding-top: 64px; }
+  #application #homepage.work-page > #hero { padding-top: 36px; }
 }
 @media (max-width: 560px) {
   #application .work-hero__services { padding-inline: 0; }
+  #application #homepage.work-page > #hero { padding-top: 20px; }
 }
