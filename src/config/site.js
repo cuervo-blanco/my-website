@@ -8,9 +8,9 @@ export const siteMetadata = {
   description:
     "New York sound mixer and sound designer for film and theater. Explore Jaime Osvaldo's credits, audio programming, software development, and animation.",
   url: "https://jaimeosvaldo.com",
-  defaultSocialImage: "/og-image.png",
-  socialImageAlt: "Jaime Osvaldo website preview",
-  themeColor: "#040404",
+  defaultSocialImage: "/studio-preview.jpg",
+  socialImageAlt: "Jaime Osvaldo — sound, software and animation in New York",
+  themeColor: "#10110f",
   email: clientEnv.VITE_CONTACT_EMAIL || "",
   location: "New York, NY",
   resumePath: "/CV/JaimeORiveraCV-2025v09.pdf",

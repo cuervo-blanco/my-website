@@ -5,6 +5,7 @@ import FilmCredits from "../components/sections/FilmCredits";
 import Portfolio from "../components/sections/Portfolio";
 import RecentClients from "../components/sections/RecentClients";
 import LiveCredits from "../components/sections/LiveCredits";
+import StudioHighlights from "../components/sections/StudioHighlights";
 import PageSeo from "../components/common/PageSeo";
 import { pageMetadata, siteMetadata } from "../config/site";
 import { workStructuredData } from "../config/prerender";
@@ -16,6 +17,7 @@ function FilmHomePage() {
       <PageSeo {...pageMetadata.film} structuredData={workStructuredData} />
       <main id="homepage" className="site-home site-home--film work-page">
         <Hero compact />
+        <StudioHighlights />
         <FilmCredits />
         <div className="work-page__shell work-page__reel surface-panel">
           <details>

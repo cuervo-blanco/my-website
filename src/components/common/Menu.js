@@ -1,82 +1,35 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import useSiteNavigation from "../../hooks/useSiteNavigation";
 import useSectionSite from "../../hooks/useSectionSite";
-import SiteIcon from "./SiteIcon";
+import "../../assets/styles/navigation-refresh.css";
 
 function Menu() {
-  const [showHeader, setShowHeader] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
   const toggleRef = useRef(null);
   const mobileMenuRef = useRef(null);
-  const lastScrollTopRef = useRef(0);
   const { getItemHref, handleNavigationClick } = useSiteNavigation();
   const { navigation } = useSectionSite();
   const location = useLocation();
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
-        setIsExpanded(false);
-      }
+      if (window.innerWidth > 768) setIsExpanded(false);
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const handleScroll = useCallback(() => {
-    if (window.innerWidth <= 768) {
-      setShowHeader(true);
-      return;
-    }
-
-    if (isExpanded) {
-      setShowHeader(true);
-      return;
-    }
-
-    const currentScrollTop =
-      window.pageYOffset || document.documentElement.scrollTop;
-
-    if (currentScrollTop <= 32) {
-      setShowHeader(true);
-      lastScrollTopRef.current = 0;
-      return;
-    }
-
-    if (currentScrollTop < lastScrollTopRef.current) {
-      setShowHeader(true);
-    } else if (currentScrollTop - lastScrollTopRef.current > 12) {
-      setShowHeader(false);
-    }
-
-    lastScrollTopRef.current = currentScrollTop <= 0 ? 0 : currentScrollTop;
-  }, [isExpanded]);
-
-  useEffect(() => {
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleScroll);
-    };
-  }, [handleScroll]);
 
   useEffect(() => {
     setIsExpanded(false);
   }, [location.hash, location.pathname]);
 
   useEffect(() => {
+    if (!isExpanded) return undefined;
     const previousOverflow = document.body.style.overflow;
-    if (isExpanded) document.body.style.overflow = "hidden";
-    if (isExpanded) mobileMenuRef.current?.querySelector("a")?.focus();
-
-    return () => {
-      document.body.style.overflow = previousOverflow;
-    };
+    document.body.style.overflow = "hidden";
+    mobileMenuRef.current?.querySelector("a")?.focus();
+    return () => { document.body.style.overflow = previousOverflow; };
   }, [isExpanded]);
 
   const handleMenuKeyDown = (event) => {
@@ -89,77 +42,74 @@ function Menu() {
       const controls = [toggleRef.current, ...mobileMenuRef.current.querySelectorAll("a")];
       const first = controls[0];
       const last = controls[controls.length - 1];
-      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     }
   };
 
-  const handleNavigation = (event, item) => {
-    handleNavigationClick(event, item);
-    setIsExpanded(false);
-  };
+  const renderNavigationLink = (item, mobile = false) => {
+    const href = getItemHref(item);
+    const isContact = item.label === "Contact";
+    const isCurrent = item.type === "route" && location.pathname === item.to;
+    const props = {
+      className: `studio-nav__link${isContact ? " studio-nav__link--contact" : ""}`,
+      "aria-current": isCurrent ? "page" : undefined,
+      tabIndex: isExpanded && !mobile ? -1 : undefined,
+    };
+    const label = isContact && !mobile ? "Let's talk" : item.label;
+    const content = <><span>{label}</span>{isContact && <span className="studio-nav__arrow" aria-hidden="true">↗</span>}</>;
 
-  const renderNavigationLink = (item) => {
     if (item.type === "external") {
-      return (
-        <a
-          className="menu-link"
-          href={getItemHref(item)}
-          target={item.target}
-          rel={item.rel}
-          onClick={() => setIsExpanded(false)}
-        >
-          <span>{item.label}</span>
-        </a>
-      );
+      return <a {...props} href={href} target={item.target} rel={item.rel} onClick={() => setIsExpanded(false)}>{content}</a>;
     }
-
     return (
-      <Link
-        className="menu-link"
-        to={getItemHref(item)}
-        onClick={(event) => handleNavigation(event, item)}
-      >
-        <span>{item.label}</span>
-      </Link>
+      <Link {...props} to={href} onClick={(event) => {
+        handleNavigationClick(event, item);
+        setIsExpanded(false);
+      }}>{content}</Link>
     );
   };
 
   return (
-    <header id="menu" onKeyDown={handleMenuKeyDown} className={`header ${showHeader ? "" : "hide"} ${isExpanded ? "menu-open" : ""}`}>
-      <div id="menu-container" className={isExpanded ? "is-expanded" : ""}>
-        <nav aria-label="Primary">
-          <ul className="menu-list">
-            {navigation.map((item) => (
-              <li key={item.label}>
-                {renderNavigationLink(item)}
-              </li>
-            ))}
-          </ul>
+    <header className={`studio-header${isExpanded ? " studio-header--expanded" : ""}`} onKeyDown={handleMenuKeyDown}>
+      <div className="studio-header__inner">
+        <Link className="studio-wordmark" to="/" aria-label="Jaime Osvaldo home" tabIndex={isExpanded ? -1 : undefined} onClick={() => setIsExpanded(false)}>
+          <img src="/dragon-icon.svg" alt="" width="38" height="38" />
+          <span>JAIME<span>OSVALDO</span></span>
+        </Link>
+
+        <nav className="studio-nav" aria-label="Primary">
+          <ul>{navigation.map((item) => <li key={item.label}>{renderNavigationLink(item)}</li>)}</ul>
         </nav>
 
         <button
           type="button"
+          className="studio-menu-toggle"
           ref={toggleRef}
-          onClick={() => setIsExpanded((currentValue) => !currentValue)}
-          id="menu-bars"
+          onClick={() => setIsExpanded((current) => !current)}
           aria-expanded={isExpanded}
-          aria-controls="hidden-menu"
+          aria-controls="studio-mobile-menu"
           aria-label={isExpanded ? "Close menu" : "Open menu"}
         >
-          {isExpanded ? <span aria-hidden="true">×</span> : <SiteIcon name="menu" />}
+          <span>{isExpanded ? "Close" : "Menu"}</span>
+          <span className="studio-menu-toggle__icon" aria-hidden="true"><i /><i /></span>
         </button>
-
-        {isExpanded && (
-          <div id="hidden-menu" ref={mobileMenuRef}>
-            <nav aria-label="Mobile">
-              <ul>
-                {navigation.map((item) => <li key={item.label}>{renderNavigationLink(item)}</li>)}
-              </ul>
-            </nav>
-          </div>
-        )}
       </div>
+
+      {isExpanded && (
+        <div id="studio-mobile-menu" className="studio-mobile-menu" ref={mobileMenuRef}>
+          <p className="studio-mobile-menu__label">Explore</p>
+          <nav aria-label="Mobile">
+            <ul>{navigation.map((item) => <li key={item.label}>{renderNavigationLink(item, true)}</li>)}</ul>
+          </nav>
+          <p className="studio-mobile-menu__note">Sound · Software · Animation</p>
+        </div>
+      )}
     </header>
   );
 }

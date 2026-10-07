@@ -2,6 +2,16 @@
 
 Portfolio and marketing site for Jaime Osvaldo built with React, Vite, and deployed to Firebase Hosting.
 
+## October 2026 redesign
+
+The current design uses charcoal, warm white, electric lime, self-hosted condensed type, and the original Godzilla/Jaime artwork. The homepage includes an immediate audio preview, entrances to Dev and Animation, searchable film credits with role filters, scene samples, companies, and live work. Dev's full DSP dictionary is searchable; history navigation reveals linked concepts even when a search had hidden them. Animation and Contact share the same design. Main styling is in `src/assets/styles/studio.css`; navigation and footer styling is in `src/assets/styles/navigation-refresh.css`.
+
+The complete previous design is browsable at `/classic/`, with its original Dev, Animation, Contact, and Terms pages. Its independent bundled assets are saved in `public/classic` and copied into production by Vite. The footer links back to it. It shares the existing public audio, video, posters, and résumé. Keep those assets when changing content. The archive carries `noindex,follow` in both HTML and Hosting headers so it does not compete with the main site's search pages.
+
+Exact original source and recovery instructions are saved in [the recovery README](content-archive/2026-10-07-original-site.README.md). The source snapshot is verified against original commit `53f787109707d6422219307a03afeb78d3489688`. `node scripts/archive-original.mjs` reconstructs the archive from that fixed commit and refuses to overwrite an existing archive.
+
+`public/studio-preview.jpg` supplies the new social-link preview. The build generates the sitemap from indexable prerender routes, with canonical metadata and connected person, service, and credited-work structured data. Unknown production URLs return a real 404 with links back to Work and Contact. The local production preview mirrors Hosting routes, including the archive and 404 responses.
+
 ## Stack
 
 - React 18 with `react-router-dom`
@@ -173,6 +183,6 @@ The canonical portfolio pages are `/` (Film, Companies, Live & Theatre), `/dev` 
 
 The original descriptions are preserved outside the public bundle in `content-archive/2026-10-01-original-descriptions.json`. Its `files` object contains exact pre-revision source text keyed by path; see `content-archive/README.md`.
 
-The `--constellation-*` color tokens in `src/assets/styles/readable-site.css` match the hero artwork and drive text accents. Yeseva One headings stay white. Section headings use matching wide outlined rectangles; the hero name and Dev, Animation, and Contact page titles stay unboxed. Contact content aligns to the left. The hero service sentences are a destination menu; complete linked phrases use palette colors. `HeroStars` mounts once in the application shell and loads tsParticles' basic bundle and star shape. Its fixed canvas appears throughout every page, uses 10 white stars on mobile and 24 on larger screens at 24 FPS, pauses when the tab loses focus, and disables drift and twinkling for reduced-motion preferences. The original constellation image remains behind the hero only, fading into black. Section panels are translucent enough for the decorative stars to remain visible without covering text or media.
+The earlier constellation colors and Yeseva One headings remain in the preserved `/classic/` design. The current `studio.css` imports after the existing styles and sets the active typography, layout, and colors. `HeroStars` still mounts once in the application shell, with its fixed canvas subdued behind the new design. It uses 10 white stars on mobile and 24 on larger screens at 24 FPS, pauses when the tab loses focus, and disables drift and twinkling for reduced-motion preferences. The new interface also respects reduced motion when navigating to page sections.
 
 Frontend checks run with `npm run test:ci`. The Functions backend uses a separate Node test runner: `npm --prefix functions test`.

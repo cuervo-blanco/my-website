@@ -85,6 +85,24 @@
     ],
     "headers": [
       {
+        "source": "/classic{,/**}",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex,follow"
+          }
+        ]
+      },
+      {
+        "source": "/404.html",
+        "headers": [
+          {
+            "key": "X-Robots-Tag",
+            "value": "noindex,follow"
+          }
+        ]
+      },
+      {
         "source": "/firmware/firmware.bin",
         "headers": [
           {
@@ -145,8 +163,28 @@
         "destination": "/contact/index.html"
       },
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/classic/dev",
+        "destination": "/classic/dev/index.html"
+      },
+      {
+        "source": "/classic/art",
+        "destination": "/classic/art/index.html"
+      },
+      {
+        "source": "/classic/contact",
+        "destination": "/classic/contact/index.html"
+      },
+      {
+        "source": "/classic/terms",
+        "destination": "/classic/terms/index.html"
+      },
+      {
+        "source": "/classic",
+        "destination": "/classic/index.html"
+      },
+      {
+        "source": "/classic/**",
+        "destination": "/classic/index.html"
       }
     ]
   }

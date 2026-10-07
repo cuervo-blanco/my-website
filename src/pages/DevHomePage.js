@@ -14,7 +14,9 @@ function DevHomePage() {
       <main className="section-site-page dev-site-page">
         <div className="section-site-shell dev-intro surface-panel">
           <header className="dev-work-header">
+            <p className="studio-kicker">Sound, under the hood</p>
             <h1>Dev</h1>
+            <p className="studio-page-tagline">A playground for your ears. And your brain.</p>
           </header>
           <nav className="dev-work-links" aria-label="Dev work">
             <a href={githubProfileUrl} target="_blank" rel="noopener noreferrer">

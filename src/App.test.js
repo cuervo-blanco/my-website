@@ -11,10 +11,10 @@ afterEach(() => { window.history.pushState({}, "", "/"); });
 test("puts work on the homepage with contact in primary navigation", () => {
   render(<App />);
   const navigation = within(screen.getByRole("navigation", { name: "Primary" }));
-  expect(navigation.getAllByRole("link").map((link) => link.textContent)).toEqual(["Work", "Dev", "Animation", "Contact"]);
+  for (const name of ["Work", "Dev", "Animation", "Let's talk"]) expect(navigation.getByRole("link", { name, exact: true })).toBeVisible();
   expect(screen.getByRole("heading", { name: "Jaime Osvaldo", level: 1 })).toBeVisible();
   expect(screen.getByRole("link", { name: "Résumé" })).toBeInTheDocument();
-  expect(navigation.getByRole("link", { name: "Contact" })).toHaveAttribute("href", "/contact");
+  expect(navigation.getByRole("link", { name: "Let's talk" })).toHaveAttribute("href", "/contact");
   expect(screen.queryByRole("heading", { name: "Contact" })).not.toBeInTheDocument();
   expect(document.title).toMatch(/New York Sound Mixer & Sound Designer/i);
 });
@@ -124,7 +124,7 @@ test("puts GitHub above the complete interactive DSP dictionary on Dev", () => {
   expect(screen.getAllByRole("slider").length).toBeGreaterThan(28);
   expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute("href", "https://jaimeosvaldo.com/dev");
   expect(document.querySelector('script[data-seo="structured-data"]').textContent).not.toContain("Delay Compensation Plugin");
-  expect(within(screen.getByRole("navigation", { name: "Primary" })).getByRole("link", { name: "Contact" })).toHaveAttribute("href", "/contact");
+  expect(within(screen.getByRole("navigation", { name: "Primary" })).getByRole("link", { name: "Let's talk" })).toHaveAttribute("href", "/contact");
 });
 
 test("shows all 28 interactive dictionary lessons without the original essays", () => {
@@ -139,6 +139,23 @@ test("shows all 28 interactive dictionary lessons without the original essays", 
   expect(within(filter).getByRole("slider", { name: "Cutoff", exact: true })).toBeInTheDocument();
   expect(filter.querySelector("details")).not.toHaveAttribute("open");
   expect(within(filter).getByText(/H\(z\)/)).toBeVisible();
+});
+
+test("DSP search narrows the interactive lessons and can restore the full dictionary", () => {
+  window.history.pushState({}, "", "/dev");
+  const { container } = render(<App />);
+  const search = screen.getByRole("searchbox", { name: "Search DSP concepts" });
+  fireEvent.change(search, { target: { value: "compression" } });
+  expect(container.querySelectorAll("[data-dsp-concept]")).toHaveLength(2);
+  expect(screen.getByRole("heading", { name: "Compression", exact: true })).toBeVisible();
+  expect(screen.getByRole("heading", { name: "Multiband Compression", exact: true })).toBeVisible();
+  fireEvent.click(screen.getByRole("button", { name: "Show all concepts" }));
+  expect(container.querySelectorAll("[data-dsp-concept]")).toHaveLength(28);
+  fireEvent.change(search, { target: { value: "compression" } });
+  window.history.pushState({}, "", "/dev#gain");
+  fireEvent.popState(window);
+  expect(search).toHaveValue("");
+  expect(container.querySelector('[data-dsp-concept="gain"]')).toBeInTheDocument();
 });
 
 test("presents Animation on a single page with a user-controlled video", () => {

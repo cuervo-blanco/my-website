@@ -1,0 +1,25 @@
+{
+  "short_name": "Jaime Osvaldo",
+  "name": "Jaime Osvaldo Portfolio",
+  "icons": [
+    {
+      "src": "dragon-icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    },
+    {
+      "src": "dragon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "dragon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#040404",
+  "background_color": "#040404"
+}

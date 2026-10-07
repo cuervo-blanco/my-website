@@ -39,9 +39,11 @@ function upsertLink({ rel, href }) {
 }
 
 function upsertStructuredData(structuredData) {
-  const existingNode = document.head.querySelector(
+  const existingNodes = [...document.head.querySelectorAll(
     'script[data-seo="structured-data"], script[data-prerender="structured-data"]'
-  );
+  )];
+  const existingNode = existingNodes.shift();
+  existingNodes.forEach((node) => node.remove());
 
   if (!structuredData) {
     if (existingNode) {
@@ -85,8 +87,9 @@ function PageSeo({
   description,
   path = "/",
   image = siteMetadata.defaultSocialImage,
+  imageAlt = siteMetadata.socialImageAlt,
   type = "website",
-  robots = "index,follow",
+  robots = "index,follow,max-image-preview:large",
   keywords,
   structuredData,
 }) {
@@ -151,7 +154,7 @@ function PageSeo({
     upsertMeta({
       attr: "property",
       value: "og:image:alt",
-      content: siteMetadata.socialImageAlt,
+      content: imageAlt,
     });
     upsertMeta({
       attr: "property",
@@ -187,7 +190,7 @@ function PageSeo({
     upsertMeta({
       attr: "name",
       value: "twitter:image:alt",
-      content: siteMetadata.socialImageAlt,
+      content: imageAlt,
     });
 
     upsertLink({
@@ -196,7 +199,7 @@ function PageSeo({
     });
 
     upsertStructuredData(structuredData);
-  }, [description, image, keywords, path, robots, structuredData, title, type]);
+  }, [description, image, imageAlt, keywords, path, robots, structuredData, title, type]);
 
   return null;
 }

@@ -21,7 +21,7 @@ export function scrollToElementById(elementId, options = {}, attempt = 0) {
       disclosure = disclosure.parentElement?.closest("details");
     }
     element.scrollIntoView({
-      behavior: options.behavior || "smooth",
+      behavior: options.behavior || (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"),
       block: options.block || "start",
     });
     return;

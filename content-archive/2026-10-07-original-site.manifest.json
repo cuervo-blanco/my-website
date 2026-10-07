@@ -1,0 +1,2913 @@
+{
+  "originalCommit": "53f787109707d6422219307a03afeb78d3489688",
+  "originalTree": "e3e807b06f7485393be0762346bd5cc87df6a747",
+  "sourceArchive": "2026-10-07-original-site.source.tar.gz",
+  "sourceArchiveSha256": "0d7a0292ac82668cad30c8e0a06d0ad40ac59d22123911e89d7c45d5dab18d23",
+  "sourceArchiveFiles": [
+    ".env.example",
+    ".firebase/hosting.YnVpbGQ.cache",
+    ".firebaserc",
+    ".github/workflows/firebase-hosting-merge.yml",
+    ".github/workflows/firebase-hosting-pull-request.yml",
+    ".gitignore",
+    "README.md",
+    "content-archive/2026-10-01-original-descriptions.json",
+    "content-archive/README.md",
+    "content-sources/live-theatre-media.md",
+    "docs/film-artwork-sources.md",
+    "firebase.json",
+    "functions/.gitignore",
+    "functions/index.js",
+    "functions/licensing/activationRepository.js",
+    "functions/licensing/adminAuth.js",
+    "functions/licensing/app.js",
+    "functions/licensing/database.js",
+    "functions/licensing/juceRsa.js",
+    "functions/licensing/licenseRepository.js",
+    "functions/licensing/signedLicense.js",
+    "functions/package-lock.json",
+    "functions/package.json",
+    "functions/sql/001_licensing_schema.sql",
+    "functions/test/licensingApi.test.js",
+    "index.html",
+    "package-lock.json",
+    "package.json",
+    "scripts/prerender.mjs",
+    "src/App.css",
+    "src/App.js",
+    "src/App.test.js",
+    "src/assets/styles/_animated.scss",
+    "src/assets/styles/_base.scss",
+    "src/assets/styles/_bordered-pulled.scss",
+    "src/assets/styles/_core.scss",
+    "src/assets/styles/_fixed-width.scss",
+    "src/assets/styles/_icons.scss",
+    "src/assets/styles/_larger.scss",
+    "src/assets/styles/_list.scss",
+    "src/assets/styles/_mixins.scss",
+    "src/assets/styles/_path.scss",
+    "src/assets/styles/_rotated-flipped.scss",
+    "src/assets/styles/_screen-reader.scss",
+    "src/assets/styles/_stacked.scss",
+    "src/assets/styles/_variables.scss",
+    "src/assets/styles/animation.css",
+    "src/assets/styles/companies.css",
+    "src/assets/styles/dev-work.css",
+    "src/assets/styles/dsp-concepts.css",
+    "src/assets/styles/dsp-motion.css",
+    "src/assets/styles/film.css",
+    "src/assets/styles/live-work.css",
+    "src/assets/styles/minimal-site.css",
+    "src/assets/styles/readable-site.css",
+    "src/assets/styles/resume.scss",
+    "src/assets/styles/styles.scss",
+    "src/assets/styles/work.css",
+    "src/components/common/AudioPlayer.js",
+    "src/components/common/AudioTrack.js",
+    "src/components/common/Button.js",
+    "src/components/common/DspConceptDemo.js",
+    "src/components/common/DspConceptDemo.test.js",
+    "src/components/common/DspMotion.js",
+    "src/components/common/GainDemo.js",
+    "src/components/common/HeroStars.js",
+    "src/components/common/HeroStars.test.js",
+    "src/components/common/Menu.js",
+    "src/components/common/PageSeo.js",
+    "src/components/common/SiteIcon.js",
+    "src/components/common/SocialLinks.js",
+    "src/components/common/SoftwareProjectCard.js",
+    "src/components/common/WorkDestinations.js",
+    "src/components/common/section-title.js",
+    "src/components/layout/Footer.js",
+    "src/components/layout/Hero.js",
+    "src/components/layout/SectionSiteHero.js",
+    "src/components/sections/AudioSoftwareTools.js",
+    "src/components/sections/Contact.js",
+    "src/components/sections/Contact.test.js",
+    "src/components/sections/FilmCredits.js",
+    "src/components/sections/FilmCredits.test.js",
+    "src/components/sections/LiveCredits.js",
+    "src/components/sections/Portfolio.js",
+    "src/components/sections/Portfolio.test.js",
+    "src/components/sections/RecentClients.js",
+    "src/components/sections/Reel.tsx",
+    "src/components/sections/Resume.js",
+    "src/components/sections/Services.js",
+    "src/config/prerender.js",
+    "src/config/setupTests.js",
+    "src/config/site.js",
+    "src/config/siteSections.js",
+    "src/data/clients.js",
+    "src/data/dspBrief.js",
+    "src/data/dspDemos/core.js",
+    "src/data/dspDemos/core.test.js",
+    "src/data/dspDemos/dynamics.js",
+    "src/data/dspDemos/dynamics.test.js",
+    "src/data/dspDemos/index.js",
+    "src/data/dspDemos/modulation.js",
+    "src/data/dspDemos/modulation.test.js",
+    "src/data/dspDemos/nonlinear.js",
+    "src/data/dspDemos/nonlinear.test.js",
+    "src/data/dspDictionary.js",
+    "src/data/film.js",
+    "src/data/filmArtwork.js",
+    "src/data/liveCredits.js",
+    "src/data/portfolio.js",
+    "src/data/screenCredits.js",
+    "src/data/services.js",
+    "src/data/software.js",
+    "src/entry-server.jsx",
+    "src/hooks/useSectionSite.js",
+    "src/hooks/useSiteNavigation.js",
+    "src/index.css",
+    "src/lib/firebase.js",
+    "src/lib/heroStars.js",
+    "src/lib/scroll.js",
+    "src/logo.svg",
+    "src/main.jsx",
+    "src/pages/ArtAboutPage.js",
+    "src/pages/ArtHomePage.js",
+    "src/pages/ContactPage.js",
+    "src/pages/DevHomePage.js",
+    "src/pages/DspDictionary.js",
+    "src/pages/FilmHomePage.js",
+    "src/pages/FilmSamplesPage.js",
+    "src/pages/Home.js",
+    "src/pages/LiveCompaniesPage.js",
+    "src/pages/LiveHomePage.js",
+    "src/pages/PortfolioPage.js",
+    "src/pages/SiteGatewayPage.js",
+    "src/pages/SoftwarePage.js",
+    "src/pages/Terms.js",
+    "src/setupTests.js",
+    "vite.config.js"
+  ],
+  "assetPolicy": "Binary source assets and public assets are retained in the repository and recoverable from the original commit; they are not duplicated in the compact source archive.",
+  "files": [
+    {
+      "path": ".env.example",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d6681d66c4529b0ac0b8c9ce769e81ff3f1b1d2d",
+      "bytes": 438
+    },
+    {
+      "path": ".firebase/hosting.YnVpbGQ.cache",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ffd63bfe52cef0158ab771e321f075a6340244ab",
+      "bytes": 10621
+    },
+    {
+      "path": ".firebaserc",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f386c6b5afeb26abc7926c2372649a81c4b09f16",
+      "bytes": 58
+    },
+    {
+      "path": ".github/workflows/firebase-hosting-merge.yml",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f6e6f6afa0005829dd5f63ef310338f475d875c5",
+      "bytes": 811
+    },
+    {
+      "path": ".github/workflows/firebase-hosting-pull-request.yml",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "1a82c341956a436af808406124be108e7f4ff564",
+      "bytes": 843
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f04d18d910ba998aa41fa945ca0310a1d6acf0bb",
+      "bytes": 377
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a484eb9ee6206757f3ef61552dbb2b691a0a044e",
+      "bytes": 11100
+    },
+    {
+      "path": "content-archive/2026-10-01-original-descriptions.json",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2ee47e16481ba441369f3d1def0062c0c1afe03a",
+      "bytes": 257061
+    },
+    {
+      "path": "content-archive/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "aec826212dd2caaf3331f6facefd08b17fcb012c",
+      "bytes": 552
+    },
+    {
+      "path": "content-sources/live-theatre-media.md",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e41424475fa84b10571b8fbad627df0d8041d0a3",
+      "bytes": 4143
+    },
+    {
+      "path": "docs/film-artwork-sources.md",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "74da4cb74db39d242bc75bb2dfe647ee98cfb88a",
+      "bytes": 2460
+    },
+    {
+      "path": "firebase.json",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c411a5ec6a8c2bd211ca19c90ff8757f6d724cd7",
+      "bytes": 3279
+    },
+    {
+      "path": "functions/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "9c6dd48f31d6c0cc5e09001de03ac990019d6c36",
+      "bytes": 33
+    },
+    {
+      "path": "functions/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4e50b64b9f898ba24657014ff94257269792450b",
+      "bytes": 3272
+    },
+    {
+      "path": "functions/licensing/activationRepository.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "65e5f13383b8a4c35da03c731bcf17c671b93551",
+      "bytes": 2123
+    },
+    {
+      "path": "functions/licensing/adminAuth.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "240690129400895cde0f6c5a0c3b6e65f469dff6",
+      "bytes": 866
+    },
+    {
+      "path": "functions/licensing/app.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0eb32e086d0b321ba12255d4bf7f2fc7918d8630",
+      "bytes": 15267
+    },
+    {
+      "path": "functions/licensing/database.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4d20dda6490bb3fd98d44d3d59194851e8d3bd40",
+      "bytes": 592
+    },
+    {
+      "path": "functions/licensing/juceRsa.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ed4c89046af15d127e478d5a6cd79c091f41e76e",
+      "bytes": 1872
+    },
+    {
+      "path": "functions/licensing/licenseRepository.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ca41e972755b7fb7056037636a304f759e5e4e8d",
+      "bytes": 2625
+    },
+    {
+      "path": "functions/licensing/signedLicense.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "61ec8b45a6d3bf447a0992b6a02af4898d1fb06e",
+      "bytes": 2611
+    },
+    {
+      "path": "functions/package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a1cfcba1f32ca3e0af82e0b37f66ecd884f7381a",
+      "bytes": 104811
+    },
+    {
+      "path": "functions/package.json",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "760fb8a05522da9b16be3b4c3ca7ee75e7674432",
+      "bytes": 482
+    },
+    {
+      "path": "functions/sql/001_licensing_schema.sql",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "73608872ee1bd54ef2d69eef2b5bc685fd7f9ef7",
+      "bytes": 2382
+    },
+    {
+      "path": "functions/test/licensingApi.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b00b2a4ef2e45309b829fc427b39315f13b95691",
+      "bytes": 8148
+    },
+    {
+      "path": "index.html",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "47075d9ddef434a786f1c12c49da55e2d65bd529",
+      "bytes": 2772
+    },
+    {
+      "path": "package-lock.json",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "76d5609c11e790f0f6342a79de60133a2525d44f",
+      "bytes": 251541
+    },
+    {
+      "path": "package.json",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a3c096dfdf21c4fca05896e977a429d58726a049",
+      "bytes": 1301
+    },
+    {
+      "path": "public/CV/JaimeORiveraCV-2025v09.pdf",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "624d862397033b0711901efd9aff657ff0121a54",
+      "bytes": 238544
+    },
+    {
+      "path": "public/audio-previews/BTTG_track1.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "9cc1ee87c6d51a42e24f117823e88af591188328",
+      "bytes": 3178620
+    },
+    {
+      "path": "public/audio-previews/BTTG_track2.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e4c42ed2e536e2466dcfb4b6f7c415fb7f322742",
+      "bytes": 336708
+    },
+    {
+      "path": "public/audio-previews/BTTG_track3.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4433e13d3ac4f7a84c68d16ad09bcabc64156367",
+      "bytes": 293364
+    },
+    {
+      "path": "public/audio-previews/BTTG_track4.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "717b6f37cc9c1d4cf9ee4047911f1fa55c7bf30c",
+      "bytes": 1579644
+    },
+    {
+      "path": "public/audio-previews/HDLI_track1.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "dc45ad4a6519025c10bf2698fd248685b659844f",
+      "bytes": 1122252
+    },
+    {
+      "path": "public/audio-previews/HDLI_track2.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c6b681188c0c5ecfb9dd5a8058467a19be35a061",
+      "bytes": 1157292
+    },
+    {
+      "path": "public/audio-previews/HDLI_track3.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a5abc3dd860294ea1a9797e83d96da684bb68648",
+      "bytes": 411228
+    },
+    {
+      "path": "public/audio-previews/HORT_track1.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7a5e6a14b0eaf05f7aa61400addfa3592cc7aa3f",
+      "bytes": 498588
+    },
+    {
+      "path": "public/audio-previews/HORT_track2.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "808bb753d4a841766af4700c7af0f3ebbd4a1762",
+      "bytes": 416124
+    },
+    {
+      "path": "public/audio-previews/HORT_track3.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "96374643da95ef7631d8463989d1fb1043b4a37d",
+      "bytes": 667572
+    },
+    {
+      "path": "public/audio-previews/HORT_track4.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "09042544b5b9876131cccd0ed32f0d2247b9de81",
+      "bytes": 2203908
+    },
+    {
+      "path": "public/audio-previews/JC_track1.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6e68c7cff9ba63047ac5c2ef4a1b51a6b719c324",
+      "bytes": 665988
+    },
+    {
+      "path": "public/audio-previews/JC_track2.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a99b1df6161cfa16acbeb5640ba900ced8cc1b40",
+      "bytes": 249516
+    },
+    {
+      "path": "public/audio-previews/JC_track3.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a50a8a502beff9993c1e76071f6ceb9c25114a71",
+      "bytes": 164580
+    },
+    {
+      "path": "public/audio-previews/OBRA_track1.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6da70b1e526a2df00883e25e7947e49c738f1e4c",
+      "bytes": 1191036
+    },
+    {
+      "path": "public/audio-previews/OBRA_track2.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7d7ac96c923e537716dea4caffdd9aa4e1db09e3",
+      "bytes": 1290516
+    },
+    {
+      "path": "public/audio-previews/OBRA_track3.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0fc7adbb9be4b2439423f96ec7621b9d1ff28b7f",
+      "bytes": 575028
+    },
+    {
+      "path": "public/audio-previews/OBRA_track4.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "8172f2c8b0e6195e9275019fcf9b2439d2b85789",
+      "bytes": 471060
+    },
+    {
+      "path": "public/audio-previews/OBRA_track5.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a524b51cb170be5f43357a4c2f17bff5bc11009d",
+      "bytes": 421284
+    },
+    {
+      "path": "public/audio-previews/PASTOR_track1.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "dbe1c6c303c1f64aaf908b7b7c584719f10c5598",
+      "bytes": 976188
+    },
+    {
+      "path": "public/audio-previews/PASTOR_track2.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "761eac1d8d17ac4eabb75dd7b4c45e727677c8f2",
+      "bytes": 1011660
+    },
+    {
+      "path": "public/audio-previews/PASTOR_track3.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f78fe14b3a0eb6794345cf69f4e73fdd41d67566",
+      "bytes": 539988
+    },
+    {
+      "path": "public/audio-previews/TOK_track1.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2d6244fffe7fc8a66b15993ae27608733e1623b3",
+      "bytes": 318443
+    },
+    {
+      "path": "public/audio-previews/TOK_track10.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4d78f8abdf2f7d3e89b2e0961b180916d5eb0e72",
+      "bytes": 809099
+    },
+    {
+      "path": "public/audio-previews/TOK_track11.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "9fcf7fb2e2a6a2b67eda72efb75c000aefb869c2",
+      "bytes": 375755
+    },
+    {
+      "path": "public/audio-previews/TOK_track12.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "df53c7b9fc2db3cc4ac5fe8f27aeb5b794427157",
+      "bytes": 704171
+    },
+    {
+      "path": "public/audio-previews/TOK_track13.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "633f9a898de1a18bc56832d640ad45bd66ee01aa",
+      "bytes": 1171067
+    },
+    {
+      "path": "public/audio-previews/TOK_track2.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d8dc8272d61d46db9454bcc4f1bc8d68e6d3963b",
+      "bytes": 570587
+    },
+    {
+      "path": "public/audio-previews/TOK_track3.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "8a3f3d208e563b43a3db187f411575a92ae7f4a3",
+      "bytes": 562139
+    },
+    {
+      "path": "public/audio-previews/TOK_track4.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e922aa9e97d2421293df4b71eadb04c87f9a8f39",
+      "bytes": 2705915
+    },
+    {
+      "path": "public/audio-previews/TOK_track5.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4575d8da67a5c50da1d11881cd34fcf662a77426",
+      "bytes": 739931
+    },
+    {
+      "path": "public/audio-previews/TOK_track6.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d5a957edb0100a5f71d4e72873968403be286934",
+      "bytes": 4355627
+    },
+    {
+      "path": "public/audio-previews/TOK_track7.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "84cc59359dfa965d220db742b889ba16dda94b64",
+      "bytes": 1582835
+    },
+    {
+      "path": "public/audio-previews/TOK_track8.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3ea796b9abc9290c25a6f6950be4c87c7f58fef6",
+      "bytes": 731963
+    },
+    {
+      "path": "public/audio-previews/TOK_track9.mp3",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "102c09d4f546cc5111b46d895c392759be2ce842",
+      "bytes": 565307
+    },
+    {
+      "path": "public/audio/BTTG_track1.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "07e7fe7a32ce90c6eab1933f92287d8a9f76769c",
+      "bytes": 37491026
+    },
+    {
+      "path": "public/audio/BTTG_track2.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "996bf8ea558881b65ddd8a50e83c8b0f2ab7ea93",
+      "bytes": 9806124
+    },
+    {
+      "path": "public/audio/BTTG_track3.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2fd54d58243a51b3551aa0a56250b09c104c1e41",
+      "bytes": 9229364
+    },
+    {
+      "path": "public/audio/BTTG_track4.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a86205664c495223a24f7524fd0a125fd7fbff6f",
+      "bytes": 42681966
+    },
+    {
+      "path": "public/audio/HDLI_track1.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "355ce4fdbe938b6f5fc59c67d21faa85e42b6f1e",
+      "bytes": 20620654
+    },
+    {
+      "path": "public/audio/HDLI_track2.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a123f44723e9c27be056d50041ed79ffe998615c",
+      "bytes": 19983748
+    },
+    {
+      "path": "public/audio/HDLI_track3.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f47b01e430a9b6ac8325cebe201e6b0a20729903",
+      "bytes": 7499130
+    },
+    {
+      "path": "public/audio/HORT_track1.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "98b3b577299ccb028290a0a263d1f14c518ea99c",
+      "bytes": 8436390
+    },
+    {
+      "path": "public/audio/HORT_track2.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3f7b101a247767078f564c0f9a1506cc0113fdac",
+      "bytes": 5912784
+    },
+    {
+      "path": "public/audio/HORT_track3.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "20286f4feb3f0c1fccd05117f9e8087cb4b3a502",
+      "bytes": 12545764
+    },
+    {
+      "path": "public/audio/HORT_track4.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "26714dc9678f483ae78880ba94342c35ed3c8572",
+      "bytes": 49203310
+    },
+    {
+      "path": "public/audio/JC_track1.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e7a80245564d48e2b57ce52351e71da9bd8bd2f9",
+      "bytes": 10382888
+    },
+    {
+      "path": "public/audio/JC_track2.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ddb0e1344de8f16f88c7935ef8acdef6d0e5a4f0",
+      "bytes": 4038484
+    },
+    {
+      "path": "public/audio/JC_track3.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c23a63158a88bcaaa30efd4b89cc0e143ee34126",
+      "bytes": 2308190
+    },
+    {
+      "path": "public/audio/OBRA_track1.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0466d2f090b8bdea514482420195b975eabf1fd1",
+      "bytes": 21341578
+    },
+    {
+      "path": "public/audio/OBRA_track2.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d86547b2d45b9b18d104016cac9d07fbbcb17984",
+      "bytes": 24802186
+    },
+    {
+      "path": "public/audio/OBRA_track3.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2f94cfeb5f00b685dcbe137719373af5ba399f91",
+      "bytes": 12113202
+    },
+    {
+      "path": "public/audio/OBRA_track4.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "eed1f04f10f9b6d731a7cca382e66ee9b5f45e2d",
+      "bytes": 6922368
+    },
+    {
+      "path": "public/audio/OBRA_track5.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "5497fa9c549ffa791b5e2a1cba89a7a71d102ce3",
+      "bytes": 11248096
+    },
+    {
+      "path": "public/audio/PASTOR_track1.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a60655d6e59384cc65fc0aeecb119093a22d942e",
+      "bytes": 16727442
+    },
+    {
+      "path": "public/audio/PASTOR_track2.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "96c90d679a599ee522be79bd19d770ebef7d08db",
+      "bytes": 16294832
+    },
+    {
+      "path": "public/audio/PASTOR_track3.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2769645a81754570be4ab76f7f7ded6ee8df3e0b",
+      "bytes": 8652604
+    },
+    {
+      "path": "public/audio/TOK_track1.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "59e48e6b15d8dc66d79dbed93ab0d33f10d4955b",
+      "bytes": 5045202
+    },
+    {
+      "path": "public/audio/TOK_track10.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "44b16cd6e303cb8793df121ce280ce86a6243c29",
+      "bytes": 13233310
+    },
+    {
+      "path": "public/audio/TOK_track11.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "fa7a2e2f31cd10e0075c0686ecdf30dd6493ae0d",
+      "bytes": 5103320
+    },
+    {
+      "path": "public/audio/TOK_track12.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0dde9a526aea996071b07dc02e5604cec69ca9bc",
+      "bytes": 10440976
+    },
+    {
+      "path": "public/audio/TOK_track13.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4271e878ff9aa0dcb724776fc40aeb4b821264b6",
+      "bytes": 19934916
+    },
+    {
+      "path": "public/audio/TOK_track2.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "75d777b87b9a81f40ead21e892184fc6755ad95d",
+      "bytes": 9828152
+    },
+    {
+      "path": "public/audio/TOK_track3.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "eb89d579d77c21a2c9f63279be82cb0ae3a13f14",
+      "bytes": 9698010
+    },
+    {
+      "path": "public/audio/TOK_track4.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "8fc5a254c81f09434775b7a9e4f52d526d490242",
+      "bytes": 57918054
+    },
+    {
+      "path": "public/audio/TOK_track5.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "47b7e92f125f3253c69d7e7ee3d758d980de7a23",
+      "bytes": 12235896
+    },
+    {
+      "path": "public/audio/TOK_track6.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7129bb3f95afc5b8349b54b8068234afafaba2db",
+      "bytes": 68822884
+    },
+    {
+      "path": "public/audio/TOK_track7.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f8b6fe64a086c367663c25a77fa896a40b520d89",
+      "bytes": 27604588
+    },
+    {
+      "path": "public/audio/TOK_track8.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "dbe30a913dbef1215ee4349c1780db6ab6b8a08a",
+      "bytes": 12223780
+    },
+    {
+      "path": "public/audio/TOK_track9.wav",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "185c8a9dd458b48a707d110b534f76669562c63a",
+      "bytes": 8658178
+    },
+    {
+      "path": "public/dragon-180.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a52b91195914fb27bc6e20bf9c2d8012d34538dc",
+      "bytes": 10681
+    },
+    {
+      "path": "public/dragon-192.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "be2ecb7f22f23e48d2e1498e5cd7a9d927ecbfde",
+      "bytes": 11308
+    },
+    {
+      "path": "public/dragon-512.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7d9f9bedde55ba0b8414984e41a67f8493a74fe8",
+      "bytes": 17091
+    },
+    {
+      "path": "public/dragon-icon.svg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "463ef6f8ec48a5836441ef26ee8239712a424ca0",
+      "bytes": 466
+    },
+    {
+      "path": "public/favicon.ico",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "33ae9f79ad07ce82457cd2d1a9cb7950cb6edc41",
+      "bytes": 5085
+    },
+    {
+      "path": "public/firmware/firmware.bin",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3d1fe55426a847d8cb645c05c74c3fe27daccad9",
+      "bytes": 1010832
+    },
+    {
+      "path": "public/img/BTTGPoster.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "261c996e39a4be1dbe295fb9bbe7f2faa1816c5f",
+      "bytes": 261622
+    },
+    {
+      "path": "public/img/ElPastorPoster.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7a0147a403835e13984bc1e3493aa74fac9785f5",
+      "bytes": 536318
+    },
+    {
+      "path": "public/img/HDLIPoster.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6bf8a23bf41ee7ffd76b402b7622da01acf2970a",
+      "bytes": 1134464
+    },
+    {
+      "path": "public/img/HortensiasPoster.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "cce185daaccbec655adc5e1d0eaf9669094440f1",
+      "bytes": 43065
+    },
+    {
+      "path": "public/img/JCPoster.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2b38f61013dae415d2219713883ac933bfae3edd",
+      "bytes": 754208
+    },
+    {
+      "path": "public/img/LaObraPoster.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "01f9518bbaa87d486e3c18d18ac8f95b09c9684f",
+      "bytes": 1015422
+    },
+    {
+      "path": "public/img/OmicronHeadshotCartoon.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "54e9078b4f0f76cf5588dc870a43fa279150f373",
+      "bytes": 566493
+    },
+    {
+      "path": "public/img/OmicronPoster.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ac1f71fda17816910fd0dbdaa82c14e6be00d04f",
+      "bytes": 1128434
+    },
+    {
+      "path": "public/img/film/carreras-en-el-aire.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "67809195d2fc7afa78afb3684556b99d04896904",
+      "bytes": 18838
+    },
+    {
+      "path": "public/img/film/dead-mans-creek.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4591ba0dd1ebcea0b0b6c36450d8eb518eef9d9c",
+      "bytes": 22669
+    },
+    {
+      "path": "public/img/film/duelistas.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e86cfa95f6ef7cff24e4074fa068944a98c41bee",
+      "bytes": 29997
+    },
+    {
+      "path": "public/img/film/el-momento-de-las-lechuzas.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b18554285b286bb5d0852a07199d6bbbd6058a24",
+      "bytes": 45569
+    },
+    {
+      "path": "public/img/film/how-to-disappear-completely.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "04a4c2be2b34d68ad8dda7e50fc945e7f65a1e82",
+      "bytes": 14963
+    },
+    {
+      "path": "public/img/film/krazy-klowny.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3035fe13e97fba7b7bd51b779bdaf6349346c6f3",
+      "bytes": 11403
+    },
+    {
+      "path": "public/img/film/la-creacion.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "07518e6d9a9162936cd4bbcfd9595e57f66ebfbb",
+      "bytes": 16354
+    },
+    {
+      "path": "public/img/film/madre-nuestra.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a6a42a27f51cdf2fb094223e3ee48e6a4c512805",
+      "bytes": 163658
+    },
+    {
+      "path": "public/img/film/mulheres-arvore.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b019930b5241bfc1107a7ccf83f6c0c9a093e6d8",
+      "bytes": 37166
+    },
+    {
+      "path": "public/img/film/no-pienses-en-monos.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3b804cee1437018feb8cbf8b09e2de0a9f99c78d",
+      "bytes": 37595
+    },
+    {
+      "path": "public/img/film/queer-khalifa.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a82f4789e284e6ba462c3a63ebb0d743d29fcca1",
+      "bytes": 28284
+    },
+    {
+      "path": "public/img/film/soberane.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "89b0c85730d3a1a2fd124fb71c966e2960388037",
+      "bytes": 11360
+    },
+    {
+      "path": "public/manifest.json",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f304815f722e10c196249d1dcedf53d9f16f0fb6",
+      "bytes": 487
+    },
+    {
+      "path": "public/media/dark-knites-logo.mp4",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b82b529a2c8f72224acc2ce32cb8e79f9fb89219",
+      "bytes": 9091291
+    },
+    {
+      "path": "public/media/dark-knites-poster.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "00237023dd7461f238fdb5341bdaeaf2448e0755",
+      "bytes": 221620
+    },
+    {
+      "path": "public/og-image.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "71ca485004ad703ae737cff35f165dcfdc7423d8",
+      "bytes": 2035106
+    },
+    {
+      "path": "public/robots.txt",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7d9f046b7edb0eba0e1c5d45b1cd686f3b77b04c",
+      "bytes": 70
+    },
+    {
+      "path": "public/sitemap.xml",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "849180aa5b5e16eff0101488ed2d8af30bbd04d1",
+      "bytes": 439
+    },
+    {
+      "path": "scripts/prerender.mjs",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "95babb1f248b0fda1d2710e36421a03229841ee4",
+      "bytes": 5352
+    },
+    {
+      "path": "src/App.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f784d39d50aab3764f65bf5e283760abefcc2747",
+      "bytes": 1139
+    },
+    {
+      "path": "src/App.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "9f629282b3d9ac6b9d7c666ce805b5f94747da7a",
+      "bytes": 3050
+    },
+    {
+      "path": "src/App.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "bb9d8a18a8f3777e6d93ca74cf2697a93388e002",
+      "bytes": 11501
+    },
+    {
+      "path": "src/assets/fonts/Fira_Sans_Extra_Condensed.zip",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6e8c10e5209540d82dba1afcfa3a36309647589e",
+      "bytes": 8354422
+    },
+    {
+      "path": "src/assets/fonts/FontAwesome.otf",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "401ec0f36e4f73b8efa40bd6f604fe80d286db70",
+      "bytes": 134808
+    },
+    {
+      "path": "src/assets/fonts/Homemade_Apple,Pixelify_Sans.zip",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7d7b289dff3104a1dc12cfa7b23e670f3b1a96da",
+      "bytes": 411490
+    },
+    {
+      "path": "src/assets/fonts/Pixelify_Sans,Yeseva_One.zip",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e0a21404f3c8cdc9aa6ff021764bb8f4fcf56339",
+      "bytes": 399604
+    },
+    {
+      "path": "src/assets/fonts/Poiret_One.zip",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b73261db9f2e9c3f11a5722b44aaeb89de45894c",
+      "bytes": 49956
+    },
+    {
+      "path": "src/assets/fonts/fontawesome-webfont.eot",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e9f60ca953f93e35eab4108bd414bc02ddcf3928",
+      "bytes": 165742
+    },
+    {
+      "path": "src/assets/fonts/fontawesome-webfont.svg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "855c845e538b65548118279537a04eab2ec6ef0d",
+      "bytes": 444379
+    },
+    {
+      "path": "src/assets/fonts/fontawesome-webfont.ttf",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "35acda2fa1196aad98c2adf4378a7611dd713aa3",
+      "bytes": 165548
+    },
+    {
+      "path": "src/assets/fonts/fontawesome-webfont.woff",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "400014a4b06eee3d0c0d54402a47ab2601b2862b",
+      "bytes": 98024
+    },
+    {
+      "path": "src/assets/fonts/fontawesome-webfont.woff2",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4d13fc60404b91e398a37200c4a77b645cfd9586",
+      "bytes": 77160
+    },
+    {
+      "path": "src/assets/img/1842_Mather_Map_of_Long_Island,_New_York_-_Geographicus_-_LongIsland-mather-1842.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "8719a9752650eb96b33c8a526ccfce87c91b0f8e",
+      "bytes": 3805039
+    },
+    {
+      "path": "src/assets/img/AESLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "8b4de332ecc2253b7ff8102cb1d953afa59a12c0",
+      "bytes": 14932
+    },
+    {
+      "path": "src/assets/img/ArdourLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "80af89db49506db3d5d7f8b78c858c3c895cf115",
+      "bytes": 715377
+    },
+    {
+      "path": "src/assets/img/AuditionLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2dd1b4f252507034803143bff128c8ad38636b9e",
+      "bytes": 67169
+    },
+    {
+      "path": "src/assets/img/Computer.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "aa0bebaa0108ce65295a79fc7ab3d31f994fd288",
+      "bytes": 133669
+    },
+    {
+      "path": "src/assets/img/DanteLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "8f2247c38783cbf178d3ca308cbc955834dd7274",
+      "bytes": 79728
+    },
+    {
+      "path": "src/assets/img/ElPastorPoster.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7a0147a403835e13984bc1e3493aa74fac9785f5",
+      "bytes": 536318
+    },
+    {
+      "path": "src/assets/img/FilmCamera.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b712137b453f0683f1e85190da24ec1de96821bb",
+      "bytes": 100781
+    },
+    {
+      "path": "src/assets/img/FmodLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "22ae50186ba665333cfa14af7bb0fa8a70e5fd10",
+      "bytes": 35459
+    },
+    {
+      "path": "src/assets/img/Godzilla.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a03d8f672eaf37330e56cb75a1675f8e20c6d247",
+      "bytes": 1045403
+    },
+    {
+      "path": "src/assets/img/HDLIPoster.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6bf8a23bf41ee7ffd76b402b7622da01acf2970a",
+      "bytes": 1134464
+    },
+    {
+      "path": "src/assets/img/HortensiasPoster.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "cce185daaccbec655adc5e1d0eaf9669094440f1",
+      "bytes": 43065
+    },
+    {
+      "path": "src/assets/img/JCPoster.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2b38f61013dae415d2219713883ac933bfae3edd",
+      "bytes": 754208
+    },
+    {
+      "path": "src/assets/img/JaimeMoon.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0d7cc973ab721f480f9b0316244d435f547b8106",
+      "bytes": 1101221
+    },
+    {
+      "path": "src/assets/img/LaObraPoster.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "01f9518bbaa87d486e3c18d18ac8f95b09c9684f",
+      "bytes": 1015422
+    },
+    {
+      "path": "src/assets/img/LogicProLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b603356dda7a3ec625907b0e3a3a936b6a83b321",
+      "bytes": 190453
+    },
+    {
+      "path": "src/assets/img/Logo Jaime 2.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "351e217a97afb9d7a0b601080221241d97697eba",
+      "bytes": 5896
+    },
+    {
+      "path": "src/assets/img/Logo Jaime 3.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "76dc89978acfd708b6a74342000e854814e79368",
+      "bytes": 14133
+    },
+    {
+      "path": "src/assets/img/Logo Jaime.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0fe78720a8cd68bb7da3c6890e6f4e709ae94a61",
+      "bytes": 87176
+    },
+    {
+      "path": "src/assets/img/OmicronHeadshotCartoon.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "54e9078b4f0f76cf5588dc870a43fa279150f373",
+      "bytes": 566493
+    },
+    {
+      "path": "src/assets/img/OmicronPoster copy.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ac1f71fda17816910fd0dbdaa82c14e6be00d04f",
+      "bytes": 1128434
+    },
+    {
+      "path": "src/assets/img/OmicronPoster copy2.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0363daa229b967070c62203bc0c3a303e83c65c3",
+      "bytes": 1041453
+    },
+    {
+      "path": "src/assets/img/OmicronPoster.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ac1f71fda17816910fd0dbdaa82c14e6be00d04f",
+      "bytes": 1128434
+    },
+    {
+      "path": "src/assets/img/OshaLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a83adfb10fc1dec9f0194cef97c69381a166a17b",
+      "bytes": 44031
+    },
+    {
+      "path": "src/assets/img/ProToolsLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0fbe124074c4972b71c0a1276c07060a3da95c61",
+      "bytes": 78245
+    },
+    {
+      "path": "src/assets/img/PureDataLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2983fc1ed1b965b7d29ec1461bdb682b38ddce5c",
+      "bytes": 25531
+    },
+    {
+      "path": "src/assets/img/Q-Sys-Logo.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3c12a20696627618d649bcf3624ae202b7fb8a23",
+      "bytes": 27477
+    },
+    {
+      "path": "src/assets/img/Q-Sys-Logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c9bb0c5c50d36fadf724d6c3dbcaabdc9577fd61",
+      "bytes": 392875
+    },
+    {
+      "path": "src/assets/img/QLabLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "921ed4fbdd2140a0d37b6ac4a970c8c9c37abf35",
+      "bytes": 231204
+    },
+    {
+      "path": "src/assets/img/RTSLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "257c29b32cb8320f3d25cd9a2560cb05db13dafa",
+      "bytes": 39102
+    },
+    {
+      "path": "src/assets/img/RXLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "1634169dcd949d0da4d7a17e76d007fa3c242b4e",
+      "bytes": 46998
+    },
+    {
+      "path": "src/assets/img/ReaperLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "5f7d34590f7a3332d4ca2777987ea481dc8eadff",
+      "bytes": 87052
+    },
+    {
+      "path": "src/assets/img/ScissorCutting.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "1fc13691f22771ae567044c59bfa2d6d7b37f2bb",
+      "bytes": 395428
+    },
+    {
+      "path": "src/assets/img/ScissorCutting.xcf",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b3fb4b9e11650eb61cd61cbf77ff19ddc3bd225f",
+      "bytes": 595070
+    },
+    {
+      "path": "src/assets/img/TAB_Logo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f864f1203caa70307dfd1bc5e313721ce85bb18c",
+      "bytes": 37929
+    },
+    {
+      "path": "src/assets/img/TAB_Logo1.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "cdea3ea4ddcf9e7d1a59f4482cf37767e3eb90d7",
+      "bytes": 7268
+    },
+    {
+      "path": "src/assets/img/UnityLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2cdb7937cb57a5d64a23fcb1b39ca0d7990ca8d3",
+      "bytes": 147445
+    },
+    {
+      "path": "src/assets/img/WavesLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "1a07a62c44924be5d6827d741f369a5b53f1e990",
+      "bytes": 40075
+    },
+    {
+      "path": "src/assets/img/WwiseLogo.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "89dc1f869d420d444d4a58f5df67375de3438367",
+      "bytes": 80309
+    },
+    {
+      "path": "src/assets/img/WwiseLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "995d20493c564672b0943c357f2418f84d2f05ec",
+      "bytes": 95122
+    },
+    {
+      "path": "src/assets/img/about-background.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2ab11c7a6c559cd3c9c3a6c39955020bae9d1ced",
+      "bytes": 2010223
+    },
+    {
+      "path": "src/assets/img/astronaut.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "39b59b8cd32ddbdf39bb30d2856192d5488357e1",
+      "bytes": 628998
+    },
+    {
+      "path": "src/assets/img/background.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f2ff8effcb0a7fb83b6134946cc43e364750f8aa",
+      "bytes": 874524
+    },
+    {
+      "path": "src/assets/img/banner-npem.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "06822c982f806b43e7433ccfdecdf3ab816befcd",
+      "bytes": 85733
+    },
+    {
+      "path": "src/assets/img/banner-npem.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "71ca485004ad703ae737cff35f165dcfdc7423d8",
+      "bytes": 2035106
+    },
+    {
+      "path": "src/assets/img/client-logos/amas-musical-theatre.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "fc295f7a37395fa3fb4e27043a0c62396954d592",
+      "bytes": 124116
+    },
+    {
+      "path": "src/assets/img/client-logos/blackstone.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "74e5c057251d8e8ce24d039010b4824d8ed85a83",
+      "bytes": 197147
+    },
+    {
+      "path": "src/assets/img/client-logos/cpa-theatricals.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3081d33ab7584384d9cb10b17d9bd11cc4e23acd",
+      "bytes": 18946
+    },
+    {
+      "path": "src/assets/img/client-logos/creative-technology.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ac50119d5fb88ba22a1889ff46dabf30fd8ff0f7",
+      "bytes": 147834
+    },
+    {
+      "path": "src/assets/img/client-logos/dataiku.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d1a3e7bd273992226260f89cc1aa883af75be5b6",
+      "bytes": 43202
+    },
+    {
+      "path": "src/assets/img/client-logos/dwight-school.svg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f1a5ab4006b5a83b79506282b16cd1022192bf57",
+      "bytes": 26054
+    },
+    {
+      "path": "src/assets/img/client-logos/encore.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "8ef655ee7353b6a69c910a5cf05ef900c95645ea",
+      "bytes": 41291
+    },
+    {
+      "path": "src/assets/img/client-logos/mccabe-events.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "cec981cbf8b76540773bc459d6d65a2c3e4e6237",
+      "bytes": 104435
+    },
+    {
+      "path": "src/assets/img/client-logos/mccabe-group.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e79b25b3330b7e0cf6d3d1ce00d3eb75844be839",
+      "bytes": 15504
+    },
+    {
+      "path": "src/assets/img/client-logos/mizuho.svg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "47e452688898ad5eab88195d96b7a185f8ffbc4c",
+      "bytes": 13983
+    },
+    {
+      "path": "src/assets/img/client-logos/new-federal-theatre.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "135d6fd8b922333628cd86d26d6eb7255396c051",
+      "bytes": 35929
+    },
+    {
+      "path": "src/assets/img/client-logos/oracle.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "de7d4ccb43c6bfa311ca9b2df0ea7e4d74d95312",
+      "bytes": 185095
+    },
+    {
+      "path": "src/assets/img/client-logos/school-at-columbia.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c83e6bd8583dbdf3c8431f1d15414f076b6b6489",
+      "bytes": 19336
+    },
+    {
+      "path": "src/assets/img/client-logos/sdn-broadcast.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "937cdc34419c4ebf8acc0a3a9e2153b3d2bf30f7",
+      "bytes": 52571
+    },
+    {
+      "path": "src/assets/img/client-logos/subway.svg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "313b2df9fd9f53470447fbc04d15d373129b29d0",
+      "bytes": 1679
+    },
+    {
+      "path": "src/assets/img/client-logos/young-peoples-chorus.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7721640df6302c138c53f33cfafc621b6fb2d715",
+      "bytes": 11006
+    },
+    {
+      "path": "src/assets/img/contact-background.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6d4b0f8750a81271e4bd3c9fbac66106b4502f8a",
+      "bytes": 781040
+    },
+    {
+      "path": "src/assets/img/cropped-jaime_logothick-1.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "de167beb93064cff6b8126274fe73f89414f2530",
+      "bytes": 15928
+    },
+    {
+      "path": "src/assets/img/fire-n-ice.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d6ff26fc257547710fb0dd010b6bcca119c57faf",
+      "bytes": 1973656
+    },
+    {
+      "path": "src/assets/img/gallery-background.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "04e95ada4895ca4f6b1e8c5589a3be8dba7d9769",
+      "bytes": 532468
+    },
+    {
+      "path": "src/assets/img/happy-planet.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "732338ff9ee04a9db139544b642a3a3953e5726e",
+      "bytes": 1679443
+    },
+    {
+      "path": "src/assets/img/header-portfolio-5-edited.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "bb07d81071a8321f9b10c4f8a2afe615454072b6",
+      "bytes": 2323970
+    },
+    {
+      "path": "src/assets/img/image1.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "368698cd4bb3a03df2be283569cd39143240c40e",
+      "bytes": 157454
+    },
+    {
+      "path": "src/assets/img/image1.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0f64665671454bcf4405891fd9123e131a9d4eeb",
+      "bytes": 28432
+    },
+    {
+      "path": "src/assets/img/image10.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "283afb0598f84e377aa23b41c59e3d530affa8e6",
+      "bytes": 199062
+    },
+    {
+      "path": "src/assets/img/image10.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "29cab4feb27c50d9ea531c7ec417a03768f27c1b",
+      "bytes": 69610
+    },
+    {
+      "path": "src/assets/img/image11.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4ea49fa1de2b1b68623ea637df0fdf1d9683da8d",
+      "bytes": 292500
+    },
+    {
+      "path": "src/assets/img/image11.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f5e6320e14afbb0bd67f525526ccc61c24e7587f",
+      "bytes": 137528
+    },
+    {
+      "path": "src/assets/img/image12.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "bf16af2b3dfcb3dd95f3c3e320478aa77a195ae2",
+      "bytes": 117950
+    },
+    {
+      "path": "src/assets/img/image12.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c754a55eeaa3e4cd98d55476847ab07380093720",
+      "bytes": 30758
+    },
+    {
+      "path": "src/assets/img/image13.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4b31cdb53b588515706b06e267f4dd52071e9f87",
+      "bytes": 559719
+    },
+    {
+      "path": "src/assets/img/image13.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ff7fba5791817476c56b8e1bb62c157dfe7063fe",
+      "bytes": 803296
+    },
+    {
+      "path": "src/assets/img/image14.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0d88edd44d3a6c08c16b7051d8d8ccd29a1b56d0",
+      "bytes": 762587
+    },
+    {
+      "path": "src/assets/img/image14.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "9f018f862e302fa6f7bb33c4b223e0e7ad67c224",
+      "bytes": 1112592
+    },
+    {
+      "path": "src/assets/img/image15.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "982ac6f85ce2269e4b6419d916beb123a8a6c019",
+      "bytes": 178294
+    },
+    {
+      "path": "src/assets/img/image15.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d8cb7bdb88e25b5afa4f71b6283c55d17a3d16ed",
+      "bytes": 66150
+    },
+    {
+      "path": "src/assets/img/image16.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2b7bd7dae218ca1ab8336329efd3f46382df3b5b",
+      "bytes": 196774
+    },
+    {
+      "path": "src/assets/img/image16.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "10414a02ab2ac3bed43631511cb1ccf87ebe2b14",
+      "bytes": 263674
+    },
+    {
+      "path": "src/assets/img/image17.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "dfa725ab11f827453e9e4f9706a9e1b0baddd6ce",
+      "bytes": 7272477
+    },
+    {
+      "path": "src/assets/img/image17.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2bb637802d41ee6d24809951c6178195bc3a7f6f",
+      "bytes": 7149176
+    },
+    {
+      "path": "src/assets/img/image18.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "11ef2c9ab63547fad1e9949fc366f7dda311b548",
+      "bytes": 492931
+    },
+    {
+      "path": "src/assets/img/image18.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2332af56acb972017fa4f4e8c3b99260d1f6cc42",
+      "bytes": 677320
+    },
+    {
+      "path": "src/assets/img/image2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "35840e063dc88e97db1e63ae28321c4096624726",
+      "bytes": 371974
+    },
+    {
+      "path": "src/assets/img/image2.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2d3491b0e317e2153f0e590536d8117927c09a9f",
+      "bytes": 188378
+    },
+    {
+      "path": "src/assets/img/image3.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "cc283d418c0b25f05747c90c1dedb9395c6d897a",
+      "bytes": 227452
+    },
+    {
+      "path": "src/assets/img/image3.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "5c2da53c62752f17854a021c942ab2230251a03f",
+      "bytes": 930216
+    },
+    {
+      "path": "src/assets/img/image4.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7305fe39d51787f6d163d5c61889857bf404cba9",
+      "bytes": 239883
+    },
+    {
+      "path": "src/assets/img/image4.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4834344b59c961d7739fd5663f8efd908d5640df",
+      "bytes": 945354
+    },
+    {
+      "path": "src/assets/img/image5.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7b79d07bac318ecd86c375d43afc4e4de1e06881",
+      "bytes": 379983
+    },
+    {
+      "path": "src/assets/img/image5.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e7eeaf635c3a17ecc9d91456a7ea252fd884dc18",
+      "bytes": 215924
+    },
+    {
+      "path": "src/assets/img/image6.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "72fb2621d494070b2bbe3436bffa7587c67e5114",
+      "bytes": 164545
+    },
+    {
+      "path": "src/assets/img/image6.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "9fa0a26bd30cfc9071c62be6141e5172176268a1",
+      "bytes": 70016
+    },
+    {
+      "path": "src/assets/img/image7.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ba98985211627e6d9f67c4b90affaefb3e94ae08",
+      "bytes": 303950
+    },
+    {
+      "path": "src/assets/img/image7.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "360cedf50e31bfb58608b726892c76c6c32bdd7d",
+      "bytes": 1525868
+    },
+    {
+      "path": "src/assets/img/image8.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "41246cd858720b54d0b4a66ff853ba347aee8f63",
+      "bytes": 113823
+    },
+    {
+      "path": "src/assets/img/image8.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f7ae2b3040ee977b17252979f2e67ec86b72e1cd",
+      "bytes": 447508
+    },
+    {
+      "path": "src/assets/img/image9.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0de590ec40e7929013dcf929f1165ddcc8313164",
+      "bytes": 94441
+    },
+    {
+      "path": "src/assets/img/image9.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "cfa01f35cf9eab5193b40a7c491e680947b04686",
+      "bytes": 356346
+    },
+    {
+      "path": "src/assets/img/izotopeLogo.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e335c0821cada75be9f59b55697e07c7b35f6953",
+      "bytes": 47012
+    },
+    {
+      "path": "src/assets/img/jaime-osvaldo-001.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "9b878cf935e92a72a988a12c471834ec8147e496",
+      "bytes": 1870962
+    },
+    {
+      "path": "src/assets/img/jaime-osvaldo-002.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6da45026f338d9723f0e9d05a03178a6688fd1b6",
+      "bytes": 2346559
+    },
+    {
+      "path": "src/assets/img/jaime-osvaldo-002B.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "cb3c093f4ee323fb6b0b8e03dbf019a662b84bae",
+      "bytes": 221452
+    },
+    {
+      "path": "src/assets/img/jaime-osvaldo-003.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b5e7dcf486ed5f933cfb95c31acb216c778b54f3",
+      "bytes": 2889075
+    },
+    {
+      "path": "src/assets/img/jaime-osvaldo-004.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "1e3dc6b59a3379e3cf12881c046c1421eea0fe97",
+      "bytes": 3206173
+    },
+    {
+      "path": "src/assets/img/jaime-osvaldo-005.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6c6bd74ea9ed358370c1be7237ea7393449fc130",
+      "bytes": 4988449
+    },
+    {
+      "path": "src/assets/img/jaime-osvaldo-006.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b9f42d2440ead2ab23ce6cbe3fbcf836b473a03d",
+      "bytes": 2632695
+    },
+    {
+      "path": "src/assets/img/jaime-osvaldo-007.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "edcdb9371cfdef79c0ab4b46048fc8b7d4ea1e24",
+      "bytes": 5293978
+    },
+    {
+      "path": "src/assets/img/juanbobo-1.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3bc32643a790082bddeb86be3936cc38c0c8660f",
+      "bytes": 6718
+    },
+    {
+      "path": "src/assets/img/lights.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "616f4acd7cfd7f1fcb90e636264df66a5a219d6c",
+      "bytes": 152295
+    },
+    {
+      "path": "src/assets/img/live-work/blooming-in-dry-season.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a758ca9fa8126384266af3289fbb3ff835efb4b3",
+      "bytes": 62272
+    },
+    {
+      "path": "src/assets/img/live-work/broken-snow.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "dfa26bf283157491fed2bb8a5cf16a39d8419d4f",
+      "bytes": 49114
+    },
+    {
+      "path": "src/assets/img/live-work/bubbling-brown-sugar-2026.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ade2aab2e7a9774e1e1ba8ccc87dd259e7d4849e",
+      "bytes": 70982
+    },
+    {
+      "path": "src/assets/img/live-work/chita-rivera-awards-2026.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "de322b0180859d2df8cc58f5112a1c5e9475fb88",
+      "bytes": 63830
+    },
+    {
+      "path": "src/assets/img/live-work/cracked-open.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c6c300bfe80c58b0a851b3c83b10e29626bbca42",
+      "bytes": 42906
+    },
+    {
+      "path": "src/assets/img/live-work/the-wash.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d27c2cbbb697e763338cff8c3694e75c4c9d5855",
+      "bytes": 111320
+    },
+    {
+      "path": "src/assets/img/logos.xcf",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "32296203f66ce9434e5e2796e4e8775cb96e841a",
+      "bytes": 471194
+    },
+    {
+      "path": "src/assets/img/moon.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "915c5f2787ff1f06551c6b9098b63b78b2c6b358",
+      "bytes": 1895614
+    },
+    {
+      "path": "src/assets/img/moon.xcf",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0ada0376ec8ca51199330ff82c4791861f8a6de2",
+      "bytes": 5088814
+    },
+    {
+      "path": "src/assets/img/moon2.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "191771525ecc60291305cf8d555960e6a6dcd1fc",
+      "bytes": 1854134
+    },
+    {
+      "path": "src/assets/img/moon3.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "23bfaaadaa0ee661786f1b0fc420e7e4f235e906",
+      "bytes": 1351514
+    },
+    {
+      "path": "src/assets/img/moon4.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "847a9898d3dd31d0c907e9b96d7667bfd36fe425",
+      "bytes": 915868
+    },
+    {
+      "path": "src/assets/img/moon4.xcf",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4805fcdb02757eeb26883c5a719a497fe87974dc",
+      "bytes": 5565024
+    },
+    {
+      "path": "src/assets/img/musical-notes.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f0e650bc7d1966ba9c727552159b999b87a9ded1",
+      "bytes": 586490
+    },
+    {
+      "path": "src/assets/img/musical-notes2.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "927c6320cc3d8bd01c483d7e408622236bdf4054",
+      "bytes": 603666
+    },
+    {
+      "path": "src/assets/img/musical-notes2.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "98cf907930a10b747864c2fb4a9480ad4910abcb",
+      "bytes": 77506
+    },
+    {
+      "path": "src/assets/img/new-york-city-map.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6e260ed2da150e5a790b813a1ddfa7854921e966",
+      "bytes": 884147
+    },
+    {
+      "path": "src/assets/img/new-york-city-map2.jpeg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "1890f0a581266703cda74f6ed5fdb3a4f37325d3",
+      "bytes": 1227048
+    },
+    {
+      "path": "src/assets/img/picture-row-background.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b0ba7a2cfa00c09fab62314963acf20c40dc038b",
+      "bytes": 110699
+    },
+    {
+      "path": "src/assets/img/portfolio-background.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "64138b554eb9fce07bd3eaefab69829151a233c4",
+      "bytes": 387367
+    },
+    {
+      "path": "src/assets/img/portfolio-background2.jpg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f38f3f90f0c6f39669d890b89ff695fdd0caff6e",
+      "bytes": 367528
+    },
+    {
+      "path": "src/assets/img/rice-bowl-02.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7e64a50bc435ff4d3e722e569a5c9ad5d1553926",
+      "bytes": 682653
+    },
+    {
+      "path": "src/assets/img/rice.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3a3f2c2add187366e7e8dcf8098752f6b06e808f",
+      "bytes": 900956
+    },
+    {
+      "path": "src/assets/img/rice2.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "33fc9a5072dbb8a05b612f70f17e7304be172e27",
+      "bytes": 284388
+    },
+    {
+      "path": "src/assets/img/rice3.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "69beccb4a1395f0027e9179afdd0b4354ff1af65",
+      "bytes": 587351
+    },
+    {
+      "path": "src/assets/img/rice4.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "41e3875f075541a5a9dce55997df0d7f0c223d93",
+      "bytes": 751960
+    },
+    {
+      "path": "src/assets/img/rice5.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e6a753c9672a4595b9845177febf7fb905f3749c",
+      "bytes": 306906
+    },
+    {
+      "path": "src/assets/img/rice6.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2d3fb93a294d10cc043862253e0dfd2e9eb9cafe",
+      "bytes": 344089
+    },
+    {
+      "path": "src/assets/img/rice7.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0d50616226150658c8aeb9c563af203da67f8347",
+      "bytes": 116828
+    },
+    {
+      "path": "src/assets/img/roce-bowl.png",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b37c5fbdbe9dd64b2fb74b42b527494b52c205e4",
+      "bytes": 1106257
+    },
+    {
+      "path": "src/assets/img/sound-stuff.webp",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "99f28892c8d7829a07d36fea42495d96cee57326",
+      "bytes": 20998
+    },
+    {
+      "path": "src/assets/styles/_animated.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "691e43138a40b735271eadbfffa8eec3482b7c5b",
+      "bytes": 736
+    },
+    {
+      "path": "src/assets/styles/_base.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "30c14996d0a673209e108b9578549420f5c4b97b",
+      "bytes": 443
+    },
+    {
+      "path": "src/assets/styles/_bordered-pulled.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d4b85a02f24adad8890ad69f7a1db6c7e3ec8a7d",
+      "bytes": 592
+    },
+    {
+      "path": "src/assets/styles/_core.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7425ef85fc80ce6b035065906fc27490715e3733",
+      "bytes": 459
+    },
+    {
+      "path": "src/assets/styles/_fixed-width.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "aec43ec593eb23c7ebb47ede116866dc25d77dd1",
+      "bytes": 146
+    },
+    {
+      "path": "src/assets/styles/_icons.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e63e702c4d9c28fb78922cefa5daf91858b12c9a",
+      "bytes": 50498
+    },
+    {
+      "path": "src/assets/styles/_larger.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ec2757c59fd0806d1c72b0e4aba08c56b67236f0",
+      "bytes": 408
+    },
+    {
+      "path": "src/assets/styles/_list.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "887901c1eeb4c6a8dcc296c236a7bc6bf8cdea07",
+      "bytes": 411
+    },
+    {
+      "path": "src/assets/styles/_mixins.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "fd8c8f5282120fd149c93a1836b004febe086d90",
+      "bytes": 1639
+    },
+    {
+      "path": "src/assets/styles/_path.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "bb457c23a8e4e0688ebd9383e34ab9f2b3acecab",
+      "bytes": 783
+    },
+    {
+      "path": "src/assets/styles/_rotated-flipped.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a3558fd09ca7cb968166d5445f4df1a0bc2d5a7e",
+      "bytes": 672
+    },
+    {
+      "path": "src/assets/styles/_screen-reader.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "637426f0da6dcef3602d764d9e359dabb4a5a862",
+      "bytes": 134
+    },
+    {
+      "path": "src/assets/styles/_stacked.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "aef7403660c9a2ccc02a264c62c6b105f7d8d532",
+      "bytes": 482
+    },
+    {
+      "path": "src/assets/styles/_variables.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "63d115100952f1be0048f29cb7fcdbe03655ffff",
+      "bytes": 22567
+    },
+    {
+      "path": "src/assets/styles/animation.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "51099b6c9ee44ee4294589acda209fd8197ad331",
+      "bytes": 1542
+    },
+    {
+      "path": "src/assets/styles/companies.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c5fa573da625eaeb0e1f28b03cf21c8635f4bb45",
+      "bytes": 2125
+    },
+    {
+      "path": "src/assets/styles/dev-work.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "299711be99b8d459cfce5504290c634af6503706",
+      "bytes": 1251
+    },
+    {
+      "path": "src/assets/styles/dsp-concepts.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "78957b16cda79070be2ec54890c61473e8de21ff",
+      "bytes": 3965
+    },
+    {
+      "path": "src/assets/styles/dsp-motion.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "5f0c16a29028f75feb0e3918f0edd78b6b50c7cb",
+      "bytes": 5158
+    },
+    {
+      "path": "src/assets/styles/film.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "55accf31a48eabaf850619bfe075ca553f3d5496",
+      "bytes": 3190
+    },
+    {
+      "path": "src/assets/styles/live-work.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "10451bdc6c4f4e0673854131012e33a38796c650",
+      "bytes": 1201
+    },
+    {
+      "path": "src/assets/styles/minimal-site.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "8033402304d1fbd692a465234de4717c86e74c92",
+      "bytes": 5248
+    },
+    {
+      "path": "src/assets/styles/readable-site.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "fea27cc025d55ee3cf9c08874c142d6adfd376e0",
+      "bytes": 11328
+    },
+    {
+      "path": "src/assets/styles/resume.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d9289b2157d264b07f0caf268d49dd71a687b7d7",
+      "bytes": 367
+    },
+    {
+      "path": "src/assets/styles/styles.scss",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b00da2195c43538121ec1329aa7d1e700402ee28",
+      "bytes": 98023
+    },
+    {
+      "path": "src/assets/styles/work.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7bf34eee23f530cb20c5dcf37fcef07a4d1530ac",
+      "bytes": 5833
+    },
+    {
+      "path": "src/components/common/AudioPlayer.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "cd1ca33105ea5619d5b0a99b4483a428be4b94bb",
+      "bytes": 956
+    },
+    {
+      "path": "src/components/common/AudioTrack.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "268eb6189d2b55c9852074da1e5e4df6d670f9dd",
+      "bytes": 666
+    },
+    {
+      "path": "src/components/common/Button.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "60a7404924866f68cda538fd606e1c9048c329f9",
+      "bytes": 816
+    },
+    {
+      "path": "src/components/common/DspConceptDemo.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b18ded66648fd99307308b91ecf04cd0fafbdb18",
+      "bytes": 8219
+    },
+    {
+      "path": "src/components/common/DspConceptDemo.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f8bfe0511292b6ca0a812da95a8fa5c4ede1bed5",
+      "bytes": 2263
+    },
+    {
+      "path": "src/components/common/DspMotion.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e8b161ea76102ee922b36cbb37b463ea2d0d67d2",
+      "bytes": 881
+    },
+    {
+      "path": "src/components/common/GainDemo.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b0777b27a492d062bf796185f642bf8bc41ec866",
+      "bytes": 3294
+    },
+    {
+      "path": "src/components/common/HeroStars.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d1e9735e5edff2746d51395f0ad4257b13d23575",
+      "bytes": 1928
+    },
+    {
+      "path": "src/components/common/HeroStars.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "aff7934f27eb2d0d5d5f301c7dc91f239622eadd",
+      "bytes": 1996
+    },
+    {
+      "path": "src/components/common/Menu.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "160f77827aaacbb2226520a000bc18dc8b925a6b",
+      "bytes": 4900
+    },
+    {
+      "path": "src/components/common/PageSeo.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "8135db3a5a915be88ef78c2425da0556a483496e",
+      "bytes": 4445
+    },
+    {
+      "path": "src/components/common/SiteIcon.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6eb51376b7d70515c3f703dd10419863dc5b9534",
+      "bytes": 6337
+    },
+    {
+      "path": "src/components/common/SocialLinks.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4ba19e67a2f9cbba4c6e7625687ae6332236e6e7",
+      "bytes": 549
+    },
+    {
+      "path": "src/components/common/SoftwareProjectCard.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "043fbb27b7a3b2989d0d3313b1815415161e85ea",
+      "bytes": 1236
+    },
+    {
+      "path": "src/components/common/WorkDestinations.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "96a0eab98587918c3829ea3c495bba2ebb32c595",
+      "bytes": 1034
+    },
+    {
+      "path": "src/components/common/section-title.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "57895ac4cb545dde2e39bdf1a6ff504d164aca6a",
+      "bytes": 335
+    },
+    {
+      "path": "src/components/layout/Footer.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0a0b324d267bedf47d2f5c690b989ccffe2a079f",
+      "bytes": 654
+    },
+    {
+      "path": "src/components/layout/Hero.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b97b0f88eb63464a534efa44f92f0ecc53ad8dda",
+      "bytes": 2336
+    },
+    {
+      "path": "src/components/layout/SectionSiteHero.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "a1242caf07d7cf5aee132a8b7a1ff6886f2e9046",
+      "bytes": 870
+    },
+    {
+      "path": "src/components/sections/AudioSoftwareTools.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ff0cbf592fa631ab9a75b344d13da3a10345f44f",
+      "bytes": 1329
+    },
+    {
+      "path": "src/components/sections/Contact.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3af6686e1a44159f8d7fe0d85400dff509f598b7",
+      "bytes": 6890
+    },
+    {
+      "path": "src/components/sections/Contact.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0b8360f59226f68e2ab3e150d1407be7a11e596c",
+      "bytes": 2252
+    },
+    {
+      "path": "src/components/sections/FilmCredits.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2bcf881e6abcb1caff56bef1cd27099e43b541d7",
+      "bytes": 3539
+    },
+    {
+      "path": "src/components/sections/FilmCredits.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f5b012383aba340efe8c17d99ac4753bc7371db3",
+      "bytes": 1232
+    },
+    {
+      "path": "src/components/sections/LiveCredits.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "329fca8ec20e70733b59a5e254f086d87b0f5b7c",
+      "bytes": 2641
+    },
+    {
+      "path": "src/components/sections/Portfolio.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4fa35d9057508df251c79fb9a476c9f438602df2",
+      "bytes": 7603
+    },
+    {
+      "path": "src/components/sections/Portfolio.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "5c6440912097e7efa1dd0a223a773e590747de44",
+      "bytes": 997
+    },
+    {
+      "path": "src/components/sections/RecentClients.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c883f00c2e3b9e0af5dabe45f38c6d18f5b1159b",
+      "bytes": 2210
+    },
+    {
+      "path": "src/components/sections/Reel.tsx",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "567075afff42e3129ea61be1bf6c4317f640554c",
+      "bytes": 1852
+    },
+    {
+      "path": "src/components/sections/Resume.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "1390f92973bede89c3b576273d51fd20cac6ba4d",
+      "bytes": 371
+    },
+    {
+      "path": "src/components/sections/Services.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "e41fac849aa36d9a5fdc2f9a6138edf49bb40d17",
+      "bytes": 2027
+    },
+    {
+      "path": "src/config/prerender.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "87f0b6a53b9485f1528afff5b3b18bf255bc30e2",
+      "bytes": 6054
+    },
+    {
+      "path": "src/config/setupTests.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "5cbf3cc6c3614867847863b0e2c318569f412a4c",
+      "bytes": 621
+    },
+    {
+      "path": "src/config/site.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "43266af2853494ce114e564dad0fd6372b8f3575",
+      "bytes": 7644
+    },
+    {
+      "path": "src/config/siteSections.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "8c73cee70786c02eb8577cdb1b712331f3b0b892",
+      "bytes": 3130
+    },
+    {
+      "path": "src/data/clients.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ce5f59ddd272894d7fa6132fde5fc9ac79c17698",
+      "bytes": 2907
+    },
+    {
+      "path": "src/data/dspBrief.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "26b62368cd1d425a58336dcf04c85867ee521af5",
+      "bytes": 8561
+    },
+    {
+      "path": "src/data/dspDemos/core.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7302fa03d10704d95edb49832c5693ec3fbe9d41",
+      "bytes": 15612
+    },
+    {
+      "path": "src/data/dspDemos/core.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b757e39e57bbb31ae123495d5e1ea045efff6fae",
+      "bytes": 5917
+    },
+    {
+      "path": "src/data/dspDemos/dynamics.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "1c8bfa25036656f82e2816ddc9cb7aa74f1c48d9",
+      "bytes": 15111
+    },
+    {
+      "path": "src/data/dspDemos/dynamics.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7e0b93fc9818a0219c38b4cf05eb8d660147bf89",
+      "bytes": 4836
+    },
+    {
+      "path": "src/data/dspDemos/index.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ddc3fe0ddaa65ec4c8d37b4009e845374e303e64",
+      "bytes": 418
+    },
+    {
+      "path": "src/data/dspDemos/modulation.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "023be5652aa0f9d04ed6b132dd0399ea686d6745",
+      "bytes": 19076
+    },
+    {
+      "path": "src/data/dspDemos/modulation.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c2735eb2e9d6f50f2853a7d8a01c577e5c41c52b",
+      "bytes": 7605
+    },
+    {
+      "path": "src/data/dspDemos/nonlinear.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "bfbc97550d3f6f8a8774116fe76c08cb8be6711b",
+      "bytes": 10081
+    },
+    {
+      "path": "src/data/dspDemos/nonlinear.test.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "50dcecf65569415199bd3125847968c9ef52549b",
+      "bytes": 3797
+    },
+    {
+      "path": "src/data/dspDictionary.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "2ecab1f3a1304a6bd38e7bcbd36423abc8e19871",
+      "bytes": 42967
+    },
+    {
+      "path": "src/data/film.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "afac263d65a4b81d617f505c0681f067f162894a",
+      "bytes": 4656
+    },
+    {
+      "path": "src/data/filmArtwork.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c04d74f1b75ac0973b77beb744f3d3b790d01b98",
+      "bytes": 5525
+    },
+    {
+      "path": "src/data/liveCredits.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f41c134b096689b2d739114c6b67f18e4dc35106",
+      "bytes": 4590
+    },
+    {
+      "path": "src/data/portfolio.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "aecbe1a4a5570c09c9149296b3341c8698d2e0d3",
+      "bytes": 3909
+    },
+    {
+      "path": "src/data/screenCredits.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d46f759f0c14404d66da72b76dafcd3e1ae3250a",
+      "bytes": 2070
+    },
+    {
+      "path": "src/data/services.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0238154e6cb617d330a246391b1cc9f1e11ad440",
+      "bytes": 6879
+    },
+    {
+      "path": "src/data/software.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "d92933fd26419072a3c6acd4ee8cfab9801d8967",
+      "bytes": 2180
+    },
+    {
+      "path": "src/entry-server.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "c5375138fe93fdfc6e5f2a3e99535768fb2ce130",
+      "bytes": 360
+    },
+    {
+      "path": "src/hooks/useSectionSite.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "9a947ad2d51d170a62cb973bf8ae8a0b61f3df4f",
+      "bytes": 679
+    },
+    {
+      "path": "src/hooks/useSiteNavigation.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "fe6c361ccc7f3a4ea5b1eff1a2d2485448e8e385",
+      "bytes": 2277
+    },
+    {
+      "path": "src/index.css",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b59b4b254e24c65c988812a47f67dba48c37c431",
+      "bytes": 334
+    },
+    {
+      "path": "src/lib/firebase.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4c63cce214c2bc19df131c18dfa18934a3b43b12",
+      "bytes": 1684
+    },
+    {
+      "path": "src/lib/heroStars.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "1375145897a12e9b35a78bcdd73b4290bf3df0ba",
+      "bytes": 481
+    },
+    {
+      "path": "src/lib/scroll.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "f82d6b459f2b51b27798a619b40d83cd8456bc3e",
+      "bytes": 887
+    },
+    {
+      "path": "src/logo.svg",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "9dfc1c058cebbef8b891c5062be6f31033d7d186",
+      "bytes": 2632
+    },
+    {
+      "path": "src/main.jsx",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "9affed56acd3c94d1dec5e3df348ed2934dda512",
+      "bytes": 903
+    },
+    {
+      "path": "src/pages/ArtAboutPage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "59a7225f6dde4ac3f602800363a4e8377fc0446b",
+      "bytes": 215
+    },
+    {
+      "path": "src/pages/ArtHomePage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "4c20c10d694d4d429b8f5ca70fc89b9b6559595f",
+      "bytes": 2128
+    },
+    {
+      "path": "src/pages/ContactPage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7f15d1818f64dbc74bacd38e9aada45d7c883512",
+      "bytes": 477
+    },
+    {
+      "path": "src/pages/DevHomePage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "110194a522576b0c8481ad827b20492db6384430",
+      "bytes": 1294
+    },
+    {
+      "path": "src/pages/DspDictionary.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "7047312d7f5b44b8e790c9ff2f1a3f10b89b3d07",
+      "bytes": 2726
+    },
+    {
+      "path": "src/pages/FilmHomePage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "3b05a4f13266de2acc783b8ef7d77b768a3b9ae3",
+      "bytes": 1277
+    },
+    {
+      "path": "src/pages/FilmSamplesPage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ca263a59f06eeeb9efdcfd12b2f065477e6cf860",
+      "bytes": 3036
+    },
+    {
+      "path": "src/pages/Home.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "0bc84c30a3e5853641babca3f3852567d1a53e7e",
+      "bytes": 1142
+    },
+    {
+      "path": "src/pages/LiveCompaniesPage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "fb1539c88641ed98745cab76911f5868a3cdcaec",
+      "bytes": 599
+    },
+    {
+      "path": "src/pages/LiveHomePage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "1dbd737749388fc1fd6bef3bb9f801561ae6e6b6",
+      "bytes": 1663
+    },
+    {
+      "path": "src/pages/PortfolioPage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "6588f3e0b9ca5e5376af5c86d6738b35d4fa2dce",
+      "bytes": 3255
+    },
+    {
+      "path": "src/pages/SiteGatewayPage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "88d2f888f748ed932f654fde13ce9a8237853988",
+      "bytes": 1825
+    },
+    {
+      "path": "src/pages/SoftwarePage.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "cc3a207a5be755ea62386af844c257491cc3ffdf",
+      "bytes": 5502
+    },
+    {
+      "path": "src/pages/Terms.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "b651d3820fe396c804445528a3f9af6fc7e1ed4c",
+      "bytes": 8677
+    },
+    {
+      "path": "src/setupTests.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "ead85619c1ce7733afed1c75ea071c8f08d84cca",
+      "bytes": 30
+    },
+    {
+      "path": "vite.config.js",
+      "mode": "100644",
+      "type": "blob",
+      "gitBlob": "48930134cd1d88651728aa06558ba06e94391afd",
+      "bytes": 2453
+    }
+  ]
+}

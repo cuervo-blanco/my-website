@@ -4,6 +4,29 @@ import { githubProfileUrl } from "../data/software";
 import { filmCredits, getFilmImdbUrl } from "../data/film";
 
 const personId = `${siteMetadata.url}/#jaime-osvaldo`;
+const websiteId = `${siteMetadata.url}/#website`;
+
+function pageIdentity(metadata) {
+  const url = new URL(metadata.path, siteMetadata.url).toString();
+  return {
+    "@id": `${url}#webpage`,
+    url,
+    inLanguage: "en-US",
+    isPartOf: { "@id": websiteId },
+    about: { "@id": personId },
+  };
+}
+
+function breadcrumb(metadata, label) {
+  return {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Jaime Osvaldo", item: `${siteMetadata.url}/` },
+      { "@type": "ListItem", position: 2, name: label, item: new URL(metadata.path, siteMetadata.url).toString() },
+    ],
+  };
+}
+
 export const personStructuredData = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -23,6 +46,18 @@ export const personStructuredData = {
   knowsAbout: ["Production sound", "Post-production sound", "Film sound design", "Theater sound design", "Live audio", "Audio programming", "Software development", "Digital signal processing", "Animation"],
 };
 
+export const websiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": websiteId,
+  name: siteMetadata.siteName,
+  alternateName: siteMetadata.legalName,
+  url: `${siteMetadata.url}/`,
+  description: siteMetadata.description,
+  inLanguage: "en-US",
+  publisher: { "@id": personId },
+};
+
 const totalFilmSamples = filmProjects.reduce(
   (sampleCount, project) => sampleCount + project.tracks.length,
   0
@@ -30,12 +65,14 @@ const totalFilmSamples = filmProjects.reduce(
 
 export const homeStructuredData = [
   personStructuredData,
+  websiteStructuredData,
   {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${siteMetadata.url}/#services`,
     name: "Film and theater sound, audio programming, software development and animation",
     url: `${siteMetadata.url}/contact`,
+    mainEntityOfPage: { "@id": `${siteMetadata.url}/#webpage` },
     provider: { "@id": personId },
     description: pageMetadata.home.description,
     areaServed: { "@type": "City", name: "New York" },
@@ -95,16 +132,18 @@ export const workStructuredData = [
   ...homeStructuredData,
   {
     ...portfolioStructuredData,
-    "@id": `${siteMetadata.url}/#work`,
+    ...pageIdentity(pageMetadata.home),
     name: pageMetadata.home.title,
     description: pageMetadata.home.description,
     author: { "@id": personId },
     about: ["Film sound mixing", "Film sound design", "Theater sound", "Live audio"],
     hasPart: [
       ...filmCredits.map((credit) => ({
-        "@type": "Movie",
+        "@type": credit.type.startsWith("Podcast") ? "PodcastSeries" : "Movie",
         name: credit.title,
+        description: `${credit.type}. Jaime Osvaldo: ${credit.roles.join(", ")}.`,
         sameAs: getFilmImdbUrl(credit),
+        ...(credit.poster ? { image: new URL(credit.poster, siteMetadata.url).toString() } : {}),
         contributor: { "@id": personId },
       })),
       ...portfolioStructuredData.hasPart.filter((work) => work["@type"] !== "CreativeWork"),
@@ -115,10 +154,12 @@ export const workStructuredData = [
 export const softwareStructuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  ...pageIdentity(pageMetadata.devHome),
   name: pageMetadata.devHome.title,
   description: pageMetadata.devHome.description,
-  url: `${siteMetadata.url}${pageMetadata.devHome.path}`,
   author: personStructuredData,
+  isPartOf: websiteStructuredData,
+  breadcrumb: breadcrumb(pageMetadata.devHome, "Audio programming & DSP"),
   about: ["Audio programming", "Software development", "Digital signal processing"],
   sameAs: [githubProfileUrl],
   hasPart: [
@@ -130,6 +171,7 @@ export const softwareStructuredData = {
     {
       "@type": "Article",
       name: "DSP Dictionary",
+      description: pageMetadata.dspDictionary.description,
       url: `${siteMetadata.url}/dev#dsp-dictionary`,
     },
   ],
@@ -157,10 +199,12 @@ export const dspStructuredData = {
 export const animationStructuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
+  ...pageIdentity(pageMetadata.art),
   name: pageMetadata.art.title,
   description: pageMetadata.art.description,
-  url: `${siteMetadata.url}/art`,
   author: personStructuredData,
+  isPartOf: websiteStructuredData,
+  breadcrumb: breadcrumb(pageMetadata.art, "Animation"),
   about: ["Animation", "Sound design"],
   hasPart: {
     "@type": "VideoObject",
@@ -175,10 +219,13 @@ export const animationStructuredData = {
 export const contactStructuredData = {
   "@context": "https://schema.org",
   "@type": "ContactPage",
+  ...pageIdentity(pageMetadata.contact),
   name: pageMetadata.contact.title,
   description: pageMetadata.contact.description,
-  url: `${siteMetadata.url}/contact`,
   about: personStructuredData,
+  isPartOf: websiteStructuredData,
+  mainEntity: { "@id": personId },
+  breadcrumb: breadcrumb(pageMetadata.contact, "Contact"),
 };
 
 export const prerenderRoutes = [
@@ -201,7 +248,14 @@ export const prerenderRoutes = [
   {
     ...pageMetadata.terms,
   },
-];
+].map((route) => ({
+  ...route,
+  siteUrl: siteMetadata.url,
+  siteName: siteMetadata.siteName,
+  image: route.image || siteMetadata.defaultSocialImage,
+  imageAlt: route.imageAlt || siteMetadata.socialImageAlt,
+  themeColor: siteMetadata.themeColor,
+}));
 
 export const portfolioStats = {
   filmProjects: filmProjects.length,

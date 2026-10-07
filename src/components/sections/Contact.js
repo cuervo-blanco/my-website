@@ -74,7 +74,9 @@ function Contact({ compact = false, standalone = false }) {
     const FormContainer = standalone ? "div" : "details";
     return (
       <section id="contact" className="compact-contact surface-panel" aria-labelledby="contact-heading">
+        {standalone ? <p className="studio-kicker">Start a conversation</p> : null}
         <Heading id="contact-heading">Contact</Heading>
+        {standalone ? <p className="studio-page-tagline">What are you making?</p> : null}
         {standalone ? <p className="service-intro">New York · Film &amp; theater sound · Audio programming · Software · Animation</p> : null}
         {siteMetadata.email ? <a className="compact-contact__email" href={`mailto:${siteMetadata.email}`} aria-label="Email">{siteMetadata.email} ↗</a> : null}
         <FormContainer className="compact-contact__form">
@@ -90,8 +92,8 @@ function Contact({ compact = false, standalone = false }) {
               <label htmlFor="contact-name">Name<input id="contact-name" name="name" autoComplete="name" required /></label>
               <label htmlFor="contact-email">Email<input id="contact-email" type="email" name="email" autoComplete="email" required /></label>
             </div>
-            <label htmlFor="contact-message">Message<textarea id="contact-message" name="message" rows="4" required /></label>
-            <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>{isSubmitting ? "Sending…" : "Send"}</button>
+            <label htmlFor="contact-message">Message<textarea id="contact-message" name="message" rows="5" placeholder="Tell me about your film, show, sound, or wonderfully strange idea." required /></label>
+            <button type="submit" disabled={isSubmitting} aria-busy={isSubmitting}>{isSubmitting ? "Sending…" : "Send"} <span aria-hidden="true">↗</span></button>
           </form>
         </FormContainer>
       </section>
