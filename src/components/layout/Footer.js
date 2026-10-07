@@ -14,25 +14,24 @@ function Footer() {
       <div className="studio-footer__inner">
         {pathname !== "/contact" ? <div className="studio-footer__contact">
           <div>
-            <p className="studio-footer__eyebrow">Have something in mind?</p>
-            <h2>Let's make it<br />sound right.</h2>
+            <h2>Contact</h2>
           </div>
-          <Link className="studio-footer__cta" to="/contact">Let's talk <span aria-hidden="true">↗</span></Link>
+          <Link className="studio-footer__cta" to="/contact">Get in touch <span aria-hidden="true">↗</span></Link>
         </div> : null}
 
         <div className="studio-footer__directory">
           <div className="studio-footer__identity">
             <p className="studio-footer__name">Jaime Osvaldo<span>{siteMetadata.location}</span></p>
-            <p>Sound, software, and a little imagination.</p>
+            <p>Film and theater sound, audio programming, and animation.</p>
           </div>
           <nav aria-label="Footer" className="studio-footer__links">
-            <p className="studio-footer__eyebrow">Explore</p>
+            <p className="studio-footer__eyebrow">Pages</p>
             {navigation.filter((item) => item.label !== "Contact").map((item) => item.type === "external"
               ? <a key={item.label} href={getItemHref(item)} target={item.target} rel={item.rel}>{item.label}</a>
               : <Link key={item.label} to={getItemHref(item)} onClick={(event) => handleNavigationClick(event, item)}>{item.label}</Link>)}
           </nav>
           <div className="studio-footer__links">
-            <p className="studio-footer__eyebrow">Elsewhere</p>
+            <p className="studio-footer__eyebrow">Links</p>
             {socialLinks.map((link) => <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer">{link.label} <span aria-hidden="true">↗</span></a>)}
             <a href={siteMetadata.resumePath} target="_blank" rel="noopener noreferrer">Résumé</a>
           </div>

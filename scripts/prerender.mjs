@@ -194,30 +194,30 @@ const notFoundHtml = `<!DOCTYPE html>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,follow" />
-    <meta name="theme-color" content="#10110f" />
+    <meta name="theme-color" content="#000000" />
     <title>Page not found | Jaime Osvaldo</title>
     <link rel="icon" type="image/svg+xml" href="/dragon-icon.svg" />
     <style>
       * { box-sizing: border-box; }
-      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #10110f; color: #f2f2e9; font-family: system-ui, sans-serif; padding: 32px; }
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #000; color: #fff; font-family: system-ui, sans-serif; padding: 32px; }
       main { max-width: 600px; }
-      .code { font-family: monospace; color: #c7f651; letter-spacing: .12em; }
+      .code { font-family: monospace; color: #b4d3c1; letter-spacing: .12em; }
       h1 { font-size: clamp(3rem, 10vw, 5rem); line-height: .95; letter-spacing: -.05em; margin: 28px 0; }
-      p { line-height: 1.6; color: #b7b9aa; }
+      p { line-height: 1.6; color: #c5cbc9; }
       nav { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
-      a { display: inline-block; color: #10110f; background: #c7f651; padding: 14px 20px; text-decoration: none; border-radius: 6px; font-weight: 650; }
-      a + a { background: transparent; color: #f2f2e9; border: 1px solid #54574b; }
+      a { display: inline-block; color: #000; background: #b4d3c1; padding: 14px 20px; text-decoration: none; border-radius: 6px; font-weight: 650; }
+      a + a { background: transparent; color: #fff; border: 1px solid #424752; }
       a:hover { filter: brightness(1.15); }
-      a:focus-visible { outline: 3px solid #f2f2e9; outline-offset: 5px; }
+      a:focus-visible { outline: 3px solid #fff; outline-offset: 5px; }
     </style>
   </head>
   <body>
     <main>
       <p class="code">JAIME OSVALDO / 404</p>
-      <h1>Lost in the noise?</h1>
+      <h1>Page not found</h1>
       <p>This page is missing or its address has changed. Find sound work, audio software, and animation on the homepage.</p>
       <nav aria-label="Find your way back">
-        <a href="/">Back to the work</a>
+        <a href="/">Back to home</a>
         <a href="/contact">Contact Jaime</a>
       </nav>
     </main>

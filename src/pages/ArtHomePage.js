@@ -11,10 +11,10 @@ function ArtHomePage() {
       <main id="animation-page" className="section-site-page">
         <div className="section-site-shell surface-panel">
           <header className="animation-header">
-            <p className="studio-kicker">A different frame of mind</p>
+            <p className="studio-kicker">Selected work</p>
             <h1>Animation</h1>
-            <p className="studio-page-tagline">Some ideas refuse to sit still.</p>
-            <p className="service-intro">New York animator. Animation &amp; original sound by Jaime Osvaldo.</p>
+            <p className="studio-page-tagline">Animation and original sound.</p>
+            <p className="service-intro">Jaime Osvaldo · New York</p>
           </header>
           <figure className="animation-feature">
             <video

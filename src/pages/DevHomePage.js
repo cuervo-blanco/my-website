@@ -14,16 +14,16 @@ function DevHomePage() {
       <main className="section-site-page dev-site-page">
         <div className="section-site-shell dev-intro surface-panel">
           <header className="dev-work-header">
-            <p className="studio-kicker">Sound, under the hood</p>
+            <p className="studio-kicker">Software</p>
             <h1>Dev</h1>
-            <p className="studio-page-tagline">A playground for your ears. And your brain.</p>
+            <p className="studio-page-tagline">Audio tools and digital signal processing.</p>
           </header>
           <nav className="dev-work-links" aria-label="Dev work">
             <a href={githubProfileUrl} target="_blank" rel="noopener noreferrer">
               GitHub <span aria-hidden="true">↗</span>
             </a>
           </nav>
-          <p className="service-intro">Software developer &amp; audio programmer in New York. Audio tools, DSP &amp; interactive sound.</p>
+          <p className="service-intro">Software development and audio programming by Jaime Osvaldo, New York.</p>
         </div>
         <DspDictionaryContent embedded />
       </main>

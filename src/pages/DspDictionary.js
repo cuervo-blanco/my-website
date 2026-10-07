@@ -33,7 +33,7 @@ export function DspDictionaryContent({ embedded = false }) {
         <DspReveal as="section" className="dictionary-hero">
           <div className="dictionary-shell">
             <Heading id="dictionary-heading"><span id="dsp-dictionary" />DSP Dictionary</Heading>
-            <p className="studio-section-intro">Less theory on a page. More turning knobs and seeing what changes.</p>
+            <p className="studio-section-intro">Definitions and interactive examples of digital signal processing.</p>
           </div>
         </DspReveal>
 

@@ -10,7 +10,7 @@ export const siteMetadata = {
   url: "https://jaimeosvaldo.com",
   defaultSocialImage: "/studio-preview.jpg",
   socialImageAlt: "Jaime Osvaldo — sound, software and animation in New York",
-  themeColor: "#10110f",
+  themeColor: "#000000",
   email: clientEnv.VITE_CONTACT_EMAIL || "",
   location: "New York, NY",
   resumePath: "/CV/JaimeORiveraCV-2025v09.pdf",

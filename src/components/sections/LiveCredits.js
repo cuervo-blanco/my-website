@@ -17,7 +17,7 @@ function LiveCredits() {
 
   return (
     <section id="live-credits" className="work-live work-page__shell surface-panel" aria-labelledby="live-credits-heading">
-      <header className="studio-live-header"><p className="studio-kicker">03 / No second takes</p><h2 id="live-credits-heading">Live &amp; Theatre</h2><p className="studio-section-intro">In the room. Behind the desk. Part of the show.</p></header>
+      <header className="studio-live-header"><p className="studio-kicker">03 / Live audio</p><h2 id="live-credits-heading">Live &amp; Theatre</h2><p className="studio-section-intro">Sound design and audio engineering for theatre and live events.</p></header>
       <div className="work-live__gallery">
         {gallery.map((credit) => (
           <article key={credit.title} className="work-live__image-credit">

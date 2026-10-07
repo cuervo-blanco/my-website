@@ -68,7 +68,7 @@ function FilmCredits() {
     <section id="credits" className="film-work" aria-labelledby="film-credits-heading">
       <div className="film-work__shell surface-panel">
         <header className="film-work__header">
-          <div><p className="studio-kicker">01 / Stories on screen</p><h2 id="film-credits-heading">Film</h2><p className="studio-section-intro">From the first take to the final mix.</p></div>
+          <div><p className="studio-kicker">01 / Film credits</p><h2 id="film-credits-heading">Film</h2><p className="studio-section-intro">Production sound and post-production credits.</p></div>
           <FilmLink href={imdbProfileUrl}>IMDb credits</FilmLink>
         </header>
         <div className="studio-work-filter">

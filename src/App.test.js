@@ -11,11 +11,11 @@ afterEach(() => { window.history.pushState({}, "", "/"); });
 test("puts work on the homepage with contact in primary navigation", () => {
   render(<App />);
   const navigation = within(screen.getByRole("navigation", { name: "Primary" }));
-  for (const name of ["Work", "Dev", "Animation", "Let's talk"]) expect(navigation.getByRole("link", { name, exact: true })).toBeVisible();
+  for (const name of ["Work", "Dev", "Animation", "Contact"]) expect(navigation.getByRole("link", { name, exact: true })).toBeVisible();
   expect(screen.getByRole("heading", { name: "Jaime Osvaldo", level: 1 })).toBeVisible();
   expect(screen.getByRole("link", { name: "Résumé" })).toBeInTheDocument();
-  expect(navigation.getByRole("link", { name: "Let's talk" })).toHaveAttribute("href", "/contact");
-  expect(screen.queryByRole("heading", { name: "Contact" })).not.toBeInTheDocument();
+  expect(navigation.getByRole("link", { name: "Contact" })).toHaveAttribute("href", "/contact");
+  expect(screen.queryByRole("heading", { name: "Contact", level: 1 })).not.toBeInTheDocument();
   expect(document.title).toMatch(/New York Sound Mixer & Sound Designer/i);
 });
 
@@ -124,7 +124,7 @@ test("puts GitHub above the complete interactive DSP dictionary on Dev", () => {
   expect(screen.getAllByRole("slider").length).toBeGreaterThan(28);
   expect(document.querySelector('link[rel="canonical"]')).toHaveAttribute("href", "https://jaimeosvaldo.com/dev");
   expect(document.querySelector('script[data-seo="structured-data"]').textContent).not.toContain("Delay Compensation Plugin");
-  expect(within(screen.getByRole("navigation", { name: "Primary" })).getByRole("link", { name: "Let's talk" })).toHaveAttribute("href", "/contact");
+  expect(within(screen.getByRole("navigation", { name: "Primary" })).getByRole("link", { name: "Contact" })).toHaveAttribute("href", "/contact");
 });
 
 test("shows all 28 interactive dictionary lessons without the original essays", () => {

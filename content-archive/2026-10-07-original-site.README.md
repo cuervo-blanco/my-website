@@ -4,19 +4,22 @@ The original website remains browsable at **`/classic/`**. Its Work, Dev, Animat
 
 ## Deployment checkpoints and live rollback
 
-Two annotated Git tags identify the versions:
+Annotated Git tags identify the versions:
 
 - `site-before-redesign-2026-10-07`: the complete original source at `53f787109707d6422219307a03afeb78d3489688`.
 - `site-redesign-2026-10-07`: the redesigned website, including this browsable archive.
+- `site-restored-palette-2026-10-07`: the revised design with the original constellation palette, animals and stars, and factual copy.
 
-The repository's existing deployment workflow publishes `master` to Firebase Hosting. To return the live site to the previous design, first ensure `git status --short` is empty, then revert the redesign as a new commit and push it. This preserves both checkpoints and the repository's history:
+The repository's existing deployment workflow publishes `master` to Firebase Hosting. To restore the original live site, first ensure `git status --short` is empty, then revert the revisions in reverse order and push. This preserves the checkpoints and the repository's history:
 
 ```bash
-git revert --no-edit site-redesign-2026-10-07
+git revert --no-edit site-restored-palette-2026-10-07 site-redesign-2026-10-07
 git push origin master
 ```
 
 Wait for **Deploy to Firebase Hosting on merge** to succeed, then verify `https://jaimeosvaldo.com`. If subsequent changes cause conflicts, resolve them before pushing. Firebase Hosting's release history also offers a direct rollback to a retained earlier live release.
+
+To return only to the first redesign, revert `site-restored-palette-2026-10-07` and push.
 
 ## Exact source identity
 

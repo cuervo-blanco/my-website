@@ -61,7 +61,7 @@ function Menu() {
       "aria-current": isCurrent ? "page" : undefined,
       tabIndex: isExpanded && !mobile ? -1 : undefined,
     };
-    const label = isContact && !mobile ? "Let's talk" : item.label;
+    const label = item.label;
     const content = <><span>{label}</span>{isContact && <span className="studio-nav__arrow" aria-hidden="true">↗</span>}</>;
 
     if (item.type === "external") {
@@ -103,7 +103,7 @@ function Menu() {
 
       {isExpanded && (
         <div id="studio-mobile-menu" className="studio-mobile-menu" ref={mobileMenuRef}>
-          <p className="studio-mobile-menu__label">Explore</p>
+          <p className="studio-mobile-menu__label">Navigation</p>
           <nav aria-label="Mobile">
             <ul>{navigation.map((item) => <li key={item.label}>{renderNavigationLink(item, true)}</li>)}</ul>
           </nav>

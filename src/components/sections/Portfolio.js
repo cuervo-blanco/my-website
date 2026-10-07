@@ -16,9 +16,9 @@ function CompactPortfolio() {
   return (
     <div className="work-samples work-page__shell surface-panel">
       <section id="portfolio-films" aria-labelledby="portfolio-films-heading">
-        <p className="studio-kicker">Listen closer</p>
+        <p className="studio-kicker">Audio samples</p>
         <h3 id="portfolio-films-heading">Scene samples</h3>
-        <p className="studio-section-intro">Foley, atmosphere, music, and all the details in between. Open a film to hear the work.</p>
+        <p className="studio-section-intro">Foley, ambience, sound design, and music. Select a film to play its audio clips.</p>
         <div className="work-samples__films">
           {filmProjects.map((project) => (
             <details key={project.title} className="work-samples__project">
